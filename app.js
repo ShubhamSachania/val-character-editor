@@ -50,7 +50,12 @@ const catalogGrid = document.getElementById('catalog-grid');
 // Helper to get item metadata from database
 function getItemInfo(itemName) {
   if (!itemName || typeof VALHEIM_ITEMS === 'undefined') return null;
-  return VALHEIM_ITEMS.find(i => i.id.toLowerCase() === itemName.toLowerCase() || i.name.toLowerCase() === itemName.toLowerCase()) || null;
+  const clean = itemName.toLowerCase().replace(/[^a-z0-9]/g, '');
+  return VALHEIM_ITEMS.find(i => {
+    const idClean = i.id.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const nameClean = i.name.toLowerCase().replace(/[^a-z0-9]/g, '');
+    return idClean === clean || nameClean === clean;
+  }) || null;
 }
 
 // Generate HTML <img> for item's authentic game icon
@@ -60,8 +65,12 @@ function getItemIconHtml(itemName) {
   let iconPath = `icons/${itemName}.png`;
   if (info && info.icon) {
     iconPath = info.icon;
+  } else {
+    // Try clean alphanumeric name
+    const cleanId = itemName.replace(/[^a-zA-Z0-9]/g, '');
+    iconPath = `icons/${cleanId}.png`;
   }
-  return `<img src="${iconPath}" class="item-sprite-img" alt="${itemName}" onerror="this.onerror=null; this.src='icons/Wood.png';">`;
+  return `<img src="${iconPath}" class="item-sprite-img" alt="${itemName}" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling ? this.nextElementSibling.style.display='inline' : '';"><span class="fallback-icon" style="display:none; font-size:1.4rem;">⚔️</span>`;
 }
 
 // Toast Notifications
