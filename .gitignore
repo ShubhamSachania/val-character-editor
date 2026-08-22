@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Large save dumps and backups
+*.json.bak
+*.bak
+shubahm.json
+
+# OS files
+.DS_Store
+Thumbs.db

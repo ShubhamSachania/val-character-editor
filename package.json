@@ -1,0 +1,14 @@
+{
+  "name": "valheim-character-forge",
+  "version": "1.0.0",
+  "description": "Valheim Character & Inventory Forge Web App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["valheim", "character-editor", "save-editor"],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "private": true
+}

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valheim Inventory & Character Forge</title>
+  <meta name="description" content="Authentic in-game Valheim character save (.fch) and inventory management tool.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="brand">
+      <div class="brand-icon">⚔️</div>
+      <div>
+        <h1 id="app-title">VALHEIM CHARACTER FORGE</h1>
+        <div class="subtitle">In-Game Visual Inventory & Save Editor</div>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <input type="file" id="fch-file-input" accept=".fch,.json" style="display: none;">
+      <button class="btn btn-primary" id="btn-load-file" title="Load a .fch or .json character save">
+        📂 Open .fch Save
+      </button>
+      <button class="btn btn-primary" id="btn-export-fch" title="Download modified character file as .fch save" style="display: none;">
+        💾 Export .fch
+      </button>
+      <button class="btn btn-secondary" id="btn-save-server" title="Save directly to file" style="display: none;">
+        ⚡ Save Changes
+      </button>
+      <button class="btn btn-secondary" id="btn-export-json" title="Download character data as JSON" style="display: none;">
+        📋 Export JSON
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="app-container">
+
+    <!-- Empty State File Picker / Drop Zone -->
+    <section class="upload-dropzone valheim-frame" id="upload-dropzone">
+      <div class="dropzone-inner">
+        <div class="dropzone-icon">🛡️</div>
+        <h2>Select or Drop your Valheim Character Save</h2>
+        <p class="dropzone-desc">Select a <code>.fch</code> save file to edit your Viking inventory, equipped armor, and skills in the authentic in-game interface.</p>
+        <button class="btn btn-primary btn-large" id="btn-browse-fch">
+          📂 Choose .fch Character File
+        </button>
+        <div class="dropzone-hint">
+          <span>💡 <strong>Default Valheim Save Location:</strong></span>
+          <code>%USERPROFILE%\AppData\LocalLow\IronGate\Valheim\characters</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- Editor Workspace (Visible once a file is loaded) -->
+    <div id="editor-workspace" style="display: none; flex-direction: column; gap: 20px;">
+
+      <!-- Hero Character Banner -->
+      <section class="hero-banner valheim-frame" id="hero-banner">
+        <div class="char-identity">
+          <div class="char-avatar" id="char-avatar">🛡️</div>
+          <div class="char-name-group">
+            <h2 id="display-char-name">Viking</h2>
+            <div class="char-badges">
+              <span class="badge badge-gold" id="badge-version">Save Version 43</span>
+              <span class="badge" id="badge-id">ID: </span>
+              <span class="badge" id="badge-filename">File: </span>
+              <span class="badge" id="badge-items-count">0 / 32 Slots</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="vitals-summary">
+          <div class="vital-box">
+            <div class="label">Health</div>
+            <div class="value val-health" id="display-health">❤️ 25 / 25</div>
+          </div>
+          <div class="vital-box">
+            <div class="label">Stamina</div>
+            <div class="value val-stamina" id="display-stamina">⚡ 50</div>
+          </div>
+          <div class="vital-box">
+            <div class="label">Eitr (Magic)</div>
+            <div class="value val-eitr" id="display-eitr">✨ 0</div>
+          </div>
+          <div class="vital-box">
+            <div class="label">Guardian Power</div>
+            <div class="value val-guardian" id="display-guardian">💀 None</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <button class="btn btn-secondary" id="btn-edit-char-stats">✏️ Edit Vitals</button>
+          <button class="btn btn-secondary" id="btn-switch-file">🔄 Change File</button>
+        </div>
+      </section>
+
+      <!-- 3-Column Editor Layout -->
+      <div class="editor-grid">
+
+        <!-- LEFT: Equipped Gear Loadout -->
+        <aside class="panel-card valheim-frame">
+          <div class="panel-header">
+            <div class="panel-title">🛡️ Equipped Loadout</div>
+          </div>
+
+          <div class="equipped-gear-grid" id="equipped-gear-container">
+            <!-- Populated by JavaScript -->
+          </div>
+
+          <div class="panel-header" style="margin-top: 6px;">
+            <div class="panel-title">🍖 Active Foods</div>
+          </div>
+          <div id="active-foods-container" style="display: flex; flex-direction: column; gap: 6px;">
+            <!-- Active food badges -->
+          </div>
+        </aside>
+
+        <!-- CENTER: 8x4 In-Game Inventory Grid -->
+        <section class="panel-card valheim-frame">
+          <div class="panel-header">
+            <div class="panel-title">🎒 Inventory (8 x 4)</div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+              <button class="btn btn-primary" id="btn-open-catalog">➕ Add Item</button>
+              <button class="btn btn-success" id="btn-repair-all">🔨 Repair All</button>
+              <button class="btn btn-secondary" id="btn-max-quality">⭐ Max Quality</button>
+              <button class="btn btn-secondary" id="btn-max-stacks">📦 Max Stacks</button>
+              <button class="btn btn-danger" id="btn-clear-inventory">🗑️ Clear Bag</button>
+            </div>
+          </div>
+
+          <!-- In-Game Stats Header (Armor & Weight Gauge) -->
+          <div class="inventory-stats-bar">
+            <div class="stat-item">
+              <span style="font-size: 1.1rem;">🛡️</span>
+              <div>
+                <div class="stat-label">TOTAL ARMOR</div>
+                <div class="stat-val-armor" id="stat-armor-val">0</div>
+              </div>
+            </div>
+
+            <div class="stat-item">
+              <span style="font-size: 1.1rem;">⚖️</span>
+              <div>
+                <div class="stat-label">CARRY WEIGHT</div>
+                <div class="stat-val-weight" id="stat-weight-val">0 / 300</div>
+              </div>
+            </div>
+
+            <div class="stat-item">
+              <span style="font-size: 1.1rem;">📦</span>
+              <div>
+                <div class="stat-label">SLOTS USED</div>
+                <div style="color: var(--valheim-text-gold); font-weight: 700;" id="stat-slots-val">0 / 32</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8x4 Grid -->
+          <div class="inventory-grid-container">
+            <div class="valheim-grid" id="valheim-inventory-grid">
+              <!-- 32 slots generated dynamically -->
+            </div>
+          </div>
+        </section>
+
+        <!-- RIGHT: Skills & Progression -->
+        <aside class="panel-card valheim-frame">
+          <div class="panel-header">
+            <div class="panel-title">⚡ Viking Skills</div>
+            <button class="btn btn-secondary" id="btn-max-skills" style="padding: 3px 8px; font-size: 0.72rem;">
+              Max (100)
+            </button>
+          </div>
+
+          <div class="skills-list" id="skills-list-container">
+            <!-- Populated by JavaScript -->
+          </div>
+
+          <div class="panel-header" style="margin-top: 6px;">
+            <div class="panel-title">📜 Knowledge</div>
+          </div>
+          <div id="progression-summary-container" style="font-size: 0.8rem; color: var(--valheim-text-muted); display: flex; flex-direction: column; gap: 4px; font-family: var(--font-valheim);">
+            <!-- Summary counts -->
+          </div>
+        </aside>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- MODAL: Item Inspector & Editor -->
+  <div class="modal-backdrop" id="modal-item-editor">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title" id="modal-item-title">
+          <span>📦</span>
+          <span>Edit Inventory Slot</span>
+        </div>
+        <button class="close-btn" id="btn-close-item-editor">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Item Prefab ID / Name</label>
+          <div style="display: flex; gap: 8px;">
+            <input type="text" class="form-input" id="item-id-input" placeholder="e.g. SwordBlackmetal" style="flex: 1;">
+            <button class="btn btn-secondary" id="btn-browse-catalog">Browse Catalog</button>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Quantity / Stack Size</label>
+            <input type="number" class="form-input" id="item-stack-input" min="1" max="999" value="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Quality Level (1 - 4+)</label>
+            <select class="form-select" id="item-quality-select">
+              <option value="1">Quality 1 ★</option>
+              <option value="2">Quality 2 ★★</option>
+              <option value="3">Quality 3 ★★★</option>
+              <option value="4">Quality 4 ★★★★ (Max Tier)</option>
+              <option value="5">Quality 5 ★★★★★ (Custom)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Durability</label>
+            <div style="display: flex; gap: 8px;">
+              <input type="number" class="form-input" id="item-durability-input" min="0" max="5000" step="1" value="100" style="flex: 1;">
+              <button class="btn btn-success" id="btn-item-max-durability">100%</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Crafter Name</label>
+            <input type="text" class="form-input" id="item-crafter-input" placeholder="e.g. Viking">
+          </div>
+        </div>
+
+        <div class="form-group" style="flex-direction: row; align-items: center; gap: 10px; margin-top: 6px;">
+          <input type="checkbox" id="item-equipped-checkbox" style="width: 18px; height: 18px; cursor: pointer;">
+          <label for="item-equipped-checkbox" style="cursor: pointer; font-size: 0.88rem; font-weight: 600; font-family: var(--font-valheim); color: var(--valheim-gold);">
+            Equipped (Active Gear Slot)
+          </label>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-danger" id="btn-delete-item" style="margin-right: auto;">🗑️ Remove Item</button>
+        <button class="btn btn-secondary" id="btn-cancel-item-editor">Cancel</button>
+        <button class="btn btn-primary" id="btn-save-item-editor">Save Item</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Item Catalog Browser -->
+  <div class="modal-backdrop" id="modal-item-catalog">
+    <div class="modal-dialog" style="max-width: 780px;">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span>📚</span>
+          <span>Valheim Item Catalog</span>
+        </div>
+        <button class="close-btn" id="btn-close-catalog">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="catalog-search-bar">
+          <input type="text" class="form-input" id="catalog-search-input" placeholder="🔍 Search weapons, armor, food, materials, staves..." style="flex: 1;">
+        </div>
+
+        <div class="catalog-categories" id="catalog-categories-container">
+          <button class="cat-btn active" data-cat="All">All Items</button>
+          <button class="cat-btn" data-cat="Weapons">Weapons</button>
+          <button class="cat-btn" data-cat="Shields">Shields</button>
+          <button class="cat-btn" data-cat="Armor">Armor</button>
+          <button class="cat-btn" data-cat="Tools">Tools</button>
+          <button class="cat-btn" data-cat="Magic">Magic & Eitr</button>
+          <button class="cat-btn" data-cat="Ammo">Ammo</button>
+          <button class="cat-btn" data-cat="Food">Food</button>
+          <button class="cat-btn" data-cat="Materials">Materials</button>
+          <button class="cat-btn" data-cat="Trophies">Trophies</button>
+          <button class="cat-btn" data-cat="Accessories">Accessories</button>
+        </div>
+
+        <div class="catalog-items-grid" id="catalog-grid">
+          <!-- Generated from VALHEIM_ITEMS -->
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="btn-close-catalog-footer">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Character Vitals & Stats Editor -->
+  <div class="modal-backdrop" id="modal-char-stats">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span>✏️</span>
+          <span>Edit Character Vitals & Stats</span>
+        </div>
+        <button class="close-btn" id="btn-close-char-stats">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Character Name</label>
+          <input type="text" class="form-input" id="char-name-input">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Current Health</label>
+            <input type="number" class="form-input" id="char-health-input" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Max Base Health</label>
+            <input type="number" class="form-input" id="char-maxhealth-input" step="1">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Stamina</label>
+            <input type="number" class="form-input" id="char-stamina-input" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Extra Stamina</label>
+            <input type="number" class="form-input" id="char-stamina2-input" step="1">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Eitr (Magic Mana)</label>
+            <input type="number" class="form-input" id="char-eitr-input" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Max Eitr</label>
+            <input type="number" class="form-input" id="char-maxeitr-input" step="1">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Guardian Power</label>
+          <select class="form-select" id="char-guardian-select">
+            <option value="">None</option>
+            <option value="GP_Eikthyr">Eikthyr (Sprint & Jump stamina -60%)</option>
+            <option value="GP_TheElder">The Elder (Woodcutting speed +60%)</option>
+            <option value="GP_Bonemass">Bonemass (Physical damage resistance -50%)</option>
+            <option value="GP_Moder">Moder (Always tailwind when sailing)</option>
+            <option value="GP_Yagluth">Yagluth (Elemental damage resistance)</option>
+            <option value="GP_Queen">The Queen (Eitr regen +100%, Mining +60%)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="btn-cancel-char-stats">Cancel</button>
+        <button class="btn btn-primary" id="btn-save-char-stats">Save Vitals</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notifications Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="items_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
