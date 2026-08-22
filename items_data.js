@@ -128,6 +128,19 @@ const VALHEIM_ITEMS = [
   { id: 'GiantBloodSack', name: 'Bloodbag', category: 'Materials', maxStack: 50, maxQuality: 1, durability: 100, icon: 'icons/GiantBloodSack.png', desc: 'Harvested from Swamp leeches.' },
   { id: 'BoneFragments', name: 'Bone Fragments', category: 'Materials', maxStack: 50, maxQuality: 1, durability: 100, icon: 'icons/BoneFragments.png', desc: 'Crushed skeleton remains.' },
 
+  // POTIONS & MEADS
+  { id: 'MeadHealthMajor', name: 'Major Healing Mead', category: 'Potions', maxStack: 10, maxQuality: 1, durability: 100, icon: 'icons/MeadHealthMajor.png', desc: 'Restores +125 Health over 10s.' },
+  { id: 'MeadHealthMedium', name: 'Medium Healing Mead', category: 'Potions', maxStack: 10, maxQuality: 1, durability: 100, icon: 'icons/MeadHealthMedium.png', desc: 'Restores +75 Health over 10s.' },
+  { id: 'MeadHealthMinor', name: 'Minor Healing Mead', category: 'Potions', maxStack: 10, maxQuality: 1, durability: 100, icon: 'icons/MeadHealthMinor.png', desc: 'Restores +50 Health over 10s.' },
+  { id: 'BarleyWine', name: 'Fire Resistance Barley Wine', category: 'Potions', maxStack: 10, maxQuality: 1, durability: 100, icon: 'icons/BarleyWine.png', desc: 'Grants Fire Damage Resistance for 600s.' },
+  { id: 'MeadStaminaMinor', name: 'Minor Stamina Mead', category: 'Potions', maxStack: 10, maxQuality: 1, durability: 100, icon: 'icons/MeadStaminaMinor.png', desc: 'Restores +80 Stamina quickly.' },
+  { id: 'MeadStaminaMedium', name: 'Medium Stamina Mead', category: 'Potions', maxStack: 10, maxQuality: 1, durability: 100, icon: 'icons/MeadStaminaMedium.png', desc: 'Restores +160 Stamina quickly.' },
+  { id: 'MeadLingeringStamina', name: 'Lingering Stamina Mead', category: 'Potions', maxStack: 10, maxQuality: 1, durability: 100, icon: 'icons/MeadLingeringStamina.png', desc: 'Increases stamina regeneration +25% for 300s.' },
+  { id: 'MeadFrostResist', name: 'Frost Resistance Mead', category: 'Potions', maxStack: 10, maxQuality: 1, durability: 100, icon: 'icons/MeadFrostResist.png', desc: 'Protects against freezing cold for 600s.' },
+  { id: 'MeadPoisonResist', name: 'Poison Resistance Mead', category: 'Potions', maxStack: 10, maxQuality: 1, durability: 100, icon: 'icons/MeadPoisonResist.png', desc: 'Reduces poison duration and damage for 600s.' },
+  { id: 'MeadEitrMinor', name: 'Minor Eitr Mead', category: 'Potions', maxStack: 10, maxQuality: 1, durability: 100, icon: 'icons/MeadEitrMinor.png', desc: 'Restores +125 Eitr (mana) over 10s.' },
+  { id: 'BoltBlackmetal', name: 'Blackmetal Bolt', category: 'Ammo', maxStack: 100, maxQuality: 1, durability: 100, icon: 'icons/BoltBlackmetal.png', desc: 'Heavy arbalest bolt forged with refined black metal.' },
+
   // TROPHIES & BOSS TOKENS
   { id: 'TrophyBonemass', name: 'Bonemass Trophy', category: 'Trophies', maxStack: 10, maxQuality: 1, durability: 100, icon: 'icons/TrophyBonemass.png', desc: 'Gruesome trophy of the Swamp lord.' },
   { id: 'TrophyEikthyr', name: 'Eikthyr Trophy', category: 'Trophies', maxStack: 10, maxQuality: 1, durability: 100, icon: 'icons/TrophyEikthyr.png', desc: 'Antlered head of the Meadow beast.' },
