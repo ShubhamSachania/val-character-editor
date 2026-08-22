@@ -2,6 +2,7 @@
 
 let currentCharacter = null;
 let currentFileName = '';
+let currentFileHandle = null;
 let activeSlotPos = { x: 0, y: 0 };
 let draggedSlotPos = null;
 
@@ -16,12 +17,18 @@ const progressionContainer = document.getElementById('progression-summary-contai
 
 // Header Action Buttons
 const btnLoadFile = document.getElementById('btn-load-file');
+const btnSaveOverwrite = document.getElementById('btn-save-overwrite');
 const btnExportFch = document.getElementById('btn-export-fch');
-const btnSaveServer = document.getElementById('btn-save-server');
 const btnExportJson = document.getElementById('btn-export-json');
 const fileInput = document.getElementById('fch-file-input');
 
 // Modals
+const modalConfirmOverwrite = document.getElementById('modal-confirm-overwrite');
+const confirmOverwriteFilename = document.getElementById('confirm-overwrite-filename');
+const btnCloseConfirmModal = document.getElementById('btn-close-confirm-modal');
+const btnCancelOverwrite = document.getElementById('btn-cancel-overwrite');
+const btnExecuteOverwrite = document.getElementById('btn-execute-overwrite');
+
 const modalItemEditor = document.getElementById('modal-item-editor');
 const modalCatalog = document.getElementById('modal-item-catalog');
 const modalCharStats = document.getElementById('modal-char-stats');
@@ -116,8 +123,8 @@ function onCharacterLoaded() {
   uploadDropzone.style.display = 'none';
   editorWorkspace.style.display = 'flex';
 
+  btnSaveOverwrite.style.display = 'inline-flex';
   btnExportFch.style.display = 'inline-flex';
-  btnSaveServer.style.display = 'inline-flex';
   btnExportJson.style.display = 'inline-flex';
 
   renderAll();
@@ -126,11 +133,12 @@ function onCharacterLoaded() {
 function switchCharacterFile() {
   currentCharacter = null;
   currentFileName = '';
+  currentFileHandle = null;
   uploadDropzone.style.display = 'block';
   editorWorkspace.style.display = 'none';
 
+  btnSaveOverwrite.style.display = 'none';
   btnExportFch.style.display = 'none';
-  btnSaveServer.style.display = 'none';
   btnExportJson.style.display = 'none';
 
   fileInput.value = '';
@@ -781,27 +789,78 @@ document.getElementById('btn-save-char-stats').addEventListener('click', () => {
   showToast('Saved character vitals successfully!');
 });
 
-// Save to Server with specific filename
-btnSaveServer.addEventListener('click', async () => {
+// Confirmation Overwrite Dialog Logic
+btnSaveOverwrite.addEventListener('click', () => {
+  if (!currentCharacter) return;
+  const filename = currentFileName || `${currentCharacter.playerName || 'character'}.fch`;
+  confirmOverwriteFilename.textContent = filename;
+  modalConfirmOverwrite.classList.add('show');
+});
+
+btnCloseConfirmModal.addEventListener('click', () => modalConfirmOverwrite.classList.remove('show'));
+btnCancelOverwrite.addEventListener('click', () => modalConfirmOverwrite.classList.remove('show'));
+
+// Execute Overwrite on Confirmation
+btnExecuteOverwrite.addEventListener('click', async () => {
+  modalConfirmOverwrite.classList.remove('show');
+  const filename = currentFileName || `${currentCharacter.playerName || 'character'}.fch`;
+  showToast(`Overwriting ${filename}...`, 'success');
+
   try {
-    const filename = currentFileName || `${currentCharacter.playerName || 'character'}.fch`;
-    const res = await fetch('/api/save', {
+    // 1. Fetch encoded binary buffer from encoder
+    const exportRes = await fetch('/api/export-fch', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(currentCharacter)
+    });
+
+    if (!exportRes.ok) {
+      const err = await exportRes.json();
+      throw new Error(err.error || 'Failed to encode character binary data');
+    }
+
+    const fchBlob = await exportRes.blob();
+    const fchArrayBuffer = await fchBlob.arrayBuffer();
+
+    let overwrittenSuccessfully = false;
+
+    // 2. If File System Access API handle exists, write directly back to original picked file!
+    if (currentFileHandle) {
+      try {
+        const writable = await currentFileHandle.createWritable();
+        await writable.write(fchArrayBuffer);
+        await writable.close();
+        overwrittenSuccessfully = true;
+      } catch (handleErr) {
+        console.warn('File handle write failed, attempting server/fallback save:', handleErr);
+      }
+    }
+
+    // 3. Also notify server /api/save to ensure workspace disk copy and .bak backup are kept
+    const saveRes = await fetch('/api/save', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ filename, characterData: currentCharacter })
     });
-    if (res.ok) {
-      const data = await res.json();
-      showToast(data.message || `Saved successfully to ${filename}!`, 'success');
+
+    if (saveRes.ok) {
+      overwrittenSuccessfully = true;
+    }
+
+    if (overwrittenSuccessfully) {
+      showToast(`✅ Successfully replaced & saved ${filename}! (.bak backup kept)`, 'success');
     } else {
-      showToast('Error saving to file on server.', 'error');
+      // Fallback: trigger download with original filename
+      downloadBlob(fchBlob, filename);
+      showToast(`Saved & downloaded ${filename}!`, 'success');
     }
   } catch (err) {
-    showToast('Server API unreachable. Use Export .fch instead.', 'error');
+    console.error(err);
+    showToast('Error saving file: ' + err.message, 'error');
   }
 });
 
-// Export .fch file directly
+// Export .fch file directly as a new file
 btnExportFch.addEventListener('click', async () => {
   try {
     const res = await fetch('/api/export-fch', {
@@ -844,9 +903,36 @@ function downloadBlob(blob, filename) {
   URL.revokeObjectURL(url);
 }
 
-// File Selection & Drag & Drop Handling
-btnLoadFile.addEventListener('click', () => fileInput.click());
-document.getElementById('btn-browse-fch').addEventListener('click', () => fileInput.click());
+// File Picker with File System Access API (preserves file handle for in-place overwrite)
+async function triggerFilePicker() {
+  if (window.showOpenFilePicker) {
+    try {
+      const [handle] = await window.showOpenFilePicker({
+        types: [
+          {
+            description: 'Valheim Character Save (*.fch, *.json)',
+            accept: {
+              'application/octet-stream': ['.fch', '.fch.bak', '.fch.old'],
+              'application/json': ['.json']
+            }
+          }
+        ],
+        multiple: false
+      });
+      currentFileHandle = handle;
+      const file = await handle.getFile();
+      await handleFileSelected(file);
+      return;
+    } catch (err) {
+      if (err.name === 'AbortError') return;
+      console.warn('showOpenFilePicker error, falling back to input:', err);
+    }
+  }
+  fileInput.click();
+}
+
+btnLoadFile.addEventListener('click', triggerFilePicker);
+document.getElementById('btn-browse-fch').addEventListener('click', triggerFilePicker);
 document.getElementById('btn-switch-file').addEventListener('click', switchCharacterFile);
 
 fileInput.addEventListener('change', (e) => {

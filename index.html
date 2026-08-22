@@ -24,11 +24,11 @@
       <button class="btn btn-primary" id="btn-load-file" title="Load a .fch or .json character save">
         📂 Open .fch Save
       </button>
-      <button class="btn btn-primary" id="btn-export-fch" title="Download modified character file as .fch save" style="display: none;">
-        💾 Export .fch
+      <button class="btn btn-primary" id="btn-save-overwrite" title="Prompt confirmation and replace the original file directly on disk" style="display: none;">
+        💾 Save & Overwrite
       </button>
-      <button class="btn btn-secondary" id="btn-save-server" title="Save directly to file" style="display: none;">
-        ⚡ Save Changes
+      <button class="btn btn-secondary" id="btn-export-fch" title="Download modified character file as a new .fch save" style="display: none;">
+        📥 Export New .fch
       </button>
       <button class="btn btn-secondary" id="btn-export-json" title="Download character data as JSON" style="display: none;">
         📋 Export JSON
@@ -370,6 +370,45 @@
       <div class="modal-footer">
         <button class="btn btn-secondary" id="btn-cancel-char-stats">Cancel</button>
         <button class="btn btn-primary" id="btn-save-char-stats">Save Vitals</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Confirm Overwrite Save File -->
+  <div class="modal-backdrop" id="modal-confirm-overwrite">
+    <div class="modal-dialog" style="max-width: 540px;">
+      <div class="modal-header">
+        <div class="modal-title" style="color: var(--valheim-gold);">
+          <span>⚠️</span>
+          <span>Confirm Overwrite Character Save</span>
+        </div>
+        <button class="close-btn" id="btn-close-confirm-modal">&times;</button>
+      </div>
+
+      <div class="modal-body" style="gap: 14px;">
+        <p style="font-size: 0.92rem; line-height: 1.5; color: var(--valheim-text-main);">
+          Are you sure you want to replace and overwrite your character save file directly on disk?
+        </p>
+
+        <div style="background: rgba(0, 0, 0, 0.6); border: 1px solid var(--valheim-panel-border); border-radius: 3px; padding: 10px 14px; display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 1.8rem;">📁</span>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 0.68rem; color: var(--valheim-text-muted); text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-valheim);">Target File to Replace:</div>
+            <div id="confirm-overwrite-filename" style="font-family: var(--font-valheim); color: var(--valheim-gold); font-weight: 700; font-size: 1.05rem; word-break: break-all;">character.fch</div>
+          </div>
+        </div>
+
+        <div style="font-size: 0.8rem; color: #86efac; display: flex; align-items: center; gap: 8px; background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); border-radius: 3px; padding: 8px 12px;">
+          <span style="font-size: 1.1rem;">🛡️</span>
+          <span>A backup copy (<code>.bak</code>) will be created automatically.</span>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="btn-cancel-overwrite">Cancel</button>
+        <button class="btn btn-primary" id="btn-execute-overwrite" style="background: linear-gradient(180deg, #78531c 0%, #442d0a 100%);">
+          ⚡ Confirm & Overwrite File
+        </button>
       </div>
     </div>
   </div>
