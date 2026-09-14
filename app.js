@@ -2,6 +2,7 @@
 
 let currentCharacter = null;
 let currentFileName = '';
+let currentFilePath = '';
 let currentFileHandle = null;
 let activeSlotPos = { x: 0, y: 0 };
 let draggedSlotPos = null;
@@ -40,6 +41,7 @@ const itemQualitySelect = document.getElementById('item-quality-select');
 const itemDurabilityInput = document.getElementById('item-durability-input');
 const itemCrafterInput = document.getElementById('item-crafter-input');
 const itemEquippedCheckbox = document.getElementById('item-equipped-checkbox');
+const itemCheatedCheckbox = document.getElementById('item-cheated-checkbox');
 const modalItemTitle = document.getElementById('modal-item-title');
 
 // Catalog Search
@@ -142,6 +144,7 @@ function onCharacterLoaded() {
 function switchCharacterFile() {
   currentCharacter = null;
   currentFileName = '';
+  currentFilePath = '';
   currentFileHandle = null;
   uploadDropzone.style.display = 'block';
   editorWorkspace.style.display = 'none';
@@ -151,6 +154,7 @@ function switchCharacterFile() {
   btnExportJson.style.display = 'none';
 
   fileInput.value = '';
+  loadDetectedSaves();
 }
 
 // Render everything
@@ -237,6 +241,45 @@ function renderHeroBanner() {
 
   const invCount = (pd.inventory || []).length;
   document.getElementById('badge-items-count').textContent = `${invCount} / 32 Slots`;
+
+  // Cheat Status & Steam Achievements Eligibility
+  renderCheatStatus();
+}
+
+function renderCheatStatus() {
+  const card = document.getElementById('cheat-status-card');
+  const icon = document.getElementById('cheat-badge-icon');
+  const badge = document.getElementById('cheat-status-badge');
+  const sub = document.getElementById('cheat-status-sub');
+  const btn = document.getElementById('btn-revert-cheats');
+
+  if (!card || !badge) return;
+
+  const usedCheats = !!currentCharacter.usedCheats;
+  const inventory = (currentCharacter.playerData && currentCharacter.playerData.inventory) || [];
+  const cheatedItems = inventory.filter(item => !!item.cheated);
+  const isCheated = usedCheats || cheatedItems.length > 0;
+
+  if (isCheated) {
+    card.style.display = 'flex';
+    if (icon) icon.textContent = '⚠️';
+    badge.className = 'badge badge-cheated';
+    badge.textContent = 'Locked (Cheats Detected)';
+
+    const reasons = [];
+    if (usedCheats) reasons.push('Console cheats used (devcommands)');
+    if (cheatedItems.length > 0) reasons.push(`${cheatedItems.length} cheated item${cheatedItems.length > 1 ? 's' : ''} in bag`);
+    if (sub) sub.textContent = `${reasons.join(' & ')}. Steam achievements are disabled for this character!`;
+
+    if (btn) btn.style.display = 'inline-flex';
+  } else {
+    card.style.display = 'flex';
+    if (icon) icon.textContent = '🛡️';
+    badge.className = 'badge badge-clean';
+    badge.textContent = 'Eligible (Clean)';
+    if (sub) sub.textContent = 'No console cheats or cheated items detected. Achievements will unlock normally.';
+    if (btn) btn.style.display = 'none';
+  }
 }
 
 // Render In-Game Stats Header (Armor & Weight HUD)
@@ -518,6 +561,7 @@ function openItemEditor(x, y) {
     itemDurabilityInput.value = Math.round(item.durability || 100);
     itemCrafterInput.value = item.crafterName || '';
     itemEquippedCheckbox.checked = !!item.equipped;
+    if (itemCheatedCheckbox) itemCheatedCheckbox.checked = !!item.cheated;
     document.getElementById('btn-delete-item').style.display = 'block';
   } else {
     itemIdInput.value = '';
@@ -526,6 +570,7 @@ function openItemEditor(x, y) {
     itemDurabilityInput.value = 100;
     itemCrafterInput.value = currentCharacter.playerName || 'Viking';
     itemEquippedCheckbox.checked = false;
+    if (itemCheatedCheckbox) itemCheatedCheckbox.checked = false;
     document.getElementById('btn-delete-item').style.display = 'none';
   }
 
@@ -550,6 +595,7 @@ document.getElementById('btn-save-item-editor').addEventListener('click', () => 
   const durability = Math.max(0, parseFloat(itemDurabilityInput.value) || 100);
   const crafterName = itemCrafterInput.value.trim();
   const equipped = itemEquippedCheckbox.checked;
+  const cheated = itemCheatedCheckbox ? itemCheatedCheckbox.checked : false;
 
   const inventory = currentCharacter.playerData.inventory;
   let item = inventory.find(i => i.pos.x === activeSlotPos.x && i.pos.y === activeSlotPos.y);
@@ -561,6 +607,7 @@ document.getElementById('btn-save-item-editor').addEventListener('click', () => 
     item.durability = durability;
     item.crafterName = crafterName;
     item.equipped = equipped;
+    item.cheated = cheated;
   } else {
     item = {
       name,
@@ -574,7 +621,8 @@ document.getElementById('btn-save-item-editor').addEventListener('click', () => 
       crafterName,
       customData: {},
       worldLevel: 0,
-      pickedUp: true
+      pickedUp: true,
+      cheated
     };
     inventory.push(item);
   }
@@ -845,7 +893,23 @@ btnExecuteOverwrite.addEventListener('click', async () => {
       }
     }
 
-    // 3. Also notify server /api/save to ensure workspace disk copy and .bak backup are kept
+    // 3. If file was loaded from a known system path, save directly to it with .bak backup
+    if (currentFilePath) {
+      try {
+        const pathSaveRes = await fetch('/api/save-to-path', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ filePath: currentFilePath, characterData: currentCharacter })
+        });
+        if (pathSaveRes.ok) {
+          overwrittenSuccessfully = true;
+        }
+      } catch (pathErr) {
+        console.warn('Direct path save failed:', pathErr);
+      }
+    }
+
+    // 4. Also notify server /api/save to ensure workspace disk copy and .bak backup are kept
     const saveRes = await fetch('/api/save', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -975,3 +1039,131 @@ window.addEventListener('drop', (e) => {
     handleFileSelected(file);
   }
 });
+
+// ==========================================================================
+// Valheim 1.0 Deep North - Cheats Reverter & System Save Auto-Detection
+// ==========================================================================
+
+// Revert Cheats & Restore Achievements
+const btnRevertCheats = document.getElementById('btn-revert-cheats');
+if (btnRevertCheats) {
+  btnRevertCheats.addEventListener('click', async () => {
+    if (!currentCharacter) return;
+
+    // 1. Reset cheat flags in editor memory
+    currentCharacter.usedCheats = false;
+    let cleanedItemCount = 0;
+    if (currentCharacter.playerData && currentCharacter.playerData.inventory) {
+      currentCharacter.playerData.inventory.forEach(item => {
+        if (item.cheated) {
+          item.cheated = false;
+          cleanedItemCount++;
+        }
+      });
+    }
+
+    // 2. If loaded from known disk file, execute direct revert on server to update disk & backup
+    if (currentFilePath) {
+      try {
+        const res = await fetch('/api/revert-cheats', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ filePath: currentFilePath })
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast(`🏆 Reverted cheats on disk & backup kept! Achievements restored.`, 'success');
+        } else {
+          showToast(`Cleaned in editor. Save file to apply to disk!`, 'warning');
+        }
+      } catch (err) {
+        showToast(`Cleaned in editor. Save file to apply to disk!`, 'warning');
+      }
+    } else {
+      showToast(`🏆 Reverted cheats! Save or export your file now to enable achievements.`, 'success');
+    }
+
+    renderAll();
+  });
+}
+
+// Auto-detect and populate system characters in Dropzone
+async function loadDetectedSaves() {
+  const container = document.getElementById('detected-saves-section');
+  const list = document.getElementById('detected-saves-list');
+  if (!container || !list) return;
+
+  try {
+    const res = await fetch('/api/system-saves');
+    if (!res.ok) return;
+    const data = await res.json();
+    const saves = data.saves || [];
+
+    if (saves.length === 0) {
+      container.style.display = 'none';
+      return;
+    }
+
+    container.style.display = 'block';
+    list.innerHTML = '';
+
+    saves.forEach(save => {
+      const card = document.createElement('div');
+      card.className = 'detected-save-card';
+
+      const tagClass = save.type === 'active' ? 'tag-active' : (save.type === 'steam' ? 'tag-steam' : 'tag-locallow');
+      const tagLabel = save.type === 'active' ? 'Active / OnlineFix' : (save.type === 'steam' ? 'Steam' : 'LocalLow');
+      const isCheated = save.usedCheats || (save.cheatedItemsCount > 0);
+      const cheatBadgeHtml = isCheated 
+        ? `<span class="cheat-badge badge-cheated" style="font-size:0.68rem; padding: 2px 7px;">⚠️ Cheats</span>` 
+        : `<span class="cheat-badge badge-clean" style="font-size:0.68rem; padding: 2px 7px;">🛡️ Clean</span>`;
+
+      card.innerHTML = `
+        <div class="detected-save-info">
+          <div class="detected-save-title-row">
+            <span class="detected-save-name">${save.playerName || save.name}</span>
+            <span class="detected-save-tag ${tagClass}">${tagLabel}</span>
+            ${cheatBadgeHtml}
+          </div>
+          <div class="detected-save-path">${save.filePath}</div>
+        </div>
+        <button class="btn btn-secondary" style="font-size: 0.78rem; padding: 6px 12px; pointer-events: none;">Open</button>
+      `;
+
+      card.addEventListener('click', async () => {
+        await loadSaveFromPath(save.filePath, save.filename);
+      });
+
+      list.appendChild(card);
+    });
+  } catch (err) {
+    console.warn('Error loading detected system saves:', err);
+  }
+}
+
+async function loadSaveFromPath(filePath, filename) {
+  try {
+    showToast(`Loading ${filename}...`, 'success');
+    const res = await fetch(`/api/load-from-path?path=${encodeURIComponent(filePath)}`);
+    if (!res.ok) {
+      const err = await res.json();
+      showToast(err.error || 'Failed to load character from path', 'error');
+      return;
+    }
+
+    currentCharacter = await res.json();
+    currentFileName = filename;
+    currentFilePath = filePath;
+    onCharacterLoaded();
+    showToast(`Loaded ${filename} (${currentCharacter.playerName})!`, 'success');
+  } catch (err) {
+    showToast(`Error loading file: ${err.message}`, 'error');
+  }
+}
+
+// Initialize save detection on startup
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', loadDetectedSaves);
+} else {
+  loadDetectedSaves();
+}

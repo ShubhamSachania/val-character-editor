@@ -1,5 +1,7 @@
 const crypto = require('crypto');
 const zlib = require('zlib');
+const path = require('path');
+const fs = require('fs');
 
 // Skill ID mappings
 const SKILL_NAMES = {
@@ -66,6 +68,66 @@ const PIN_TYPE_NAMES = {
   12: 'Ping',
   13: 'EventArea'
 };
+
+function getStableHashCode(str) {
+  if (!str) return 0;
+  let h1 = 5381;
+  let h2 = h1;
+  for (let i = 0; i < str.length; i += 2) {
+    h1 = (Math.imul(h1, 33) ^ str.charCodeAt(i)) | 0;
+    if (i + 1 < str.length) {
+      h2 = (Math.imul(h2, 33) ^ str.charCodeAt(i + 1)) | 0;
+    }
+  }
+  return (h1 + Math.imul(h2, 1566083941)) | 0;
+}
+
+// Prefab Hash to Name & Name to Hash cache
+const ITEM_HASH_TO_NAME = new Map();
+const ITEM_NAME_TO_HASH = new Map();
+
+function initItemHashes() {
+  try {
+    const p = path.join(__dirname, 'items_data.js');
+    if (fs.existsSync(p)) {
+      const code = fs.readFileSync(p, 'utf8');
+      const obj = {};
+      new Function('exports', code + '; exports.VALHEIM_ITEMS = VALHEIM_ITEMS;')(obj);
+      if (Array.isArray(obj.VALHEIM_ITEMS)) {
+        for (const it of obj.VALHEIM_ITEMS) {
+          const hId = getStableHashCode(it.id);
+          ITEM_HASH_TO_NAME.set(hId, it.id);
+          ITEM_NAME_TO_HASH.set(it.id.toLowerCase(), hId);
+          if (it.name && it.name !== it.id) {
+            const hName = getStableHashCode(it.name);
+            ITEM_HASH_TO_NAME.set(hName, it.id);
+            ITEM_NAME_TO_HASH.set(it.name.toLowerCase(), hName);
+          }
+        }
+      }
+    }
+  } catch (err) {
+    console.warn('Could not initialize item hashes from items_data.js:', err.message);
+  }
+
+  // Common vanilla items & Deep North / Ashlands extras
+  const extras = [
+    'ShieldBronzeBuckler', 'HelmetBronze', 'PickaxeBronze', 'Cultivator',
+    'CookedDeerMeat', 'CookedBoarMeat', 'Honey', 'Blueberries', 'Raspberries',
+    'Mushroom', 'Wood', 'Stone', 'Bronze', 'Copper', 'Tin', 'BronzeNails',
+    'DeerHide', 'LeatherScraps', 'Torch', 'Club', 'SwordBronze', 'MaceBronze',
+    'SpearBronze', 'AtgeirBronze', 'Coins', 'Amber', 'AmberPearl', 'Ruby',
+    'SilverNecklace', 'FineWood', 'CoreWood', 'Iron', 'Chain', 'SurtlingCore',
+    'BlackMetal', 'Tar', 'YggdrasilWood', 'BlackMarble', 'Softtissue',
+    'Flametal', 'CharredBone', 'MoltenCore', 'Ashwood'
+  ];
+  for (const name of extras) {
+    const h = getStableHashCode(name);
+    ITEM_HASH_TO_NAME.set(h, name);
+    ITEM_NAME_TO_HASH.set(name.toLowerCase(), h);
+  }
+}
+initItemHashes();
 
 class ZPackageWriter {
   constructor() {
@@ -300,9 +362,55 @@ function decodeFch(rawBuffer) {
 
   const saveVersion = pkg.readInt32();
   let rawStats = [];
+  let headerStats = null;
   let kills = 0, deaths = 0, crafts = 0, builds = 0;
 
-  if (saveVersion >= 38) {
+  if (saveVersion >= 46) {
+    const numStatsPerProfile = pkg.readInt32();
+    const numProfiles = pkg.readInt32();
+    const profiles = [];
+    for (let i = 0; i < numProfiles; i++) {
+      const stats = [];
+      for (let s = 0; s < numStatsPerProfile; s++) {
+        stats.push(pkg.readFloat());
+      }
+      const knownWorlds = pkg.readStringFloatMap();
+      const knownWorldKeys = pkg.readStringFloatMap();
+      const knownCommands = pkg.readStringFloatMap();
+      
+      const enemyStatsCount = pkg.readInt32();
+      const enemyStats = [];
+      for (let k = 0; k < enemyStatsCount; k++) {
+        enemyStats.push(pkg.readStringFloatMap());
+      }
+
+      const itemPickupStats = pkg.readStringFloatMap();
+      const itemCraftStats = pkg.readStringFloatMap();
+      const pickableStats = pkg.readStringFloatMap();
+      const foodEatenStats = pkg.readStringFloatMap();
+      const piecesPlacedStats = pkg.readStringFloatMap();
+
+      profiles.push({
+        stats,
+        knownWorlds,
+        knownWorldKeys,
+        knownCommands,
+        enemyStats,
+        itemPickupStats,
+        itemCraftStats,
+        pickableStats,
+        foodEatenStats,
+        piecesPlacedStats
+      });
+    }
+    headerStats = { numStatsPerProfile, numProfiles, profiles };
+    if (profiles.length > 0 && profiles[0].stats.length >= 4) {
+      kills = profiles[0].stats[0] || 0;
+      deaths = profiles[0].stats[1] || 0;
+      crafts = profiles[0].stats[2] || 0;
+      builds = profiles[0].stats[3] || 0;
+    }
+  } else if (saveVersion >= 38) {
     const statsCount = pkg.readInt32();
     for (let i = 0; i < statsCount; i++) {
       rawStats.push(pkg.readFloat());
@@ -319,7 +427,10 @@ function decodeFch(rawBuffer) {
   }
 
   let preWorldsFlag = 0;
-  if (saveVersion >= 38) {
+  let firstSpawn = false;
+  if (saveVersion >= 46) {
+    firstSpawn = pkg.readBool();
+  } else if (saveVersion >= 38) {
     preWorldsFlag = pkg.readByte();
   }
 
@@ -344,42 +455,50 @@ function decodeFch(rawBuffer) {
     if (saveVersion >= 29 && pkg.readBool()) {
       const mapBytesLen = pkg.readInt32();
       const mapBytes = pkg.readBytes(mapBytesLen);
-      const mapReader = new ZPackageReader(mapBytes);
-      const mapVersion = mapReader.readInt32();
+      let mapVersion = 8;
+      let textureSize = 2048;
       let rawGzipBase64 = null;
-      let minimapPkg;
-      if (mapVersion >= 7) {
-        const compLen = mapReader.readInt32();
-        const compBytes = mapReader.readBytes(compLen);
-        rawGzipBase64 = compBytes.toString('base64');
-        const decomp = zlib.gunzipSync(compBytes);
-        minimapPkg = new ZPackageReader(decomp);
-      } else {
-        minimapPkg = mapReader;
-      }
+      let pins = [];
+      let visibleToOthers = false;
 
-      const textureSize = minimapPkg.readInt32();
-      // Skip texture exploration raw bytes in memory
-      minimapPkg.offset += textureSize * textureSize;
-      if (mapVersion >= 5) {
-        minimapPkg.offset += textureSize * textureSize;
-      }
-
-      const pins = [];
-      if (mapVersion >= 2) {
-        const pinCount = minimapPkg.readInt32();
-        for (let p = 0; p < pinCount; p++) {
-          const pinName = minimapPkg.readString();
-          const pos = minimapPkg.readVector3();
-          const pinTypeId = minimapPkg.readInt32();
-          const pinType = PIN_TYPE_NAMES[pinTypeId] || `Type_${pinTypeId}`;
-          const checked = (mapVersion >= 3) && minimapPkg.readBool();
-          const ownerId = mapVersion >= 6 ? minimapPkg.readInt64().toString() : '0';
-          const author = mapVersion >= 8 ? minimapPkg.readString() : '';
-          pins.push({ name: pinName, pos, pinType, pinTypeId, checked, ownerId, author });
+      try {
+        const mapReader = new ZPackageReader(mapBytes);
+        mapVersion = mapReader.readInt32();
+        let minimapPkg;
+        if (mapVersion >= 7) {
+          const compLen = mapReader.readInt32();
+          const compBytes = mapReader.readBytes(compLen);
+          rawGzipBase64 = compBytes.toString('base64');
+          const decomp = zlib.gunzipSync(compBytes);
+          minimapPkg = new ZPackageReader(decomp);
+        } else {
+          minimapPkg = mapReader;
         }
+
+        textureSize = minimapPkg.readInt32();
+        minimapPkg.offset += textureSize * textureSize;
+        if (mapVersion >= 5) {
+          minimapPkg.offset += textureSize * textureSize;
+        }
+
+        if (mapVersion >= 2) {
+          const pinCount = minimapPkg.readInt32();
+          for (let p = 0; p < pinCount; p++) {
+            const pinName = minimapPkg.readString();
+            const pos = minimapPkg.readVector3();
+            const pinTypeId = minimapPkg.readInt32();
+            const pinType = PIN_TYPE_NAMES[pinTypeId] || `Type_${pinTypeId}`;
+            const checked = (mapVersion >= 3) && minimapPkg.readBool();
+            const ownerId = mapVersion >= 6 ? minimapPkg.readInt64().toString() : '0';
+            const author = mapVersion >= 8 ? minimapPkg.readString() : '';
+            pins.push({ name: pinName, pos, pinType, pinTypeId, checked, ownerId, author });
+          }
+        }
+        visibleToOthers = mapVersion >= 4 ? minimapPkg.readBool() : false;
+      } catch (err) {
+        // Fallback: keep rawMapBytesBase64 intact so it can be re-encoded without loss!
       }
-      const visibleToOthers = mapVersion >= 4 ? minimapPkg.readBool() : false;
+
       mapData = {
         mapVersion,
         textureSize,
@@ -409,7 +528,8 @@ function decodeFch(rawBuffer) {
   const playerId = pkg.readInt64().toString();
   const startSeed = pkg.readString();
 
-  let postSeedFlag = 0;
+  let usedCheats = false;
+  let dateCreated = '0';
   let logoutTimestamp = '0';
   let worldPlaytimes = [];
   let playerStatsMaps = {
@@ -421,21 +541,25 @@ function decodeFch(rawBuffer) {
   };
 
   if (saveVersion >= 38) {
-    postSeedFlag = pkg.readByte();
-    logoutTimestamp = pkg.readInt64().toString();
-    const worldTimesCount = pkg.readInt32();
-    for (let w = 0; w < worldTimesCount; w++) {
-      worldPlaytimes.push({
-        worldName: pkg.readString(),
-        playtime: pkg.readFloat()
-      });
-    }
+    usedCheats = pkg.readBool();
+    dateCreated = pkg.readInt64().toString();
+    logoutTimestamp = dateCreated;
 
-    playerStatsMaps.worldModifiers = pkg.readStringFloatMap();
-    playerStatsMaps.interactions = pkg.readStringFloatMap();
-    playerStatsMaps.enemyKills = pkg.readStringFloatMap();
-    playerStatsMaps.itemCrafts = pkg.readStringFloatMap();
-    playerStatsMaps.itemUses = pkg.readStringFloatMap();
+    if (saveVersion < 46) {
+      const worldTimesCount = pkg.readInt32();
+      for (let w = 0; w < worldTimesCount; w++) {
+        worldPlaytimes.push({
+          worldName: pkg.readString(),
+          playtime: pkg.readFloat()
+        });
+      }
+
+      playerStatsMaps.worldModifiers = pkg.readStringFloatMap();
+      playerStatsMaps.interactions = pkg.readStringFloatMap();
+      playerStatsMaps.enemyKills = pkg.readStringFloatMap();
+      playerStatsMaps.itemCrafts = pkg.readStringFloatMap();
+      playerStatsMaps.itemUses = pkg.readStringFloatMap();
+    }
   }
 
   // Player Data
@@ -458,36 +582,109 @@ function decodeFch(rawBuffer) {
 
     // Inventory
     const invVersion = pReader.readInt32();
-    const invCount = pReader.readInt32();
     const inventory = [];
-    for (let i = 0; i < invCount; i++) {
-      const name = pReader.readString();
-      const stack = pReader.readInt32();
-      const durability = Number(pReader.readFloat().toFixed(1));
-      const pos = pReader.readVector2i();
-      const equipped = pReader.readBool();
-      const quality = invVersion >= 101 ? pReader.readInt32() : 1;
-      const variant = invVersion >= 102 ? pReader.readInt32() : 0;
-      const crafterId = invVersion >= 103 ? pReader.readInt64().toString() : '0';
-      const crafterName = invVersion >= 103 ? pReader.readString() : '';
-      const customData = invVersion >= 104 ? pReader.readMap() : {};
-      const worldLevel = invVersion >= 105 ? pReader.readInt32() : 0;
-      const pickedUp = invVersion >= 106 ? pReader.readBool() : true;
 
-      inventory.push({
-        name,
-        stack,
-        durability,
-        pos,
-        equipped,
-        quality,
-        variant,
-        crafterId,
-        crafterName,
-        customData,
-        worldLevel,
-        pickedUp
-      });
+    if (invVersion >= 108) {
+      const count = pReader.buffer.readUInt16LE(pReader.offset);
+      pReader.offset += 2;
+      for (let i = 0; i < count; i++) {
+        const durabilityInt = pReader.readInt32();
+        const durability = Number((durabilityInt / 100).toFixed(1));
+        const posX = pReader.readByte();
+        const posY = pReader.readByte();
+        const pos = { x: posX, y: posY };
+        const worldLevel = pReader.readByte();
+        const flags = pReader.readByte();
+        const pickedUp = (flags & 1) !== 0;
+        const equipped = (flags & 2) !== 0;
+
+        let quality = 1;
+        if ((flags & 4) !== 0) {
+          quality = pReader.buffer.readUInt16LE(pReader.offset);
+          pReader.offset += 2;
+        }
+        let stack = 1;
+        if ((flags & 8) !== 0) {
+          stack = pReader.buffer.readUInt16LE(pReader.offset);
+          pReader.offset += 2;
+        }
+        let variant = 0;
+        if ((flags & 16) !== 0) {
+          variant = pReader.readInt32();
+        }
+        let crafterId = '0', crafterName = '';
+        if ((flags & 32) !== 0) {
+          crafterId = pReader.readInt64().toString();
+          crafterName = pReader.readString();
+        }
+        let dropPrefabHash = 0;
+        if ((flags & 64) !== 0) {
+          dropPrefabHash = pReader.readInt32();
+        }
+        let customData = {};
+        if ((flags & 128) !== 0) {
+          const numItems = pReader.read7BitEncodedInt();
+          for (let j = 0; j < numItems; j++) {
+            customData[pReader.readString()] = pReader.readString();
+          }
+        }
+        let cheated = false;
+        if (invVersion >= 109) {
+          const cheatedByte = pReader.readByte();
+          cheated = (cheatedByte & 1) !== 0;
+        }
+
+        const name = ITEM_HASH_TO_NAME.get(dropPrefabHash) || (crafterName ? `Custom_${dropPrefabHash}` : `Item_${dropPrefabHash}`);
+
+        inventory.push({
+          name,
+          dropPrefabHash,
+          stack,
+          durability,
+          pos,
+          equipped,
+          quality,
+          variant,
+          crafterId,
+          crafterName,
+          customData,
+          worldLevel,
+          pickedUp,
+          cheated
+        });
+      }
+    } else {
+      const invCount = pReader.readInt32();
+      for (let i = 0; i < invCount; i++) {
+        const name = pReader.readString();
+        const stack = pReader.readInt32();
+        const durability = Number(pReader.readFloat().toFixed(1));
+        const pos = pReader.readVector2i();
+        const equipped = pReader.readBool();
+        const quality = invVersion >= 101 ? pReader.readInt32() : 1;
+        const variant = invVersion >= 102 ? pReader.readInt32() : 0;
+        const crafterId = invVersion >= 103 ? pReader.readInt64().toString() : '0';
+        const crafterName = invVersion >= 103 ? pReader.readString() : '';
+        const customData = invVersion >= 104 ? pReader.readMap() : {};
+        const worldLevel = invVersion >= 105 ? pReader.readInt32() : 0;
+        const pickedUp = invVersion >= 106 ? pReader.readBool() : true;
+
+        inventory.push({
+          name,
+          stack,
+          durability,
+          pos,
+          equipped,
+          quality,
+          variant,
+          crafterId,
+          crafterName,
+          customData,
+          worldLevel,
+          pickedUp,
+          cheated: false
+        });
+      }
     }
 
     const knownRecipes = pReader.readStringSet();
@@ -502,11 +699,18 @@ function decodeFch(rawBuffer) {
     const uniques = pReader.readStringSet();
     const trophies = pReader.readStringSet();
 
-    const knownBiomesCount = pReader.readInt32();
     const knownBiomes = [];
-    for (let i = 0; i < knownBiomesCount; i++) {
-      const bId = pReader.readInt32();
-      knownBiomes.push({ id: bId, name: BIOME_NAMES[bId] || `Unknown (${bId})` });
+    if (pVersion >= 33) {
+      const biomesList = pReader.readStringSet();
+      for (const b of biomesList) {
+        knownBiomes.push({ name: b });
+      }
+    } else {
+      const knownBiomesCount = pReader.readInt32();
+      for (let i = 0; i < knownBiomesCount; i++) {
+        const bId = pReader.readInt32();
+        knownBiomes.push({ id: bId, name: BIOME_NAMES[bId] || `Unknown (${bId})` });
+      }
     }
 
     const knownTextsCount = pReader.readInt32();
@@ -553,6 +757,12 @@ function decodeFch(rawBuffer) {
       eitr = Number(pReader.readFloat().toFixed(2));
     }
 
+    let extraDataBase64 = null;
+    if (pReader.hasMore(4)) {
+      const extraLen = pReader.readInt32();
+      extraDataBase64 = pReader.readBytes(extraLen).toString('base64');
+    }
+
     playerData = {
       version: pVersion,
       maxHealth: Number(maxHealth.toFixed(1)),
@@ -578,20 +788,25 @@ function decodeFch(rawBuffer) {
       foods,
       skillsVersion,
       skills,
-      customData
+      customData,
+      extraDataBase64
     };
   }
 
   return {
     saveVersion,
     rawStats,
+    headerStats,
+    firstSpawn,
     preWorldsFlag,
     summaryStats: { kills, deaths, crafts, builds },
     worlds,
     playerName,
     playerId,
     startSeed: startSeed || '',
-    postSeedFlag,
+    usedCheats,
+    postSeedFlag: usedCheats ? 1 : 0,
+    dateCreated,
     logoutTimestamp,
     worldPlaytimes,
     playerStatsMaps,
@@ -602,10 +817,30 @@ function decodeFch(rawBuffer) {
 
 function encodeFch(data) {
   const pkg = new ZPackageWriter();
-  const saveVersion = data.saveVersion || 43;
+  const saveVersion = data.saveVersion || 46;
   pkg.writeInt32(saveVersion);
 
-  if (saveVersion >= 38) {
+  if (saveVersion >= 46 && data.headerStats) {
+    const hs = data.headerStats;
+    pkg.writeInt32(hs.numStatsPerProfile);
+    pkg.writeInt32(hs.profiles.length);
+    for (const p of hs.profiles) {
+      for (const s of p.stats) pkg.writeFloat(s);
+      pkg.writeStringFloatMap(p.knownWorlds || {});
+      pkg.writeStringFloatMap(p.knownWorldKeys || {});
+      pkg.writeStringFloatMap(p.knownCommands || {});
+      const es = p.enemyStats || [];
+      pkg.writeInt32(es.length);
+      for (const eMap of es) {
+        pkg.writeStringFloatMap(eMap || {});
+      }
+      pkg.writeStringFloatMap(p.itemPickupStats || {});
+      pkg.writeStringFloatMap(p.itemCraftStats || {});
+      pkg.writeStringFloatMap(p.pickableStats || {});
+      pkg.writeStringFloatMap(p.foodEatenStats || {});
+      pkg.writeStringFloatMap(p.piecesPlacedStats || {});
+    }
+  } else if (saveVersion >= 38) {
     const rawStats = data.rawStats || [
       data.summaryStats?.kills || 0,
       data.summaryStats?.deaths || 0,
@@ -622,6 +857,10 @@ function encodeFch(data) {
     pkg.writeInt32(data.summaryStats?.deaths || 0);
     pkg.writeInt32(data.summaryStats?.crafts || 0);
     pkg.writeInt32(data.summaryStats?.builds || 0);
+  }
+
+  if (saveVersion >= 46) {
+    pkg.writeBool(data.firstSpawn || false);
   }
 
   // Worlds
@@ -708,21 +947,24 @@ function encodeFch(data) {
   pkg.writeString(data.startSeed || '');
 
   if (saveVersion >= 38) {
-    pkg.writeByte(data.postSeedFlag !== undefined ? data.postSeedFlag : 0);
-    pkg.writeInt64(data.logoutTimestamp || '0');
-    const worldTimes = data.worldPlaytimes || [];
-    pkg.writeInt32(worldTimes.length);
-    for (const wt of worldTimes) {
-      pkg.writeString(wt.worldName);
-      pkg.writeFloat(wt.playtime);
-    }
+    pkg.writeBool(!!data.usedCheats);
+    pkg.writeInt64(data.dateCreated || data.logoutTimestamp || '0');
 
-    const sm = data.playerStatsMaps || {};
-    pkg.writeStringFloatMap(sm.worldModifiers || {});
-    pkg.writeStringFloatMap(sm.interactions || {});
-    pkg.writeStringFloatMap(sm.enemyKills || {});
-    pkg.writeStringFloatMap(sm.itemCrafts || {});
-    pkg.writeStringFloatMap(sm.itemUses || {});
+    if (saveVersion < 46) {
+      const worldTimes = data.worldPlaytimes || [];
+      pkg.writeInt32(worldTimes.length);
+      for (const wt of worldTimes) {
+        pkg.writeString(wt.worldName);
+        pkg.writeFloat(wt.playtime);
+      }
+
+      const sm = data.playerStatsMaps || {};
+      pkg.writeStringFloatMap(sm.worldModifiers || {});
+      pkg.writeStringFloatMap(sm.interactions || {});
+      pkg.writeStringFloatMap(sm.enemyKills || {});
+      pkg.writeStringFloatMap(sm.itemCrafts || {});
+      pkg.writeStringFloatMap(sm.itemUses || {});
+    }
   }
 
   // Player data
@@ -730,7 +972,7 @@ function encodeFch(data) {
     pkg.writeBool(true);
     const pWriter = new ZPackageWriter();
     const pd = data.playerData;
-    const pVersion = pd.version || 29;
+    const pVersion = pd.version || 33;
     pWriter.writeInt32(pVersion);
 
     if (pVersion >= 7) pWriter.writeFloat(pd.maxHealth || 25);
@@ -741,25 +983,85 @@ function encodeFch(data) {
     if (pVersion >= 24) pWriter.writeFloat(pd.guardianPowerCooldown || 0);
 
     // Inventory
-    const invVersion = pd.inventoryVersion || 106;
+    const invVersion = pd.inventoryVersion || 109;
     pWriter.writeInt32(invVersion);
     const items = pd.inventory || [];
-    pWriter.writeInt32(items.length);
-    for (const it of items) {
-      pWriter.writeString(it.name || '');
-      pWriter.writeInt32(it.stack || 1);
-      pWriter.writeFloat(it.durability !== undefined ? it.durability : 100);
-      pWriter.writeVector2i(it.pos || { x: 0, y: 0 });
-      pWriter.writeBool(it.equipped);
-      if (invVersion >= 101) pWriter.writeInt32(it.quality || 1);
-      if (invVersion >= 102) pWriter.writeInt32(it.variant || 0);
-      if (invVersion >= 103) {
-        pWriter.writeInt64(it.crafterId || '0');
-        pWriter.writeString(it.crafterName || '');
+
+    if (invVersion >= 108) {
+      const countBuf = Buffer.alloc(2);
+      countBuf.writeUInt16LE(items.length & 0xffff, 0);
+      pWriter.chunks.push(countBuf);
+
+      for (const it of items) {
+        const durabilityVal = Math.round((it.durability !== undefined ? it.durability : 100) * 100);
+        pWriter.writeInt32(durabilityVal);
+        pWriter.writeByte(it.pos ? (it.pos.x & 0xff) : 0);
+        pWriter.writeByte(it.pos ? (it.pos.y & 0xff) : 0);
+        pWriter.writeByte(it.worldLevel || 0);
+
+        let flags = 0;
+        if (it.pickedUp !== false) flags |= 1;
+        if (it.equipped) flags |= 2;
+        if (it.quality && it.quality !== 1) flags |= 4;
+        if (it.stack && it.stack !== 1) flags |= 8;
+        if (it.variant && it.variant !== 0) flags |= 16;
+        if (it.crafterId && it.crafterId !== '0') flags |= 32;
+        const dropPrefabHash = it.dropPrefabHash !== undefined ? it.dropPrefabHash : (ITEM_NAME_TO_HASH.get(it.name.toLowerCase()) || getStableHashCode(it.name));
+        if (dropPrefabHash) flags |= 64;
+        const cdEntries = Object.entries(it.customData || {});
+        if (cdEntries.length > 0) flags |= 128;
+
+        pWriter.writeByte(flags);
+
+        if ((flags & 4) !== 0) {
+          const qBuf = Buffer.alloc(2);
+          qBuf.writeUInt16LE((it.quality || 1) & 0xffff, 0);
+          pWriter.chunks.push(qBuf);
+        }
+        if ((flags & 8) !== 0) {
+          const sBuf = Buffer.alloc(2);
+          sBuf.writeUInt16LE((it.stack || 1) & 0xffff, 0);
+          pWriter.chunks.push(sBuf);
+        }
+        if ((flags & 16) !== 0) {
+          pWriter.writeInt32(it.variant || 0);
+        }
+        if ((flags & 32) !== 0) {
+          pWriter.writeInt64(it.crafterId || '0');
+          pWriter.writeString(it.crafterName || '');
+        }
+        if ((flags & 64) !== 0) {
+          pWriter.writeInt32(dropPrefabHash);
+        }
+        if ((flags & 128) !== 0) {
+          pWriter.write7BitEncodedInt(cdEntries.length);
+          for (const [k, v] of cdEntries) {
+            pWriter.writeString(k);
+            pWriter.writeString(v);
+          }
+        }
+        if (invVersion >= 109) {
+          pWriter.writeByte(it.cheated ? 1 : 0);
+        }
       }
-      if (invVersion >= 104) pWriter.writeMap(it.customData || {});
-      if (invVersion >= 105) pWriter.writeInt32(it.worldLevel || 0);
-      if (invVersion >= 106) pWriter.writeBool(it.pickedUp !== false);
+    } else {
+      pWriter.writeInt32(items.length);
+      for (const it of items) {
+        pWriter.writeString(it.name || '');
+        pWriter.writeInt32(it.stack || 1);
+        pWriter.writeFloat(it.durability !== undefined ? it.durability : 100);
+        pWriter.writeVector2i(it.pos || { x: 0, y: 0 });
+        pWriter.writeBool(it.equipped);
+        if (invVersion >= 101) pWriter.writeInt32(it.quality || 1);
+        if (invVersion >= 102) pWriter.writeInt32(it.variant || 0);
+        if (invVersion >= 103) {
+          pWriter.writeInt64(it.crafterId || '0');
+          pWriter.writeString(it.crafterName || '');
+        }
+        if (invVersion >= 104) pWriter.writeMap(it.customData || {});
+        if (invVersion >= 105) pWriter.writeInt32(it.worldLevel || 0);
+        if (invVersion >= 106) pWriter.writeBool(it.pickedUp !== false);
+      }
     }
 
     pWriter.writeStringSet(pd.knownRecipes || []);
@@ -777,9 +1079,14 @@ function encodeFch(data) {
     pWriter.writeStringSet(pd.trophies || []);
 
     const knownBiomes = pd.knownBiomes || [];
-    pWriter.writeInt32(knownBiomes.length);
-    for (const b of knownBiomes) {
-      pWriter.writeInt32(typeof b === 'object' ? b.id : b);
+    if (pVersion >= 33) {
+      const biomeNames = knownBiomes.map(b => (typeof b === 'object' ? (b.name || BIOME_NAMES[b.id] || '') : (BIOME_NAMES[b] || b))).filter(Boolean);
+      pWriter.writeStringSet(biomeNames);
+    } else {
+      pWriter.writeInt32(knownBiomes.length);
+      for (const b of knownBiomes) {
+        pWriter.writeInt32(typeof b === 'object' ? b.id : b);
+      }
     }
 
     const knownTexts = Object.entries(pd.knownTexts || {});
@@ -822,6 +1129,11 @@ function encodeFch(data) {
       pWriter.writeFloat(pd.eitr || 0);
     }
 
+    if (pd.extraDataBase64) {
+      const extraBuf = Buffer.from(pd.extraDataBase64, 'base64');
+      pWriter.writeLengthPrefixedByteArray(extraBuf);
+    }
+
     const pBuf = pWriter.getBuffer();
     pkg.writeLengthPrefixedByteArray(pBuf);
   } else {
@@ -841,9 +1153,40 @@ function encodeFch(data) {
   return finalWriter.getBuffer();
 }
 
+function cleanCharacterCheats(data) {
+  if (!data) return data;
+  data.usedCheats = false;
+  data.postSeedFlag = 0;
+  if (data.playerData && Array.isArray(data.playerData.inventory)) {
+    for (const item of data.playerData.inventory) {
+      item.cheated = false;
+    }
+  }
+  return data;
+}
+
+function getCheatedStats(data) {
+  if (!data) return { characterCheated: false, cheatedItemsCount: 0, isCheated: false };
+  const characterCheated = !!data.usedCheats;
+  let cheatedItemsCount = 0;
+  if (data.playerData && Array.isArray(data.playerData.inventory)) {
+    cheatedItemsCount = data.playerData.inventory.filter(it => it.cheated).length;
+  }
+  return {
+    characterCheated,
+    cheatedItemsCount,
+    isCheated: characterCheated || cheatedItemsCount > 0
+  };
+}
+
 module.exports = {
   decodeFch,
   encodeFch,
+  cleanCharacterCheats,
+  getCheatedStats,
+  getStableHashCode,
+  ITEM_HASH_TO_NAME,
+  ITEM_NAME_TO_HASH,
   SKILL_NAMES,
   SKILL_IDS,
   BIOME_NAMES,

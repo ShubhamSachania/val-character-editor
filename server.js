@@ -1,7 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const { decodeFch, encodeFch } = require('./fch_codec');
+const { decodeFch, encodeFch, cleanCharacterCheats, getCheatedStats } = require('./fch_codec');
 
 const PORT = process.env.PORT || 3000;
 const WORKSPACE_DIR = __dirname;
@@ -17,6 +17,29 @@ const MIME_TYPES = {
   '.svg': 'image/svg+xml'
 };
 
+function getKnownSaveDirectories() {
+  const dirs = [];
+  
+  // 1. OnlineFix / Steam Platform save location
+  const onlineFixDir = 'C:\\Users\\Public\\Documents\\OnlineFix\\892970\\Saves\\characters';
+  if (fs.existsSync(onlineFixDir)) {
+    dirs.push({ name: 'Active Game Saves (OnlineFix/Platform)', path: onlineFixDir, active: true });
+  }
+
+  // 2. Standard LocalLow location
+  if (process.env.USERPROFILE) {
+    const localLowDir = path.join(process.env.USERPROFILE, 'AppData', 'LocalLow', 'IronGate', 'Valheim', 'characters_local');
+    if (fs.existsSync(localLowDir)) {
+      dirs.push({ name: 'LocalLow Characters (Local)', path: localLowDir, active: false });
+    }
+  }
+
+  // 3. Workspace directory
+  dirs.push({ name: 'Editor Workspace Folder', path: WORKSPACE_DIR, active: false });
+
+  return dirs;
+}
+
 const server = http.createServer((req, res) => {
   const url = new URL(req.url, `http://localhost:${PORT}`);
   const pathname = url.pathname;
@@ -29,6 +52,197 @@ const server = http.createServer((req, res) => {
   if (req.method === 'OPTIONS') {
     res.writeHead(204);
     res.end();
+    return;
+  }
+
+  // API: Get list of known system save locations & character files
+  if (pathname === '/api/system-saves' && req.method === 'GET') {
+    try {
+      const dirs = getKnownSaveDirectories();
+      const results = [];
+      const flatSaves = [];
+
+      for (const d of dirs) {
+        if (!fs.existsSync(d.path)) continue;
+        const files = fs.readdirSync(d.path)
+          .filter(f => f.endsWith('.fch') && !f.endsWith('.bak') && !f.includes('_backup_'))
+          .map(f => {
+            const fullPath = path.join(d.path, f);
+            const stats = fs.statSync(fullPath);
+            let cheatInfo = null;
+            let playerName = f.replace('.fch', '');
+            try {
+              const buf = fs.readFileSync(fullPath);
+              const decoded = decodeFch(buf);
+              cheatInfo = getCheatedStats(decoded);
+              if (decoded.playerName) playerName = decoded.playerName;
+            } catch (e) {}
+
+            const saveObj = {
+              name: playerName,
+              playerName,
+              fileName: f,
+              filename: f,
+              fullPath,
+              filePath: fullPath,
+              category: d.name,
+              type: d.active ? 'active' : (d.path.includes('AppData') ? 'locallow' : 'workspace'),
+              sizeBytes: stats.size,
+              modified: stats.mtime,
+              usedCheats: cheatInfo ? cheatInfo.characterCheated : false,
+              cheatedItemsCount: cheatInfo ? cheatInfo.cheatedItemsCount : 0,
+              cheatInfo
+            };
+            flatSaves.push(saveObj);
+            return saveObj;
+          });
+
+        results.push({
+          category: d.name,
+          dirPath: d.path,
+          active: d.active,
+          files
+        });
+      }
+
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ saves: flatSaves, categories: results }));
+    } catch (err) {
+      console.error('System saves list error:', err);
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: err.message }));
+    }
+    return;
+  }
+
+  // API: Load .fch directly from a system file path (GET or POST)
+  if (pathname === '/api/load-from-path') {
+    const handleLoadPath = (targetPath) => {
+      try {
+        if (!targetPath || !fs.existsSync(targetPath)) {
+          res.writeHead(404, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Target file does not exist: ' + targetPath }));
+          return;
+        }
+
+        const buf = fs.readFileSync(targetPath);
+        const decoded = decodeFch(buf);
+        decoded._filePath = targetPath;
+        decoded._cheatStats = getCheatedStats(decoded);
+
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(decoded));
+      } catch (err) {
+        console.error('Load from path error:', err);
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: err.message }));
+      }
+    };
+
+    if (req.method === 'GET') {
+      const targetPath = url.searchParams.get('path');
+      handleLoadPath(targetPath);
+      return;
+    } else if (req.method === 'POST') {
+      let body = '';
+      req.on('data', chunk => body += chunk);
+      req.on('end', () => {
+        try {
+          const { filePath } = JSON.parse(body);
+          handleLoadPath(filePath);
+        } catch (e) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Invalid JSON body' }));
+        }
+      });
+      return;
+    }
+  }
+
+  // API: Save .fch directly to any system file path
+  if (pathname === '/api/save-to-path' && req.method === 'POST') {
+    let body = '';
+    req.on('data', chunk => body += chunk);
+    req.on('end', () => {
+      try {
+        const payload = JSON.parse(body);
+        const charData = payload.characterData;
+        const targetPath = payload.filePath;
+
+        if (!targetPath) {
+          throw new Error('Target filePath is required.');
+        }
+
+        const encodedBuf = encodeFch(charData);
+
+        // Create backup if file existed
+        if (fs.existsSync(targetPath)) {
+          const bakPath = targetPath + '.bak';
+          fs.copyFileSync(targetPath, bakPath);
+        }
+
+        fs.writeFileSync(targetPath, encodedBuf);
+
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({
+          success: true,
+          message: `Saved successfully to ${targetPath}!`,
+          cheatStats: getCheatedStats(charData)
+        }));
+      } catch (err) {
+        console.error('Save to path error:', err);
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: err.message }));
+      }
+    });
+    return;
+  }
+
+  // API: Revert cheats & restore achievements on character & inventory
+  if (pathname === '/api/revert-cheats' && req.method === 'POST') {
+    let body = '';
+    req.on('data', chunk => body += chunk);
+    req.on('end', () => {
+      try {
+        const payload = JSON.parse(body);
+        let charData = payload.characterData;
+        const filePath = payload.filePath;
+
+        if (!charData && filePath && fs.existsSync(filePath)) {
+          const buf = fs.readFileSync(filePath);
+          charData = decodeFch(buf);
+        }
+
+        if (!charData) {
+          throw new Error('No characterData or valid filePath provided.');
+        }
+
+        // Clean cheats
+        cleanCharacterCheats(charData);
+
+        // If filePath provided, write clean version to disk
+        if (filePath && fs.existsSync(filePath)) {
+          const bakPath = filePath + '.bak_before_cheat_clear';
+          if (!fs.existsSync(bakPath)) {
+            fs.copyFileSync(filePath, bakPath);
+          }
+          const cleanBuf = encodeFch(charData);
+          fs.writeFileSync(filePath, cleanBuf);
+        }
+
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({
+          success: true,
+          message: 'Cheats purged! Character and inventory cleansed for achievements.',
+          characterData: charData,
+          cheatStats: getCheatedStats(charData)
+        }));
+      } catch (err) {
+        console.error('Revert cheats error:', err);
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: err.message }));
+      }
+    });
     return;
   }
 
@@ -49,7 +263,10 @@ const server = http.createServer((req, res) => {
 
         const decoded = decodeFch(rawFchBuf);
         res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify(decoded));
+        res.end(JSON.stringify({
+          ...decoded,
+          cheatStats: getCheatedStats(decoded)
+        }));
       } catch (err) {
         console.error('Upload decode error:', err);
         res.writeHead(500, { 'Content-Type': 'application/json' });
@@ -96,7 +313,6 @@ const server = http.createServer((req, res) => {
         const encodedBuf = encodeFch(charData);
 
         const targetFchPath = path.join(WORKSPACE_DIR, filename);
-        // Create backup if file already existed
         if (fs.existsSync(targetFchPath)) {
           const bakPath = targetFchPath + '.bak';
           fs.copyFileSync(targetFchPath, bakPath);
@@ -105,7 +321,11 @@ const server = http.createServer((req, res) => {
         fs.writeFileSync(targetFchPath, encodedBuf);
 
         res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ success: true, message: `Saved successfully to ${filename}!` }));
+        res.end(JSON.stringify({
+          success: true,
+          message: `Saved successfully to ${filename}!`,
+          cheatStats: getCheatedStats(charData)
+        }));
       } catch (err) {
         console.error('Save error:', err);
         res.writeHead(500, { 'Content-Type': 'application/json' });
