@@ -3,7 +3,7 @@ const zlib = require('zlib');
 const path = require('path');
 const fs = require('fs');
 
-// Skill ID mappings
+// Skill ID mappings (Aligned with Valheim 1.0 assembly_valheim Skills+SkillType)
 const SKILL_NAMES = {
   0: 'None',
   1: 'Swords',
@@ -14,30 +14,32 @@ const SKILL_NAMES = {
   6: 'Blocking',
   7: 'Axes',
   8: 'Bows',
-  9: 'FireMagic',
-  10: 'FrostMagic',
+  9: 'ElementalMagic',
+  10: 'BloodMagic',
   11: 'Unarmed',
   12: 'Pickaxes',
   13: 'WoodCutting',
   14: 'Crossbows',
-  15: 'ElementalMagic',
-  16: 'BloodMagic',
-  100: 'Run',
+  100: 'Jump',
   101: 'Sneak',
-  102: 'Swim',
-  103: 'Jump',
+  102: 'Run',
+  103: 'Swim',
   104: 'Fishing',
-  105: 'Ride',
+  105: 'Cooking',
   106: 'Farming',
-  107: 'Cooking',
-  108: 'Crafting',
-  110: 'Mining'
+  107: 'Crafting',
+  108: 'Dodge',
+  110: 'Ride'
 };
 
 const SKILL_IDS = {};
 for (const [id, name] of Object.entries(SKILL_NAMES)) {
   SKILL_IDS[name.toLowerCase()] = parseInt(id, 10);
 }
+// Backward compatibility aliases
+SKILL_IDS['firemagic'] = 9;
+SKILL_IDS['frostmagic'] = 10;
+SKILL_IDS['mining'] = 12;
 
 const BIOME_NAMES = {
   0: 'None',
@@ -88,21 +90,16 @@ const ITEM_NAME_TO_HASH = new Map();
 
 function initItemHashes() {
   try {
-    const p = path.join(__dirname, 'items_data.js');
-    if (fs.existsSync(p)) {
-      const code = fs.readFileSync(p, 'utf8');
-      const obj = {};
-      new Function('exports', code + '; exports.VALHEIM_ITEMS = VALHEIM_ITEMS;')(obj);
-      if (Array.isArray(obj.VALHEIM_ITEMS)) {
-        for (const it of obj.VALHEIM_ITEMS) {
-          const hId = getStableHashCode(it.id);
-          ITEM_HASH_TO_NAME.set(hId, it.id);
-          ITEM_NAME_TO_HASH.set(it.id.toLowerCase(), hId);
-          if (it.name && it.name !== it.id) {
-            const hName = getStableHashCode(it.name);
-            ITEM_HASH_TO_NAME.set(hName, it.id);
-            ITEM_NAME_TO_HASH.set(it.name.toLowerCase(), hName);
-          }
+    const mod = require('./items_data.js');
+    if (mod && Array.isArray(mod.VALHEIM_ITEMS)) {
+      for (const it of mod.VALHEIM_ITEMS) {
+        const hId = getStableHashCode(it.id);
+        ITEM_HASH_TO_NAME.set(hId, it.id);
+        ITEM_NAME_TO_HASH.set(it.id.toLowerCase(), hId);
+        if (it.name && it.name !== it.id) {
+          const hName = getStableHashCode(it.name);
+          ITEM_HASH_TO_NAME.set(hName, it.id);
+          ITEM_NAME_TO_HASH.set(it.name.toLowerCase(), hName);
         }
       }
     }
@@ -110,16 +107,35 @@ function initItemHashes() {
     console.warn('Could not initialize item hashes from items_data.js:', err.message);
   }
 
-  // Common vanilla items & Deep North / Ashlands extras
+  // Deep North 1.0 & Critical Extras
   const extras = [
-    'ShieldBronzeBuckler', 'HelmetBronze', 'PickaxeBronze', 'Cultivator',
-    'CookedDeerMeat', 'CookedBoarMeat', 'Honey', 'Blueberries', 'Raspberries',
-    'Mushroom', 'Wood', 'Stone', 'Bronze', 'Copper', 'Tin', 'BronzeNails',
-    'DeerHide', 'LeatherScraps', 'Torch', 'Club', 'SwordBronze', 'MaceBronze',
-    'SpearBronze', 'AtgeirBronze', 'Coins', 'Amber', 'AmberPearl', 'Ruby',
-    'SilverNecklace', 'FineWood', 'CoreWood', 'Iron', 'Chain', 'SurtlingCore',
-    'BlackMetal', 'Tar', 'YggdrasilWood', 'BlackMarble', 'Softtissue',
-    'Flametal', 'CharredBone', 'MoltenCore', 'Ashwood'
+    'SwordGold', 'SwordGold_FrostFire', 'SwordGold_BloodLightning', 'SwordGoldUncooked',
+    'THSwordGold', 'THSwordGold_FrostFire', 'THSwordGold_BloodLightning', 'THSwordGoldUncooked',
+    'BattleaxeGold', 'BattleaxeGold_FrostFire', 'BattleaxeGold_BloodLightning', 'BattleaxeGoldUncooked',
+    'AxeGold', 'AxeGold_FrostFire', 'AxeGold_BloodLightning', 'AxeGoldUncooked',
+    'MaceGold', 'MaceGold_FrostFire', 'MaceGold_BloodLightning', 'MaceGoldUncooked',
+    'SledgeGold', 'SledgeGold_FrostFire', 'SledgeGoldUncooked',
+    'AtgeirGold', 'AtgeirGold_FrostFire', 'AtgeirGold_BloodLightning', 'AtgeirGoldUncooked',
+    'SpearGold', 'SpearGold_FrostFire', 'SpearGold_BloodLightning', 'SpearGoldUncooked',
+    'KnifeGold', 'KnifeGold_FrostFire', 'KnifeGold_BloodLightning', 'KnifeGoldUncooked',
+    'FistGold', 'FistGold_FrostFire', 'FistGold_BloodLightning', 'FistGoldUncooked',
+    'BowGold', 'BowGold_FrostFire', 'BowGold_BloodLightning', 'BowGoldUncooked',
+    'CrossbowGold', 'CrossbowGold_FrostFire', 'CrossbowGold_BloodLightning', 'CrossbowGoldUncooked',
+    'StaffThunderBlood', 'StaffSpiritCaller', 'StaffThunderbloodUncooked', 'StaffSpiritCallerUncooked',
+    'ShieldGold', 'ShieldGoldTower', 'ShieldGoldBuckler', 'ShieldCarapaceBuckler',
+    'ArrowBloodGold', 'BoltBloodGold', 'TurretBoltBloodgold', 'BombBlob_Morkhalla', 'BombDynamite',
+    'HelmetDNHeavy', 'ArmorDeepNorthHeavyChest', 'ArmorDeepNorthHeavylegs',
+    'HelmetDNMediumHood', 'ArmorDeepNorthMediumChest', 'ArmorDeepNorthMediumlegs',
+    'HelmetDNMage', 'ArmorDeepNorthMageChest', 'ArmorDeepNorthMagelegs',
+    'CapeDeepNorth', 'CapeDeepNorthMage', 'HelmetCrownofValheim',
+    'HelmetLox', 'ArmorLoxChest', 'ArmorLoxLegs',
+    'Gold', 'GoldOre', 'BloodGoldKey', 'FrozenKingDrop', 'OozeMork',
+    'OrbFrostFire', 'OrbThunderBlood', 'MooseMeat', 'CookedMooseMeat',
+    'SmokedMooseMeat', 'MooseKebab', 'MooseHide', 'MooseSinew', 'SaddleMoose',
+    'Pukeberries', 'FrostCore', 'Shovel', 'IceSkates', 'IceShoes', 'Hook',
+    'TrinketBloodGoldHealth', 'TrinketBloodGoldStamina', 'TrinketScaleStaminaDamage',
+    'TrophySeeker', 'TrophyMoose', 'TrophyFrostTroll', 'TrophyForestTroll',
+    'TrophyBlob_Morkhalla', 'TrophyMole', 'TrophyJotunWarrior', 'TrophyBarka'
   ];
   for (const name of extras) {
     const h = getStableHashCode(name);
@@ -1005,7 +1021,7 @@ function encodeFch(data) {
         if (it.quality && it.quality !== 1) flags |= 4;
         if (it.stack && it.stack !== 1) flags |= 8;
         if (it.variant && it.variant !== 0) flags |= 16;
-        if (it.crafterId && it.crafterId !== '0') flags |= 32;
+        if ((it.crafterId && it.crafterId !== '0') || (it.crafterName && it.crafterName.trim())) flags |= 32;
         const dropPrefabHash = it.dropPrefabHash !== undefined ? it.dropPrefabHash : (ITEM_NAME_TO_HASH.get(it.name.toLowerCase()) || getStableHashCode(it.name));
         if (dropPrefabHash) flags |= 64;
         const cdEntries = Object.entries(it.customData || {});
@@ -1027,7 +1043,8 @@ function encodeFch(data) {
           pWriter.writeInt32(it.variant || 0);
         }
         if ((flags & 32) !== 0) {
-          pWriter.writeInt64(it.crafterId || '0');
+          const cId = (it.crafterId && it.crafterId !== '0') ? it.crafterId : (data.playerId || '1');
+          pWriter.writeInt64(cId);
           pWriter.writeString(it.crafterName || '');
         }
         if ((flags & 64) !== 0) {

@@ -1,14 +1,154 @@
-// Valheim Complete Item Database (All Biomes & Ashlands Update)
+// Valheim Complete Item Database (Valheim 1.0 Deep North Update)
 const VALHEIM_ITEMS = [
   {
-    "id": "Demister",
-    "name": "Demister",
+    "id": "AncientCoin",
+    "name": "Ancient Coin",
     "category": "Accessories",
     "maxStack": 1,
     "maxQuality": 1,
     "durability": 100,
-    "icon": "icons/Demister.png",
-    "desc": "Demister item in Valheim."
+    "icon": "icons/AncientCoin.svg",
+    "desc": "A relic of a lost age. Its surface still bears the trace of mysterious symbols."
+  },
+  {
+    "id": "AncientGemstoneBlack",
+    "name": "Ancient Gemstone Black",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/AncientGemstoneBlack.svg",
+    "desc": "Ancient Gemstone Black in Valheim 1.0."
+  },
+  {
+    "id": "AncientGemstoneGreen",
+    "name": "Ancient Gemstone Green",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/AncientGemstoneGreen.svg",
+    "desc": "Ancient Gemstone Green in Valheim 1.0."
+  },
+  {
+    "id": "AncientGemstoneOrange",
+    "name": "Ancient Gemstone Orange",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/AncientGemstoneOrange.svg",
+    "desc": "Ancient Gemstone Orange in Valheim 1.0."
+  },
+  {
+    "id": "AncientGemstonePurple",
+    "name": "Ancient Gemstone Purple",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/AncientGemstonePurple.svg",
+    "desc": "Ancient Gemstone Purple in Valheim 1.0."
+  },
+  {
+    "id": "TrinketFlametalStaminaHealth",
+    "name": "Brimstone",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrinketFlametalStaminaHealth.svg",
+    "desc": "It's warm, as if filled with a lifesblood of its own."
+  },
+  {
+    "id": "TrinketBronzeStamina",
+    "name": "Bronze Pendant",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrinketBronzeStamina.svg",
+    "desc": "A beautiful pendant, harbouring the endurance of a bear."
+  },
+  {
+    "id": "TrinketSilverResist",
+    "name": "Crystal Heart",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrinketSilverResist.svg",
+    "desc": "A shard of frozen sorrow. Touching it makes you feel almost numb."
+  },
+  {
+    "id": "TrinketChitinSwim",
+    "name": "Fins of Destiny",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrinketChitinSwim.svg",
+    "desc": "Empty your mind as you become shapeless and one with the water."
+  },
+  {
+    "id": "GemstoneBlue",
+    "name": "Gemstone Blue",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/GemstoneBlue.svg",
+    "desc": "Gemstone Blue in Valheim 1.0."
+  },
+  {
+    "id": "GemstoneGreen",
+    "name": "Gemstone Green",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/GemstoneGreen.svg",
+    "desc": "Gemstone Green in Valheim 1.0."
+  },
+  {
+    "id": "GemstoneRed",
+    "name": "Gemstone Red",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/GemstoneRed.svg",
+    "desc": "Gemstone Red in Valheim 1.0."
+  },
+  {
+    "id": "IceSkates",
+    "name": "Ice Skates",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/IceSkates.svg",
+    "desc": "Ice Skates in Valheim 1.0."
+  },
+  {
+    "id": "TrinketIronHealth",
+    "name": "Iron Brooch",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrinketIronHealth.svg",
+    "desc": "A delicate yet defensive accessory."
+  },
+  {
+    "id": "TrinketFlametalEitr",
+    "name": "Jörmundling",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrinketFlametalEitr.svg",
+    "desc": "Tormented screams resonate from within."
   },
   {
     "id": "BeltStrength",
@@ -31,6 +171,76 @@ const VALHEIM_ITEMS = [
     "desc": "Megingjord item in Valheim."
   },
   {
+    "id": "TrinketBloodGoldHealth",
+    "name": "Neckstabber",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrinketBloodGoldHealth.svg",
+    "desc": "Claw and bone and gold – grant them blood and they shall grant you a boon."
+  },
+  {
+    "id": "TrinketIronStamina",
+    "name": "Nimble Anklet",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrinketIronStamina.svg",
+    "desc": "Puts a spring in your step!"
+  },
+  {
+    "id": "TrinketCarapaceEitr",
+    "name": "Pulsating Earrings",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrinketCarapaceEitr.svg",
+    "desc": "If you listen carefully, you can hear the faint echoes of lost souls..."
+  },
+  {
+    "id": "TrinketScaleStaminaDamage",
+    "name": "Resounding Shackle",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrinketScaleStaminaDamage.svg",
+    "desc": "A razor-sharp ankle chain. Can it truly be comfortable?"
+  },
+  {
+    "id": "SilverNecklace",
+    "name": "Silver Necklace",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/SilverNecklace.png",
+    "desc": "<color=yellow>Valuable</color>"
+  },
+  {
+    "id": "TrinketBlackDamageHealth",
+    "name": "Trinket Black Damage Health",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrinketBlackDamageHealth.svg",
+    "desc": "Trinket Black Damage Health in Valheim 1.0."
+  },
+  {
+    "id": "TrinketBlackStamina",
+    "name": "Trinket Black Stamina",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrinketBlackStamina.svg",
+    "desc": "Trinket Black Stamina in Valheim 1.0."
+  },
+  {
     "id": "TrinketBronzeHealth",
     "name": "Trinket Bronze Health",
     "category": "Accessories",
@@ -38,7 +248,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/TrinketBronzeHealth.png",
-    "desc": "Trinket Bronze Health item in Valheim."
+    "desc": "It pulsates with fragments of ancient life."
   },
   {
     "id": "Wishbone",
@@ -48,7 +258,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Wishbone.png",
-    "desc": "Wishbone item in Valheim."
+    "desc": "This ancient bone remembers the location of many forgotten things."
   },
   {
     "id": "Wisp",
@@ -58,7 +268,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Wisp.png",
-    "desc": "Wisp item in Valheim."
+    "desc": "It keeps whispering jibberish..."
+  },
+  {
+    "id": "Demister",
+    "name": "Wisplight",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Demister.png",
+    "desc": "A bound wisp to guide you through the thickest of mists."
   },
   {
     "id": "Wisplight",
@@ -69,6 +289,26 @@ const VALHEIM_ITEMS = [
     "durability": 100,
     "icon": "icons/Wisplight.png",
     "desc": "Wisplight item in Valheim."
+  },
+  {
+    "id": "TrinketBloodGoldStamina",
+    "name": "Witch Crown",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrinketBloodGoldStamina.svg",
+    "desc": "They say that the soul of a witch can grant strange powers to mortals..."
+  },
+  {
+    "id": "TrinketSilverDamage",
+    "name": "Wolf Sight",
+    "category": "Accessories",
+    "maxStack": 1,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrinketSilverDamage.svg",
+    "desc": "Assume the sharp and furious mind of a wolf."
   },
   {
     "id": "BombLava",
@@ -611,6 +851,96 @@ const VALHEIM_ITEMS = [
     "desc": "Armor Carapace Greaves item in Valheim."
   },
   {
+    "id": "ArmorGoldHeavyChestUncooked",
+    "name": "Armor Gold Heavy Chest Uncooked",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/ArmorGoldHeavyChestUncooked.svg",
+    "desc": "Armor Gold Heavy Chest Uncooked in Valheim 1.0."
+  },
+  {
+    "id": "ArmorGoldHeavyHelmetUncooked",
+    "name": "Armor Gold Heavy Helmet Uncooked",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/ArmorGoldHeavyHelmetUncooked.svg",
+    "desc": "Armor Gold Heavy Helmet Uncooked in Valheim 1.0."
+  },
+  {
+    "id": "ArmorGoldHeavyLegsUncooked",
+    "name": "Armor Gold Heavy Legs Uncooked",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/ArmorGoldHeavyLegsUncooked.svg",
+    "desc": "Armor Gold Heavy Legs Uncooked in Valheim 1.0."
+  },
+  {
+    "id": "ArmorGoldMageChestUncooked",
+    "name": "Armor Gold Mage Chest Uncooked",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/ArmorGoldMageChestUncooked.svg",
+    "desc": "Armor Gold Mage Chest Uncooked in Valheim 1.0."
+  },
+  {
+    "id": "ArmorGoldMageHelmetUncooked",
+    "name": "Armor Gold Mage Helmet Uncooked",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/ArmorGoldMageHelmetUncooked.svg",
+    "desc": "Armor Gold Mage Helmet Uncooked in Valheim 1.0."
+  },
+  {
+    "id": "ArmorGoldMageLegsUncooked",
+    "name": "Armor Gold Mage Legs Uncooked",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/ArmorGoldMageLegsUncooked.svg",
+    "desc": "Armor Gold Mage Legs Uncooked in Valheim 1.0."
+  },
+  {
+    "id": "ArmorGoldMediumChestUncooked",
+    "name": "Armor Gold Medium Chest Uncooked",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/ArmorGoldMediumChestUncooked.svg",
+    "desc": "Armor Gold Medium Chest Uncooked in Valheim 1.0."
+  },
+  {
+    "id": "ArmorGoldMediumHelmetUncooked",
+    "name": "Armor Gold Medium Helmet Uncooked",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/ArmorGoldMediumHelmetUncooked.svg",
+    "desc": "Armor Gold Medium Helmet Uncooked in Valheim 1.0."
+  },
+  {
+    "id": "ArmorGoldMediumLegsUncooked",
+    "name": "Armor Gold Medium Legs Uncooked",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/ArmorGoldMediumLegsUncooked.svg",
+    "desc": "Armor Gold Medium Legs Uncooked in Valheim 1.0."
+  },
+  {
     "id": "CapeAsh",
     "name": "Ashen Cape",
     "category": "Armor",
@@ -901,6 +1231,16 @@ const VALHEIM_ITEMS = [
     "desc": "A blue dress, with a green shawl around the shoulders. Warm and stylish!"
   },
   {
+    "id": "HelmetHat1",
+    "name": "Blue Tied Headscarf",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetHat1.svg",
+    "desc": "A blue practical headscarf."
+  },
+  {
     "id": "ArmorTunic3",
     "name": "Blue Tunic with Beads",
     "category": "Armor",
@@ -931,6 +1271,16 @@ const VALHEIM_ITEMS = [
     "desc": "The first man in Midgard knew how to guard his most vital organs, perhaps with a breastplate just like this one."
   },
   {
+    "id": "ArmorDeepNorthHeavyChest",
+    "name": "Breastplate of the Protector",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/ArmorDeepNorthHeavyChest.svg",
+    "desc": "Fur and hide and metal all work in tandem to ward off an enemy's blows."
+  },
+  {
     "id": "BronzeArmor",
     "name": "Bronze Armor",
     "category": "Armor",
@@ -939,6 +1289,16 @@ const VALHEIM_ITEMS = [
     "durability": 1000,
     "icon": "icons/BronzeArmor.png",
     "desc": "Bronze Armor item in Valheim."
+  },
+  {
+    "id": "HelmetBronze",
+    "name": "Bronze Helmet",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetBronze.png",
+    "desc": "This will help to keep your brains inside your skull."
   },
   {
     "id": "ArmorBronzeLegs",
@@ -981,6 +1341,16 @@ const VALHEIM_ITEMS = [
     "desc": "A brown dress, with a matching shawl around the shoulders. Warm and stylish!"
   },
   {
+    "id": "HelmetHat3",
+    "name": "Brown Fur Cap",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetHat3.svg",
+    "desc": "A warm fur cap, made from the finest leather."
+  },
+  {
     "id": "CapeOdin",
     "name": "Cape of Odin",
     "category": "Armor",
@@ -989,6 +1359,16 @@ const VALHEIM_ITEMS = [
     "durability": 1000,
     "icon": "icons/CapeOdin.png",
     "desc": "Odin's finest warriors deserve the finest cloth."
+  },
+  {
+    "id": "CapeDeepNorthMage",
+    "name": "Cape of the Caller",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/CapeDeepNorthMage.svg",
+    "desc": "A strange magic is woven into this cape, making it both light and warm."
   },
   {
     "id": "CapeTest",
@@ -1071,6 +1451,36 @@ const VALHEIM_ITEMS = [
     "desc": "Leg guards of a rigid carapace."
   },
   {
+    "id": "HelmetCelebration",
+    "name": "Celebratory Cap",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetCelebration.svg",
+    "desc": "You simply can't help but feel happy when donning this cap!"
+  },
+  {
+    "id": "ArmorDeepNorthMediumChest",
+    "name": "Chestpiece of the Vanguard",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/ArmorDeepNorthMediumChest.svg",
+    "desc": "Lightweight bloodgold chestpiece for high mobility in deep snow."
+  },
+  {
+    "id": "HelmetCrownofValheim",
+    "name": "Crown of Valheim",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetCrownofValheim.svg",
+    "desc": "The glorious crown of the champion of the Tenth World."
+  },
+  {
     "id": "CapeDeerHide",
     "name": "Deer Hide Cape",
     "category": "Armor",
@@ -1079,6 +1489,26 @@ const VALHEIM_ITEMS = [
     "durability": 1000,
     "icon": "icons/CapeDeerHide.png",
     "desc": "Rustic chic."
+  },
+  {
+    "id": "HelmetDrake",
+    "name": "Drake Helmet",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetDrake.png",
+    "desc": "An elaborate and finely-crafted helm."
+  },
+  {
+    "id": "HelmetDverger",
+    "name": "Dverger Circlet",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetDverger.svg",
+    "desc": "A portable perpetual lightsource for the dungeon explorer."
   },
   {
     "id": "ArmorMageChest",
@@ -1119,6 +1549,26 @@ const VALHEIM_ITEMS = [
     "durability": 1000,
     "icon": "icons/EmblaSet.png",
     "desc": "Embla Set item in Valheim."
+  },
+  {
+    "id": "HelmetHat4",
+    "name": "Extravagant Green Cap",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetHat4.svg",
+    "desc": "A warm cap for special occasions."
+  },
+  {
+    "id": "HelmetHat9",
+    "name": "Extravagant Orange Cap",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetHat9.svg",
+    "desc": "A warm cap for special occasions."
   },
   {
     "id": "CapeFeather",
@@ -1171,6 +1621,16 @@ const VALHEIM_ITEMS = [
     "desc": "Fenris Set item in Valheim."
   },
   {
+    "id": "HelmetFishingHat",
+    "name": "Fishing Hat",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetFishingHat.svg",
+    "desc": "This catchy hat may only be reeled in by the most seasoned adventurers."
+  },
+  {
     "id": "FlametalArmor",
     "name": "Flametal Armor",
     "category": "Armor",
@@ -1199,6 +1659,36 @@ const VALHEIM_ITEMS = [
     "durability": 1000,
     "icon": "icons/ArmorFlametalLegs.png",
     "desc": "Heavy trousers insulate against the heat, while solid greaves keep your shins safe from low blows."
+  },
+  {
+    "id": "HelmetFlametal",
+    "name": "Flametal Helmet",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetFlametal.png",
+    "desc": "While you're wearing this helmet, your enemies will think twice before trying to bite your head off."
+  },
+  {
+    "id": "HelmetHat2",
+    "name": "Green Twisted Headscarf",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetHat2.svg",
+    "desc": "A fancy green headscarf."
+  },
+  {
+    "id": "HelmetHat8",
+    "name": "Grey Fur Cap",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetHat8.svg",
+    "desc": "A warm fur cap, made from the finest wool."
   },
   {
     "id": "ArmorHarvester2",
@@ -1241,6 +1731,56 @@ const VALHEIM_ITEMS = [
     "desc": "Harvesttunic item in Valheim."
   },
   {
+    "id": "HelmetSweatBand",
+    "name": "Headband",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetSweatBand.svg",
+    "desc": "It feels a bit...moist."
+  },
+  {
+    "id": "HelmetDNMage",
+    "name": "Headdress of the Caller",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetDNMage.svg",
+    "desc": "The spirits of the land come as you beckon. Are they fooled by your disguise?"
+  },
+  {
+    "id": "HelmetAshlandsMediumHood",
+    "name": "Helmet Ashlands Medium Hood",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetAshlandsMediumHood.svg",
+    "desc": "Helmet Ashlands Medium Hood in Valheim 1.0."
+  },
+  {
+    "id": "HelmetBerserkerHood",
+    "name": "Helmet Berserker Hood",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetBerserkerHood.svg",
+    "desc": "Helmet Berserker Hood in Valheim 1.0."
+  },
+  {
+    "id": "HelmetBerserkerUndead",
+    "name": "Helmet Berserker Undead",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetBerserkerUndead.svg",
+    "desc": "Helmet Berserker Undead in Valheim 1.0."
+  },
+  {
     "id": "HelmetCarapace",
     "name": "Helmet Carapace",
     "category": "Armor",
@@ -1248,7 +1788,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 4,
     "durability": 1000,
     "icon": "icons/HelmetCarapace.png",
-    "desc": "Helmet Carapace item in Valheim."
+    "desc": "People might say you look like a giant ant. But they will only say it once."
+  },
+  {
+    "id": "HelmetFenring",
+    "name": "Helmet Fenring",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetFenring.svg",
+    "desc": "Helmet Fenring in Valheim 1.0."
   },
   {
     "id": "HelmetMage",
@@ -1258,7 +1808,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 4,
     "durability": 1000,
     "icon": "icons/HelmetMage.png",
-    "desc": "Helmet Mage item in Valheim."
+    "desc": "Sorcery shows itself in the eyes, so most mages wear cowls to disguise their occult pursuits."
+  },
+  {
+    "id": "HelmetDNHeavy",
+    "name": "Helmet of the Protector",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetDNHeavy.svg",
+    "desc": "Embellished with the wings of victory."
   },
   {
     "id": "HelmetPadded",
@@ -1268,7 +1828,57 @@ const VALHEIM_ITEMS = [
     "maxQuality": 4,
     "durability": 1000,
     "icon": "icons/HelmetPadded.png",
-    "desc": "Helmet Padded item in Valheim."
+    "desc": "A snug fit, finely made."
+  },
+  {
+    "id": "HelmetPointyHat",
+    "name": "Helmet Pointy Hat",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetPointyHat.svg",
+    "desc": "Helmet Pointy Hat in Valheim 1.0."
+  },
+  {
+    "id": "HelmetRootCrown",
+    "name": "Helmet Root Crown",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetRootCrown.svg",
+    "desc": "Helmet Root Crown in Valheim 1.0."
+  },
+  {
+    "id": "HelmetMage_Ashlands",
+    "name": "Hood of Embla",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetMage_Ashlands.svg",
+    "desc": "Even the first sorceress valued the mystique of covering one's face. It is rumoured that honouring her this way will make your spells even more powerful."
+  },
+  {
+    "id": "HelmetOdin",
+    "name": "Hood of Oden",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetOdin.svg",
+    "desc": "Oden's finest warriors deserve the finest cloth."
+  },
+  {
+    "id": "HelmetDNMediumHood",
+    "name": "Hood of the Vanguard",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetDNMediumHood.svg",
+    "desc": "A swift hood offering nimble protection and cold resistance."
   },
   {
     "id": "HoodofOdin",
@@ -1299,6 +1909,16 @@ const VALHEIM_ITEMS = [
     "durability": 1000,
     "icon": "icons/ArmorIronLegs.png",
     "desc": "Iron greaves to protect your legs."
+  },
+  {
+    "id": "HelmetIron",
+    "name": "Iron Helmet",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetIron.png",
+    "desc": "A helm of polished iron, fit for a hero."
   },
   {
     "id": "Charred_Breastplate",
@@ -1339,6 +1959,16 @@ const VALHEIM_ITEMS = [
     "durability": 1000,
     "icon": "icons/LeatherArmor.png",
     "desc": "Leather Armor item in Valheim."
+  },
+  {
+    "id": "HelmetLeather",
+    "name": "Leather Helmet",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetLeather.png",
+    "desc": "A hood of toughened leather."
   },
   {
     "id": "ArmorLeatherLegs",
@@ -1399,6 +2029,146 @@ const VALHEIM_ITEMS = [
     "durability": 1000,
     "icon": "icons/CapeLox.png",
     "desc": "A pelt from one of the great beasts, thick and warm."
+  },
+  {
+    "id": "HelmetLox",
+    "name": "Lox Fur Hood",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetLox.svg",
+    "desc": "A warm hood fashioned from thick, insulating lox pelt."
+  },
+  {
+    "id": "ArmorLoxChest",
+    "name": "Lox Fur Jacket",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/ArmorLoxChest.svg",
+    "desc": "A heavy jacket made from thick lox hide, providing exceptional warmth."
+  },
+  {
+    "id": "ArmorLoxLegs",
+    "name": "Lox Fur Trousers",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/ArmorLoxLegs.svg",
+    "desc": "Rugged trousers lined with lox pelt to protect against frost."
+  },
+  {
+    "id": "HelmetMidsummerCrown",
+    "name": "Midsummer Crown",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetMidsummerCrown.svg",
+    "desc": "Celebrate summer with a crown woven from flowers."
+  },
+  {
+    "id": "MoldArmorGoldChest",
+    "name": "Mold Armor Gold Chest",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/MoldArmorGoldChest.svg",
+    "desc": "Mold Armor Gold Chest in Valheim 1.0."
+  },
+  {
+    "id": "MoldArmorGoldHelmet",
+    "name": "Mold Armor Gold Helmet",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/MoldArmorGoldHelmet.svg",
+    "desc": "Mold Armor Gold Helmet in Valheim 1.0."
+  },
+  {
+    "id": "MoldArmorGoldLegs",
+    "name": "Mold Armor Gold Legs",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/MoldArmorGoldLegs.svg",
+    "desc": "Mold Armor Gold Legs in Valheim 1.0."
+  },
+  {
+    "id": "MoldArmorMageChest",
+    "name": "Mold Armor Mage Chest",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/MoldArmorMageChest.svg",
+    "desc": "Mold Armor Mage Chest in Valheim 1.0."
+  },
+  {
+    "id": "MoldArmorMageHelmet",
+    "name": "Mold Armor Mage Helmet",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/MoldArmorMageHelmet.svg",
+    "desc": "Mold Armor Mage Helmet in Valheim 1.0."
+  },
+  {
+    "id": "MoldArmorMageLegs",
+    "name": "Mold Armor Mage Legs",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/MoldArmorMageLegs.svg",
+    "desc": "Mold Armor Mage Legs in Valheim 1.0."
+  },
+  {
+    "id": "MoldArmorMediumHelmet",
+    "name": "Mold Armor Medium Helmet",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/MoldArmorMediumHelmet.svg",
+    "desc": "Mold Armor Medium Helmet in Valheim 1.0."
+  },
+  {
+    "id": "MoldArmorMediumLegs",
+    "name": "Mold Armor Medium Legs",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/MoldArmorMediumLegs.svg",
+    "desc": "Mold Armor Medium Legs in Valheim 1.0."
+  },
+  {
+    "id": "MoldArmormediumChest",
+    "name": "Mold Armormedium Chest",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/MoldArmormediumChest.svg",
+    "desc": "Mold Armormedium Chest in Valheim 1.0."
+  },
+  {
+    "id": "CapeDeepNorth",
+    "name": "Moose Hide Cape",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/CapeDeepNorth.svg",
+    "desc": "A warm cape with fine details of spun gold."
   },
   {
     "id": "PaddedArmor",
@@ -1561,6 +2331,16 @@ const VALHEIM_ITEMS = [
     "desc": "A red tunic, worn with a fashionable cape made from fine green wool."
   },
   {
+    "id": "HelmetHat7",
+    "name": "Red Twisted Headscarf",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetHat7.svg",
+    "desc": "A fancy red headscarf."
+  },
+  {
     "id": "ArmorMageChest_Ashlands",
     "name": "Robes of Embla",
     "category": "Armor",
@@ -1569,6 +2349,16 @@ const VALHEIM_ITEMS = [
     "durability": 1000,
     "icon": "icons/ArmorMageChest_Ashlands.png",
     "desc": "Imbued with the power of the first sorceress, these robes will grant a boon to any who seeks to wield the ancient art of magic."
+  },
+  {
+    "id": "ArmorDeepNorthMageChest",
+    "name": "Robes of the Caller",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/ArmorDeepNorthMageChest.svg",
+    "desc": "Gold trimmed robes, fit for only the most powerful of mages."
   },
   {
     "id": "ArmorRootChest",
@@ -1589,6 +2379,16 @@ const VALHEIM_ITEMS = [
     "durability": 1000,
     "icon": "icons/ArmorRootLegs.png",
     "desc": "A light armour oddly woven together by ancient roots and bark."
+  },
+  {
+    "id": "HelmetRoot",
+    "name": "Root Mask",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetRoot.svg",
+    "desc": "Your head fits perfectly inside this knot of roots and bark."
   },
   {
     "id": "RootSet",
@@ -1629,6 +2429,26 @@ const VALHEIM_ITEMS = [
     "durability": 1000,
     "icon": "icons/Shawldressyellow.png",
     "desc": "Shawldressyellow item in Valheim."
+  },
+  {
+    "id": "HelmetHat10",
+    "name": "Simple Purple Cap",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetHat10.svg",
+    "desc": "A simple yet fashionable purple cap."
+  },
+  {
+    "id": "HelmetHat5",
+    "name": "Simple Red Cap",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetHat5.svg",
+    "desc": "A simple yet fashionable red cap."
   },
   {
     "id": "ArmorDress10",
@@ -1741,6 +2561,46 @@ const VALHEIM_ITEMS = [
     "desc": "Skolland Hati item in Valheim."
   },
   {
+    "id": "SP_ArmorDress1",
+    "name": "SP Armor Dress 1",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/SP_ArmorDress1.svg",
+    "desc": "SP Armor Dress 1 in Valheim 1.0."
+  },
+  {
+    "id": "SP_ArmorLeatherLegs",
+    "name": "SP Armor Leather Legs",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/SP_ArmorLeatherLegs.svg",
+    "desc": "SP Armor Leather Legs in Valheim 1.0."
+  },
+  {
+    "id": "SP_ArmorTunic5",
+    "name": "SP Armor Tunic 5",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/SP_ArmorTunic5.svg",
+    "desc": "SP Armor Tunic 5 in Valheim 1.0."
+  },
+  {
+    "id": "HelmetStrawHat",
+    "name": "Straw Hat",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetStrawHat.svg",
+    "desc": "The perfect way to avoid sunstroke."
+  },
+  {
     "id": "Strawhat",
     "name": "Strawhat",
     "category": "Armor",
@@ -1759,6 +2619,16 @@ const VALHEIM_ITEMS = [
     "durability": 1000,
     "icon": "icons/CapeTrollHide.png",
     "desc": "Trollskin is tough and supple."
+  },
+  {
+    "id": "HelmetTrollLeather",
+    "name": "Troll Leather Hood",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetTrollLeather.png",
+    "desc": "Trollskin is hard to work but makes exceptional armour."
   },
   {
     "id": "ArmorTrollLeatherLegs",
@@ -1809,6 +2679,116 @@ const VALHEIM_ITEMS = [
     "durability": 1000,
     "icon": "icons/ArmorMageLegs_Ashlands.png",
     "desc": "Whether or not the first sorceress actually wore trousers exactly like these, we can never know."
+  },
+  {
+    "id": "ArmorDeepNorthMagelegs",
+    "name": "Trousers of the Caller",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/ArmorDeepNorthMagelegs.svg",
+    "desc": "Tight legwraps to keep the cold from touching your skin."
+  },
+  {
+    "id": "ArmorDeepNorthHeavylegs",
+    "name": "Trousers of the Protector",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/ArmorDeepNorthHeavylegs.svg",
+    "desc": "Heavy boots and trousers, to keep you warm as you trudge through deep snow."
+  },
+  {
+    "id": "ArmorDeepNorthMediumlegs",
+    "name": "Trousers of the Vanguard",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/ArmorDeepNorthMediumlegs.svg",
+    "desc": "Reinforced trousers engineered for swift movement."
+  },
+  {
+    "id": "Upgrader0Armor",
+    "name": "Upgrader 0Armor",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/Upgrader0Armor.svg",
+    "desc": "Upgrader 0Armor in Valheim 1.0."
+  },
+  {
+    "id": "Upgrader1Armor",
+    "name": "Upgrader 1Armor",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/Upgrader1Armor.svg",
+    "desc": "Upgrader 1Armor in Valheim 1.0."
+  },
+  {
+    "id": "Upgrader2Armor",
+    "name": "Upgrader 2Armor",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/Upgrader2Armor.svg",
+    "desc": "Upgrader 2Armor in Valheim 1.0."
+  },
+  {
+    "id": "Upgrader3Armor",
+    "name": "Upgrader 3Armor",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/Upgrader3Armor.svg",
+    "desc": "Upgrader 3Armor in Valheim 1.0."
+  },
+  {
+    "id": "Upgrader4Armor",
+    "name": "Upgrader 4Armor",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/Upgrader4Armor.svg",
+    "desc": "Upgrader 4Armor in Valheim 1.0."
+  },
+  {
+    "id": "Upgrader5Armor",
+    "name": "Upgrader 5Armor",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/Upgrader5Armor.svg",
+    "desc": "Upgrader 5Armor in Valheim 1.0."
+  },
+  {
+    "id": "Upgrader6Armor",
+    "name": "Upgrader 6Armor",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/Upgrader6Armor.svg",
+    "desc": "Upgrader 6Armor in Valheim 1.0."
+  },
+  {
+    "id": "Upgrader7Armor",
+    "name": "Upgrader 7Armor",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/Upgrader7Armor.svg",
+    "desc": "Upgrader 7Armor in Valheim 1.0."
   },
   {
     "id": "ArmorBerserkerUndeadChest",
@@ -1911,6 +2891,16 @@ const VALHEIM_ITEMS = [
     "desc": "A yellow dress, with a purple shawl around the shoulders. Warm and stylish!"
   },
   {
+    "id": "HelmetHat6",
+    "name": "Yellow Tied Headscarf",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetHat6.svg",
+    "desc": "A practical yellow headscarf."
+  },
+  {
     "id": "ArmorTunic9",
     "name": "Yellow Tunic with Beads",
     "category": "Armor",
@@ -1929,6 +2919,36 @@ const VALHEIM_ITEMS = [
     "durability": 1000,
     "icon": "icons/ArmorTunic8.png",
     "desc": "A yellow tunic, worn with a fashionable cape made from fine purple wool."
+  },
+  {
+    "id": "HelmetYule",
+    "name": "Yule Hat",
+    "category": "Armor",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 1000,
+    "icon": "icons/HelmetYule.svg",
+    "desc": "A red cap in the style of house gnomes."
+  },
+  {
+    "id": "BakedPoteitr",
+    "name": "Baked Poteitr",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/BakedPoteitr.svg",
+    "desc": "Neither boiled nor mashed nor in a stew. Still delicious though!"
+  },
+  {
+    "id": "BakedPoteitrUncooked",
+    "name": "Baked Poteitr Uncooked",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/BakedPoteitrUncooked.svg",
+    "desc": "Baked Poteitr Uncooked in Valheim 1.0."
   },
   {
     "id": "Barley",
@@ -2001,6 +3021,16 @@ const VALHEIM_ITEMS = [
     "desc": "It's bloody tasty."
   },
   {
+    "id": "MushroomBlue",
+    "name": "Blue Mushroom",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MushroomBlue.png",
+    "desc": "Glows with a soft blue hue."
+  },
+  {
     "id": "BoarJerky",
     "name": "Boar Jerky",
     "category": "Food",
@@ -2061,6 +3091,16 @@ const VALHEIM_ITEMS = [
     "desc": "Ready for the oven."
   },
   {
+    "id": "Pukeberries",
+    "name": "Bukeperries",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Pukeberries.png",
+    "desc": "Allows the consumer to quickly evacuate any misplaced meal and start anew."
+  },
+  {
     "id": "Carrot",
     "name": "Carrot",
     "category": "Food",
@@ -2091,6 +3131,16 @@ const VALHEIM_ITEMS = [
     "desc": "A warm tasty soup made of mostly carrots."
   },
   {
+    "id": "ChickenEgg",
+    "name": "Chicken Egg",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/ChickenEgg.svg",
+    "desc": "Chicken Egg in Valheim 1.0."
+  },
+  {
     "id": "ChickenMeat",
     "name": "Chicken Meat",
     "category": "Food",
@@ -2098,7 +3148,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/ChickenMeat.png",
-    "desc": "Chicken Meat item in Valheim."
+    "desc": "Chicken Meat in Valheim 1.0."
   },
   {
     "id": "Cloudberry",
@@ -2108,7 +3158,157 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Cloudberry.png",
-    "desc": "Cloudberry item in Valheim."
+    "desc": "Cloudberry in Valheim 1.0."
+  },
+  {
+    "id": "CookedAsksvinMeat",
+    "name": "Cooked Asksvin Meat",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/CookedAsksvinMeat.svg",
+    "desc": "Cooked Asksvin Meat in Valheim 1.0."
+  },
+  {
+    "id": "CookedBjornMeat",
+    "name": "Cooked Bjorn Meat",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/CookedBjornMeat.svg",
+    "desc": "Cooked Bjorn Meat in Valheim 1.0."
+  },
+  {
+    "id": "CookedBoneMawSerpentMeat",
+    "name": "Cooked Bone Maw Serpent Meat",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/CookedBoneMawSerpentMeat.svg",
+    "desc": "Cooked Bone Maw Serpent Meat in Valheim 1.0."
+  },
+  {
+    "id": "CookedBugMeat",
+    "name": "Cooked Bug Meat",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/CookedBugMeat.svg",
+    "desc": "Cooked Bug Meat in Valheim 1.0."
+  },
+  {
+    "id": "CookedChickenMeat",
+    "name": "Cooked Chicken Meat",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/CookedChickenMeat.png",
+    "desc": "Cooked Chicken Meat in Valheim 1.0."
+  },
+  {
+    "id": "CookedDeerMeat",
+    "name": "Cooked Deer Meat",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/CookedDeerMeat.png",
+    "desc": "Cooked Deer Meat in Valheim 1.0."
+  },
+  {
+    "id": "CookedEgg",
+    "name": "Cooked Egg",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/CookedEgg.png",
+    "desc": "Cooked Egg in Valheim 1.0."
+  },
+  {
+    "id": "CookedHareMeat",
+    "name": "Cooked Hare Meat",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/CookedHareMeat.png",
+    "desc": "Cooked Hare Meat in Valheim 1.0."
+  },
+  {
+    "id": "CookedLoxMeat",
+    "name": "Cooked Lox Meat",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/CookedLoxMeat.png",
+    "desc": "Cooked Lox Meat in Valheim 1.0."
+  },
+  {
+    "id": "CookedMeat",
+    "name": "Cooked Meat",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/CookedMeat.svg",
+    "desc": "Cooked Meat in Valheim 1.0."
+  },
+  {
+    "id": "CookedMooseMeat",
+    "name": "Cooked Moose Meat",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/CookedMooseMeat.svg",
+    "desc": "This meat is lean yet full of flavour."
+  },
+  {
+    "id": "CookedSealBlubber",
+    "name": "Cooked Seal Blubber",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/CookedSealBlubber.svg",
+    "desc": "Cooked Seal Blubber in Valheim 1.0."
+  },
+  {
+    "id": "SerpentMeatCooked",
+    "name": "Cooked Serpent Meat",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/SerpentMeatCooked.svg",
+    "desc": "A cooked slice of sea serpent. Smells good."
+  },
+  {
+    "id": "CookedVoltureMeat",
+    "name": "Cooked Volture Meat",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/CookedVoltureMeat.png",
+    "desc": "Cooked Volture Meat in Valheim 1.0."
+  },
+  {
+    "id": "CookedWolfMeat",
+    "name": "Cooked Wolf Meat",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/CookedWolfMeat.png",
+    "desc": "Cooked Wolf Meat in Valheim 1.0."
   },
   {
     "id": "DeerMeat",
@@ -2118,7 +3318,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/DeerMeat.png",
-    "desc": "Deer Meat item in Valheim."
+    "desc": "Deer Meat in Valheim 1.0."
   },
   {
     "id": "DeerStew",
@@ -2128,7 +3328,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/DeerStew.png",
-    "desc": "Deer Stew item in Valheim."
+    "desc": "Fall-apart tender."
   },
   {
     "id": "Egg",
@@ -2141,6 +3341,16 @@ const VALHEIM_ITEMS = [
     "desc": "Egg item in Valheim."
   },
   {
+    "id": "Fiddleheadfern",
+    "name": "Fiddlehead",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Fiddleheadfern.svg",
+    "desc": "Veggies with a twist!"
+  },
+  {
     "id": "FierySvinstew",
     "name": "Fiery Svinstew",
     "category": "Food",
@@ -2148,7 +3358,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/FierySvinstew.png",
-    "desc": "Fiery Svinstew item in Valheim."
+    "desc": "This musty stew is a necessity on every adventurer's menu."
   },
   {
     "id": "FishAndBread",
@@ -2158,7 +3368,47 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/FishAndBread.png",
-    "desc": "Fish And Bread item in Valheim."
+    "desc": "Bounty from both land and sea."
+  },
+  {
+    "id": "FishAnglerRaw",
+    "name": "Fish Angler Raw",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FishAnglerRaw.svg",
+    "desc": "Fish Angler Raw in Valheim 1.0."
+  },
+  {
+    "id": "FishCooked",
+    "name": "Fish Cooked",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FishCooked.svg",
+    "desc": "Fish Cooked in Valheim 1.0."
+  },
+  {
+    "id": "FishRaw",
+    "name": "Fish Raw",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FishRaw.svg",
+    "desc": "Fish Raw in Valheim 1.0."
+  },
+  {
+    "id": "FishSoup",
+    "name": "Fish Soup",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FishSoup.svg",
+    "desc": "Swimming with flavour!"
   },
   {
     "id": "FishWraps",
@@ -2168,7 +3418,97 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/FishWraps.png",
-    "desc": "Fish Wraps item in Valheim."
+    "desc": "Bread and fish, what more to wish?"
+  },
+  {
+    "id": "FishingBait",
+    "name": "Fishing Bait",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FishingBait.png",
+    "desc": "Common dvergr fishing bait. Fishing rod sold separately."
+  },
+  {
+    "id": "FishingBaitAshlands",
+    "name": "Fishing Bait Ashlands",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FishingBaitAshlands.svg",
+    "desc": "Fishing Bait Ashlands in Valheim 1.0."
+  },
+  {
+    "id": "FishingBaitCave",
+    "name": "Fishing Bait Cave",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FishingBaitCave.svg",
+    "desc": "Fishing Bait Cave in Valheim 1.0."
+  },
+  {
+    "id": "FishingBaitDeepNorth",
+    "name": "Fishing Bait Deep North",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FishingBaitDeepNorth.svg",
+    "desc": "Fishing Bait Deep North in Valheim 1.0."
+  },
+  {
+    "id": "FishingBaitForest",
+    "name": "Fishing Bait Forest",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FishingBaitForest.svg",
+    "desc": "Fishing Bait Forest in Valheim 1.0."
+  },
+  {
+    "id": "FishingBaitMistlands",
+    "name": "Fishing Bait Mistlands",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FishingBaitMistlands.svg",
+    "desc": "Fishing Bait Mistlands in Valheim 1.0."
+  },
+  {
+    "id": "FishingBaitOcean",
+    "name": "Fishing Bait Ocean",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FishingBaitOcean.svg",
+    "desc": "Fishing Bait Ocean in Valheim 1.0."
+  },
+  {
+    "id": "FishingBaitPlains",
+    "name": "Fishing Bait Plains",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FishingBaitPlains.svg",
+    "desc": "Fishing Bait Plains in Valheim 1.0."
+  },
+  {
+    "id": "FishingBaitSwamp",
+    "name": "Fishing Bait Swamp",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FishingBaitSwamp.svg",
+    "desc": "Fishing Bait Swamp in Valheim 1.0."
   },
   {
     "id": "FishnBread",
@@ -2181,6 +3521,16 @@ const VALHEIM_ITEMS = [
     "desc": "Fishn Bread item in Valheim."
   },
   {
+    "id": "FrostCore",
+    "name": "Frostcore",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FrostCore.svg",
+    "desc": "Terribly cold to the touch, filled with frozen energy."
+  },
+  {
     "id": "FrostedSweetbread",
     "name": "Frosted Sweetbread",
     "category": "Food",
@@ -2191,6 +3541,36 @@ const VALHEIM_ITEMS = [
     "desc": "Frosted Sweetbread item in Valheim."
   },
   {
+    "id": "VikingCupcake",
+    "name": "Frosted Sweetbread",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/VikingCupcake.svg",
+    "desc": "A sweet and tasty treat, to celebrate a feat!"
+  },
+  {
+    "id": "GenericMoldUncooked",
+    "name": "Generic Mold Uncooked",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/GenericMoldUncooked.svg",
+    "desc": "Generic Mold Uncooked in Valheim 1.0."
+  },
+  {
+    "id": "NeckTailGrilled",
+    "name": "Grilled Neck Tail",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/NeckTailGrilled.svg",
+    "desc": "This savoury, charcoal-grilled meat has a slight aroma of seaweed and grass."
+  },
+  {
     "id": "HareMeat",
     "name": "Hare Meat",
     "category": "Food",
@@ -2198,7 +3578,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/HareMeat.png",
-    "desc": "Hare Meat item in Valheim."
+    "desc": "Hare Meat in Valheim 1.0."
   },
   {
     "id": "HeartyMountainLoggersStew",
@@ -2218,7 +3598,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Honey.png",
-    "desc": "Honey item in Valheim."
+    "desc": "Sweet and tasty."
   },
   {
     "id": "HoneyGlazedChicken",
@@ -2228,7 +3608,77 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/HoneyGlazedChicken.png",
-    "desc": "Honey Glazed Chicken item in Valheim."
+    "desc": "Grilled to perfection. Makes both eyes and mouths water."
+  },
+  {
+    "id": "Kale",
+    "name": "Kale",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Kale.svg",
+    "desc": "A versatile leafy green."
+  },
+  {
+    "id": "KaleChips",
+    "name": "Kale Chips",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/KaleChips.svg",
+    "desc": "Crispy greens!"
+  },
+  {
+    "id": "KaleChipsUncooked",
+    "name": "Kale Chips Uncooked",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/KaleChipsUncooked.svg",
+    "desc": "Kale Chips Uncooked in Valheim 1.0."
+  },
+  {
+    "id": "KeysGoldUncooked",
+    "name": "Keys Gold Uncooked",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/KeysGoldUncooked.svg",
+    "desc": "Keys Gold Uncooked in Valheim 1.0."
+  },
+  {
+    "id": "Larva",
+    "name": "Larva",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Larva.svg",
+    "desc": "Larva in Valheim 1.0."
+  },
+  {
+    "id": "Lingonberry",
+    "name": "Lingonberry",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Lingonberry.svg",
+    "desc": "Lingonberry in Valheim 1.0."
+  },
+  {
+    "id": "Lingondricka",
+    "name": "Lingonberry Juice",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Lingondricka.svg",
+    "desc": "Pairs well with most foods."
   },
   {
     "id": "LoxMeat",
@@ -2238,7 +3688,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/LoxMeat.png",
-    "desc": "Lox Meat item in Valheim."
+    "desc": "A raw slab of marbled meat."
   },
   {
     "id": "LoxMeatPie",
@@ -2258,7 +3708,47 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/LoxPie.png",
-    "desc": "Lox Pie item in Valheim."
+    "desc": "Break the crust to release a cloud of fragrant steam. Delicious!"
+  },
+  {
+    "id": "LoxPieUncooked",
+    "name": "Lox Pie Uncooked",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/LoxPieUncooked.svg",
+    "desc": "Lox Pie Uncooked in Valheim 1.0."
+  },
+  {
+    "id": "GlowWorm",
+    "name": "Luminous Larva",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/GlowWorm.svg",
+    "desc": "Slimy, yet satisfying."
+  },
+  {
+    "id": "MagicallyStuffedShroom",
+    "name": "Magically Stuffed Shroom",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MagicallyStuffedShroom.svg",
+    "desc": "Magically Stuffed Shroom in Valheim 1.0."
+  },
+  {
+    "id": "MagicallyStuffedShroomUncooked",
+    "name": "Magically Stuffed Shroom Uncooked",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MagicallyStuffedShroomUncooked.svg",
+    "desc": "Magically Stuffed Shroom Uncooked in Valheim 1.0."
   },
   {
     "id": "MashedMeat",
@@ -2268,7 +3758,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/MashedMeat.png",
-    "desc": "Mashed Meat item in Valheim."
+    "desc": "Leftover meat can actually be pretty tasty if you just mash it right!"
+  },
+  {
+    "id": "MooseKebab",
+    "name": "Meat In Bread",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MooseKebab.svg",
+    "desc": "A convenient meal, often favoured by travelling merchants."
   },
   {
     "id": "MeatPlatter",
@@ -2278,7 +3778,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/MeatPlatter.png",
-    "desc": "Meat Platter item in Valheim."
+    "desc": "Battle fuel."
+  },
+  {
+    "id": "MeatballsMashedPoteitr",
+    "name": "Meatballs and Poteitr",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeatballsMashedPoteitr.svg",
+    "desc": "It doesn't get more iconic than this!"
   },
   {
     "id": "MincedMeatSauce",
@@ -2291,6 +3801,56 @@ const VALHEIM_ITEMS = [
     "desc": "Minced Meat Sauce item in Valheim."
   },
   {
+    "id": "MinceMeatSauce",
+    "name": "Minced Meat Sauce",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MinceMeatSauce.svg",
+    "desc": "Chunks of goodness in a thick gravy."
+  },
+  {
+    "id": "MoldKeys",
+    "name": "Mold Keys",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MoldKeys.svg",
+    "desc": "Mold Keys in Valheim 1.0."
+  },
+  {
+    "id": "MoldSmallParts",
+    "name": "Mold Small Parts",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MoldSmallParts.svg",
+    "desc": "Mold Small Parts in Valheim 1.0."
+  },
+  {
+    "id": "MooseMeat",
+    "name": "Moose Meat",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MooseMeat.svg",
+    "desc": "This meat is sure to provide a hearty meal once cooked."
+  },
+  {
+    "id": "ShocklateSmoothie",
+    "name": "Muckshake",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/ShocklateSmoothie.svg",
+    "desc": "Wakes you up!"
+  },
+  {
     "id": "Mushroom",
     "name": "Mushroom",
     "category": "Food",
@@ -2298,7 +3858,27 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Mushroom.png",
-    "desc": "Mushroom item in Valheim."
+    "desc": "Mushroom in Valheim 1.0."
+  },
+  {
+    "id": "MushroomBzerker",
+    "name": "Mushroom Bzerker",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MushroomBzerker.svg",
+    "desc": "Mushroom Bzerker in Valheim 1.0."
+  },
+  {
+    "id": "MushroomJotunPuffs",
+    "name": "Mushroom Jotun Puffs",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MushroomJotunPuffs.svg",
+    "desc": "Mushroom Jotun Puffs in Valheim 1.0."
   },
   {
     "id": "MushroomMagecap",
@@ -2308,7 +3888,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/MushroomMagecap.png",
-    "desc": "Mushroom Magecap item in Valheim."
+    "desc": "Mushroom Magecap in Valheim 1.0."
   },
   {
     "id": "MushroomOmelette",
@@ -2318,7 +3898,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/MushroomOmelette.png",
-    "desc": "Mushroom Omelette item in Valheim."
+    "desc": "A delicious omelette with an earthy aftertaste."
+  },
+  {
+    "id": "MushroomSmokePuff",
+    "name": "Mushroom Smoke Puff",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MushroomSmokePuff.svg",
+    "desc": "Mushroom Smoke Puff in Valheim 1.0."
   },
   {
     "id": "MushroomStuffed",
@@ -2341,6 +3931,36 @@ const VALHEIM_ITEMS = [
     "desc": "Mushrooms Galorela Mistlands item in Valheim."
   },
   {
+    "id": "OatMilk",
+    "name": "Oat Milk",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/OatMilk.svg",
+    "desc": "Tastes like innovation."
+  },
+  {
+    "id": "OatmealLingonberryJam",
+    "name": "Oatmeal",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/OatmealLingonberryJam.svg",
+    "desc": "Served with a generous helping of lingonberry jam."
+  },
+  {
+    "id": "Oat",
+    "name": "Oats",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Oat.svg",
+    "desc": "Tasty grains, to be used as they are or to be ground into flour."
+  },
+  {
     "id": "Onion",
     "name": "Onion",
     "category": "Food",
@@ -2348,7 +3968,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Onion.png",
-    "desc": "Onion item in Valheim."
+    "desc": "A crunchy and spicy taste."
   },
   {
     "id": "OnionSoup",
@@ -2358,7 +3978,37 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/OnionSoup.png",
-    "desc": "Onion Soup item in Valheim."
+    "desc": "Deliciously rich."
+  },
+  {
+    "id": "OvenPancake",
+    "name": "Oven Pancake",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/OvenPancake.svg",
+    "desc": "Warm and fluffy."
+  },
+  {
+    "id": "OvenPancakeUncooked",
+    "name": "Oven Pancake Uncooked",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/OvenPancakeUncooked.svg",
+    "desc": "Oven Pancake Uncooked in Valheim 1.0."
+  },
+  {
+    "id": "Pancakes",
+    "name": "Pancakes",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Pancakes.svg",
+    "desc": "Was there ever a more comforting food?"
   },
   {
     "id": "PiquantPie",
@@ -2368,7 +4018,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/PiquantPie.png",
-    "desc": "Piquant Pie item in Valheim."
+    "desc": "It takes some time and effort to make this pie, but the taste is well worth it."
+  },
+  {
+    "id": "PiquantPieUncooked",
+    "name": "Piquant Pie Uncooked",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/PiquantPieUncooked.svg",
+    "desc": "Piquant Pie Uncooked in Valheim 1.0."
   },
   {
     "id": "PlainsPiePicnic",
@@ -2381,6 +4041,16 @@ const VALHEIM_ITEMS = [
     "desc": "Plains Pie Picnic item in Valheim."
   },
   {
+    "id": "Poteitr",
+    "name": "Poteitr",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Poteitr.svg",
+    "desc": "The possibilities are practically endless. Who wouldn't want a taste?"
+  },
+  {
     "id": "PowderedDragonEggshells",
     "name": "Powdered Dragon Eggshells",
     "category": "Food",
@@ -2391,6 +4061,16 @@ const VALHEIM_ITEMS = [
     "desc": "Powdered Dragon Eggshells item in Valheim."
   },
   {
+    "id": "PulledBear",
+    "name": "Pulled Bear",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/PulledBear.svg",
+    "desc": "Pulled Bear in Valheim 1.0."
+  },
+  {
     "id": "QueensJam",
     "name": "Queens Jam",
     "category": "Food",
@@ -2398,7 +4078,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/QueensJam.png",
-    "desc": "Queens Jam item in Valheim."
+    "desc": "That classic tasty blend of raspberries and blueberries."
+  },
+  {
+    "id": "Raspberry",
+    "name": "Raspberry",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Raspberry.svg",
+    "desc": "Raspberry in Valheim 1.0."
   },
   {
     "id": "RawFish",
@@ -2411,6 +4101,16 @@ const VALHEIM_ITEMS = [
     "desc": "Raw Fish item in Valheim."
   },
   {
+    "id": "RawMeat",
+    "name": "Raw Meat",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/RawMeat.svg",
+    "desc": "Raw Meat in Valheim 1.0."
+  },
+  {
     "id": "RoastedCrustPie",
     "name": "Roasted Crust Pie",
     "category": "Food",
@@ -2418,7 +4118,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/RoastedCrustPie.png",
-    "desc": "Roasted Crust Pie item in Valheim."
+    "desc": "This dessert keeps you going all day long."
+  },
+  {
+    "id": "RoastedCrustPieUncooked",
+    "name": "Roasted Crust Pie Uncooked",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/RoastedCrustPieUncooked.svg",
+    "desc": "Roasted Crust Pie Uncooked in Valheim 1.0."
   },
   {
     "id": "RottenMeat",
@@ -2428,7 +4138,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/RottenMeat.png",
-    "desc": "Rotten Meat item in Valheim."
+    "desc": "Rotten Meat in Valheim 1.0."
   },
   {
     "id": "Salad",
@@ -2438,7 +4148,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Salad.png",
-    "desc": "Salad item in Valheim."
+    "desc": "Fresh, crisp leaves."
   },
   {
     "id": "Sausages",
@@ -2448,7 +4158,27 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Sausages.png",
-    "desc": "Sausages item in Valheim."
+    "desc": "Links of savory, smoked meat."
+  },
+  {
+    "id": "SealBlubber",
+    "name": "Seal Blubber",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/SealBlubber.svg",
+    "desc": "Seal Blubber in Valheim 1.0."
+  },
+  {
+    "id": "SealSoup",
+    "name": "Seal Meat Soup",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/SealSoup.svg",
+    "desc": "A warm and tasty meal, best enjoyed on a cold day."
   },
   {
     "id": "BugMeat",
@@ -2478,7 +4208,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/SerpentMeat.png",
-    "desc": "Serpent Meat item in Valheim."
+    "desc": "A slice of sea serpent. Smells fishy."
   },
   {
     "id": "SerpentStew",
@@ -2488,7 +4218,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/SerpentStew.png",
-    "desc": "Serpent Stew item in Valheim."
+    "desc": "Smells of honey and serpent..."
   },
   {
     "id": "SizzlingBerryBroth",
@@ -2498,7 +4228,37 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/SizzlingBerryBroth.png",
-    "desc": "Sizzling Berry Broth item in Valheim."
+    "desc": "This soup settles in your stomach with an almost tingly sensation."
+  },
+  {
+    "id": "SmallPartsGoldUncooked",
+    "name": "Small Parts Gold Uncooked",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/SmallPartsGoldUncooked.svg",
+    "desc": "Small Parts Gold Uncooked in Valheim 1.0."
+  },
+  {
+    "id": "SmokedFish",
+    "name": "Smoked Fish",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/SmokedFish.svg",
+    "desc": "Fish prepared in the most delicious way."
+  },
+  {
+    "id": "SmokedMooseMeat",
+    "name": "Smoked Moose Meat",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/SmokedMooseMeat.svg",
+    "desc": "The smoke only adds to the wild flavour."
   },
   {
     "id": "StuffedMushroom",
@@ -2518,7 +4278,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Turnip.png",
-    "desc": "Turnip item in Valheim."
+    "desc": "A dense vegetable, rich with nutrition."
   },
   {
     "id": "TurnipStew",
@@ -2528,7 +4288,47 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/TurnipStew.png",
-    "desc": "Turnip Stew item in Valheim."
+    "desc": "Nutritious and restorative."
+  },
+  {
+    "id": "FishAndBreadUncooked",
+    "name": "Uncooked Fish 'n' Bread",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FishAndBreadUncooked.svg",
+    "desc": "Uncooked Fish 'n' Bread in Valheim 1.0."
+  },
+  {
+    "id": "HoneyGlazedChickenUncooked",
+    "name": "Uncooked Honey Glazed Chicken",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/HoneyGlazedChickenUncooked.svg",
+    "desc": "Uncooked Honey Glazed Chicken in Valheim 1.0."
+  },
+  {
+    "id": "MeatPlatterUncooked",
+    "name": "Uncooked Meat Platter",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeatPlatterUncooked.svg",
+    "desc": "Uncooked Meat Platter in Valheim 1.0."
+  },
+  {
+    "id": "VikingCupcakeUncooked",
+    "name": "Viking Cupcake Uncooked",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/VikingCupcakeUncooked.svg",
+    "desc": "Viking Cupcake Uncooked in Valheim 1.0."
   },
   {
     "id": "VineberryCluster",
@@ -2541,6 +4341,16 @@ const VALHEIM_ITEMS = [
     "desc": "Vineberry Cluster item in Valheim."
   },
   {
+    "id": "Vineberry",
+    "name": "Vineberry Cluster",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Vineberry.svg",
+    "desc": "These juicy berries are both sour and sweet."
+  },
+  {
     "id": "VoltureMeat",
     "name": "Volture Meat",
     "category": "Food",
@@ -2548,7 +4358,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/VoltureMeat.png",
-    "desc": "Volture Meat item in Valheim."
+    "desc": "Volture Meat in Valheim 1.0."
   },
   {
     "id": "Voltureegg",
@@ -2558,7 +4368,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Voltureegg.png",
-    "desc": "Voltureegg item in Valheim."
+    "desc": "Warm to the touch, and full of protein."
   },
   {
     "id": "WolfJerky",
@@ -2568,7 +4378,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/WolfJerky.png",
-    "desc": "Wolf Jerky item in Valheim."
+    "desc": "Chewy and full of flavor."
   },
   {
     "id": "WolfMeat",
@@ -2578,7 +4388,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/WolfMeat.png",
-    "desc": "Wolf Meat item in Valheim."
+    "desc": "Wolf Meat in Valheim 1.0."
+  },
+  {
+    "id": "WolfMeatSkewer",
+    "name": "Wolf Meat Skewer",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/WolfMeatSkewer.svg",
+    "desc": "Wolf Meat Skewer in Valheim 1.0."
   },
   {
     "id": "YellowMushroom",
@@ -2591,6 +4411,16 @@ const VALHEIM_ITEMS = [
     "desc": "Yellow Mushroom item in Valheim."
   },
   {
+    "id": "MushroomYellow",
+    "name": "Yellow Mushroom",
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MushroomYellow.svg",
+    "desc": "An energetic glowing mushroom."
+  },
+  {
     "id": "YggdrasilPorridge",
     "name": "Yggdrasil Porridge",
     "category": "Food",
@@ -2598,7 +4428,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/YggdrasilPorridge.png",
-    "desc": "Yggdrasil Porridge item in Valheim."
+    "desc": "Made with sap from the great tree. Even a mouthful imparts a warm glow to your whole body."
   },
   {
     "id": "DeadRaiser",
@@ -2611,6 +4441,46 @@ const VALHEIM_ITEMS = [
     "desc": "Dead Raiser item in Valheim."
   },
   {
+    "id": "MoldStaffOrbofAhri",
+    "name": "Mold Staff Orbof Ahri",
+    "category": "Magic",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MoldStaffOrbofAhri.svg",
+    "desc": "Mold Staff Orbof Ahri in Valheim 1.0."
+  },
+  {
+    "id": "MoldStafffrostorbs",
+    "name": "Mold Stafffrostorbs",
+    "category": "Magic",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MoldStafffrostorbs.svg",
+    "desc": "Mold Stafffrostorbs in Valheim 1.0."
+  },
+  {
+    "id": "MoldStaffspiritcaller",
+    "name": "Mold Staffspiritcaller",
+    "category": "Magic",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MoldStaffspiritcaller.svg",
+    "desc": "Mold Staffspiritcaller in Valheim 1.0."
+  },
+  {
+    "id": "MoldStaffthunderblood",
+    "name": "Mold Staffthunderblood",
+    "category": "Magic",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MoldStaffthunderblood.svg",
+    "desc": "Mold Staffthunderblood in Valheim 1.0."
+  },
+  {
     "id": "StaffFireball",
     "name": "Staff Fireball",
     "category": "Magic",
@@ -2618,7 +4488,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 4,
     "durability": 350,
     "icon": "icons/StaffFireball.png",
-    "desc": "Staff Fireball item in Valheim."
+    "desc": "The sweltering heat of Muspelheim seems almost pathetic when compared to what this staff can do..."
   },
   {
     "id": "StaffIceShards",
@@ -2628,7 +4498,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 4,
     "durability": 350,
     "icon": "icons/StaffIceShards.png",
-    "desc": "Staff Ice Shards item in Valheim."
+    "desc": "A staff as cold as the three-year winter that will herald the end of times."
   },
   {
     "id": "StaffShield",
@@ -2638,7 +4508,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 4,
     "durability": 350,
     "icon": "icons/StaffShield.png",
-    "desc": "Staff Shield item in Valheim."
+    "desc": "For a slight blood offering it will protect the caster in a magical shell."
   },
   {
     "id": "StaffSkeleton",
@@ -2648,7 +4518,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 4,
     "durability": 350,
     "icon": "icons/StaffSkeleton.png",
-    "desc": "Staff Skeleton item in Valheim."
+    "desc": "Sacrifice a bit of blood to raise the dead. Upgrade the skull to spawn multiple skeletons, and increase your blood magic to make them stronger."
   },
   {
     "id": "StaffofEmbers",
@@ -2749,6 +4619,16 @@ const VALHEIM_ITEMS = [
     "durability": 100,
     "icon": "icons/AncientBark.png",
     "desc": "Ancient Bark item in Valheim."
+  },
+  {
+    "id": "ElderBark",
+    "name": "Ancient Bark",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/ElderBark.svg",
+    "desc": "An ancient and sturdy material."
   },
   {
     "id": "AncientSeed",
@@ -3001,6 +4881,16 @@ const VALHEIM_ITEMS = [
     "desc": "Bloodgeon item in Valheim."
   },
   {
+    "id": "Gold",
+    "name": "Bloodgold",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Gold.svg",
+    "desc": "Precious metal, infused with the essence of a living thing."
+  },
+  {
     "id": "Bloodstone",
     "name": "Bloodstone",
     "category": "Materials",
@@ -3019,6 +4909,16 @@ const VALHEIM_ITEMS = [
     "durability": 100,
     "icon": "icons/BlueJute.png",
     "desc": "Blue Jute item in Valheim."
+  },
+  {
+    "id": "JuteBlue",
+    "name": "Blue Jute",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/JuteBlue.svg",
+    "desc": "Made from natural fibers and dvergr hair."
   },
   {
     "id": "Blueberries",
@@ -3178,7 +5078,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/CharredBone.png",
-    "desc": "Charred Bone item in Valheim."
+    "desc": "Followed by the distinct smell of burnt meat."
   },
   {
     "id": "CharredCogwheel",
@@ -3188,7 +5088,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/CharredCogwheel.png",
-    "desc": "Charred Cogwheel item in Valheim."
+    "desc": "This could be used for some clever machinery..."
   },
   {
     "id": "CharredSkull",
@@ -3198,7 +5098,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/CharredSkull.png",
-    "desc": "Charred Skull item in Valheim."
+    "desc": "The blackened skull of a long-dead warrior. It's unlikely that a proper burial would grant them any peace."
   },
   {
     "id": "Chitin",
@@ -3208,7 +5108,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Chitin.png",
-    "desc": "Chitin item in Valheim."
+    "desc": "A shard of crustacean shell."
   },
   {
     "id": "Cloudberries",
@@ -3228,7 +5128,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Coal.png",
-    "desc": "Coal item in Valheim."
+    "desc": "A lump of coal."
   },
   {
     "id": "Coins",
@@ -3238,7 +5138,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Coins.png",
-    "desc": "Coins item in Valheim."
+    "desc": "<color=yellow>Valuable</color>"
   },
   {
     "id": "Copper",
@@ -3248,7 +5148,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Copper.png",
-    "desc": "Copper item in Valheim."
+    "desc": "A bar of pure copper ready to be worked."
+  },
+  {
+    "id": "CopperOre",
+    "name": "Copper Ore",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/CopperOre.png",
+    "desc": "Unrefined copper. Needs to be refined in a smelter."
   },
   {
     "id": "CopperScrap",
@@ -3258,7 +5168,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/CopperScrap.png",
-    "desc": "Copper Scrap item in Valheim."
+    "desc": "One person's scrap is another person's treasure."
   },
   {
     "id": "CoreWood",
@@ -3269,6 +5179,16 @@ const VALHEIM_ITEMS = [
     "durability": 100,
     "icon": "icons/CoreWood.png",
     "desc": "Core Wood item in Valheim."
+  },
+  {
+    "id": "RoundLog",
+    "name": "Corewood",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/RoundLog.svg",
+    "desc": "Perfect for building log cabins."
   },
   {
     "id": "BlobVial",
@@ -3291,6 +5211,16 @@ const VALHEIM_ITEMS = [
     "desc": "Corkedvial item in Valheim."
   },
   {
+    "id": "CrownJewel",
+    "name": "Crown Jewel",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/CrownJewel.svg",
+    "desc": "Crown Jewel in Valheim 1.0."
+  },
+  {
     "id": "Crystal",
     "name": "Crystal",
     "category": "Materials",
@@ -3298,7 +5228,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Crystal.png",
-    "desc": "Crystal item in Valheim."
+    "desc": "A shard of crystal from deep within the earth."
   },
   {
     "id": "CuredSquirrelHamstring",
@@ -3308,7 +5238,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/CuredSquirrelHamstring.png",
-    "desc": "Cured Squirrel Hamstring item in Valheim."
+    "desc": "Elastic and strong. This tendon must have come from a quick and agile animal."
   },
   {
     "id": "Dandelion",
@@ -3318,7 +5248,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Dandelion.png",
-    "desc": "Dandelion item in Valheim."
+    "desc": "Some call it a weed, but it's pretty nonetheless."
   },
   {
     "id": "DeerHide",
@@ -3328,7 +5258,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/DeerHide.png",
-    "desc": "Deer Hide item in Valheim."
+    "desc": "A cleaned hide from a deer."
+  },
+  {
+    "id": "DragonEgg",
+    "name": "Dragon Egg",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/DragonEgg.png",
+    "desc": "Far heavier than it looks, with a faint humming sound from within."
   },
   {
     "id": "DragonTear",
@@ -3338,7 +5278,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/DragonTear.png",
-    "desc": "Dragon Tear item in Valheim."
+    "desc": "The last frozen tear of a dragon, pulsating with mysterious energy."
   },
   {
     "id": "DraugrFang",
@@ -3371,6 +5311,16 @@ const VALHEIM_ITEMS = [
     "desc": "Dvergr Extractor item in Valheim."
   },
   {
+    "id": "DvergrNeedle",
+    "name": "Dvergr Extractor",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/DvergrNeedle.svg",
+    "desc": "Looks like a perfect piece for piercing something..."
+  },
+  {
     "id": "DvergrLantern",
     "name": "Dvergr Lantern",
     "category": "Materials",
@@ -3391,6 +5341,36 @@ const VALHEIM_ITEMS = [
     "desc": "Dvergr Tankard item in Valheim."
   },
   {
+    "id": "DyrnwynBladeFragment",
+    "name": "Dyrnwyn Blade Fragment",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/DyrnwynBladeFragment.png",
+    "desc": "Dyrnwyn Blade Fragment in Valheim 1.0."
+  },
+  {
+    "id": "DyrnwynHiltFragment",
+    "name": "Dyrnwyn Hilt Fragment",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/DyrnwynHiltFragment.png",
+    "desc": "Dyrnwyn Hilt Fragment in Valheim 1.0."
+  },
+  {
+    "id": "DyrnwynTipFragment",
+    "name": "Dyrnwyn Tip Fragment",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/DyrnwynTipFragment.png",
+    "desc": "Dyrnwyn Tip Fragment in Valheim 1.0."
+  },
+  {
     "id": "Ectoplasm",
     "name": "Ectoplasm",
     "category": "Materials",
@@ -3398,17 +5378,27 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Ectoplasm.png",
-    "desc": "Ectoplasm item in Valheim."
+    "desc": "A restless essence of a once living thing..."
   },
   {
-    "id": "Eitr",
-    "name": "Eitr",
+    "id": "ElakingHairBundle",
+    "name": "Elaking Hair Bundle",
     "category": "Materials",
     "maxStack": 50,
     "maxQuality": 1,
     "durability": 100,
-    "icon": "icons/Eitr.png",
-    "desc": "Eitr item in Valheim."
+    "icon": "icons/ElakingHairBundle.svg",
+    "desc": "The fur is dense, coarse, and surprisingly clean."
+  },
+  {
+    "id": "FaderEmber",
+    "name": "Embers",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FaderEmber.svg",
+    "desc": "Every flying ember is a burning wish to repent."
   },
   {
     "id": "Entrails",
@@ -3418,7 +5408,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Entrails.png",
-    "desc": "Entrails item in Valheim."
+    "desc": "A slimy length of something's insides."
   },
   {
     "id": "ExplosivePayload",
@@ -3458,7 +5448,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Eyescream.png",
-    "desc": "Eyescream item in Valheim."
+    "desc": "Crispy cool and creamy."
+  },
+  {
+    "id": "FaderDrop",
+    "name": "Fader Drop",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FaderDrop.svg",
+    "desc": "Fader Drop in Valheim 1.0."
   },
   {
     "id": "FaderRelic",
@@ -3471,6 +5471,86 @@ const VALHEIM_ITEMS = [
     "desc": "Fader Relic item in Valheim."
   },
   {
+    "id": "FeastAshlands_Material",
+    "name": "Feast Ashlands Material",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FeastAshlands_Material.svg",
+    "desc": "Feast Ashlands Material in Valheim 1.0."
+  },
+  {
+    "id": "FeastBlackforest_Material",
+    "name": "Feast Blackforest Material",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FeastBlackforest_Material.svg",
+    "desc": "Feast Blackforest Material in Valheim 1.0."
+  },
+  {
+    "id": "FeastDeepNorth_Material",
+    "name": "Feast Deep North Material",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FeastDeepNorth_Material.svg",
+    "desc": "Feast Deep North Material in Valheim 1.0."
+  },
+  {
+    "id": "FeastMistlands_Material",
+    "name": "Feast Mistlands Material",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FeastMistlands_Material.svg",
+    "desc": "Feast Mistlands Material in Valheim 1.0."
+  },
+  {
+    "id": "FeastMountains_Material",
+    "name": "Feast Mountains Material",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FeastMountains_Material.svg",
+    "desc": "Feast Mountains Material in Valheim 1.0."
+  },
+  {
+    "id": "FeastOceans_Material",
+    "name": "Feast Oceans Material",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FeastOceans_Material.svg",
+    "desc": "Feast Oceans Material in Valheim 1.0."
+  },
+  {
+    "id": "FeastPlains_Material",
+    "name": "Feast Plains Material",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FeastPlains_Material.svg",
+    "desc": "Feast Plains Material in Valheim 1.0."
+  },
+  {
+    "id": "FeastSwamps_Material",
+    "name": "Feast Swamps Material",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FeastSwamps_Material.svg",
+    "desc": "Feast Swamps Material in Valheim 1.0."
+  },
+  {
     "id": "Feathers",
     "name": "Feathers",
     "category": "Materials",
@@ -3478,7 +5558,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Feathers.png",
-    "desc": "Feathers item in Valheim."
+    "desc": "A small pile of feathers."
   },
   {
     "id": "FenrisClaw",
@@ -3491,6 +5571,16 @@ const VALHEIM_ITEMS = [
     "desc": "Fenris Claw item in Valheim."
   },
   {
+    "id": "WolfClaw",
+    "name": "Fenris Claw",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/WolfClaw.svg",
+    "desc": "It is hard and sharp like iron."
+  },
+  {
     "id": "FenrisHair",
     "name": "Fenris Hair",
     "category": "Materials",
@@ -3499,6 +5589,16 @@ const VALHEIM_ITEMS = [
     "durability": 100,
     "icon": "icons/FenrisHair.png",
     "desc": "Fenris Hair item in Valheim."
+  },
+  {
+    "id": "WolfHairBundle",
+    "name": "Fenris Hair",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/WolfHairBundle.svg",
+    "desc": "A bundle of thick, rough hair. It has a strong smell."
   },
   {
     "id": "Fiddlehead",
@@ -3521,6 +5621,16 @@ const VALHEIM_ITEMS = [
     "desc": "Fiery Spice Powder item in Valheim."
   },
   {
+    "id": "SpiceAshlands",
+    "name": "Fiery Spice Powder",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/SpiceAshlands.svg",
+    "desc": "Whatever spices have been used in this blend, they must come from someplace hot. And as if that wasn't enough, they have also been dried and smoked before being ground into a fine powder."
+  },
+  {
     "id": "FineWood",
     "name": "Fine Wood",
     "category": "Materials",
@@ -3528,7 +5638,97 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/FineWood.png",
-    "desc": "Fine Wood item in Valheim."
+    "desc": "High quality wood for fine carpentry."
+  },
+  {
+    "id": "FirCone",
+    "name": "Fir Cone",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FirCone.png",
+    "desc": "Plant it to grow a fir tree."
+  },
+  {
+    "id": "FirConeFrost",
+    "name": "Fir Cone Frost",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FirConeFrost.svg",
+    "desc": "Fir Cone Frost in Valheim 1.0."
+  },
+  {
+    "id": "FireworksRocket_Blue",
+    "name": "Fireworks Rocket Blue",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FireworksRocket_Blue.svg",
+    "desc": "Fireworks Rocket Blue in Valheim 1.0."
+  },
+  {
+    "id": "FireworksRocket_Cyan",
+    "name": "Fireworks Rocket Cyan",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FireworksRocket_Cyan.svg",
+    "desc": "Fireworks Rocket Cyan in Valheim 1.0."
+  },
+  {
+    "id": "FireworksRocket_Green",
+    "name": "Fireworks Rocket Green",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FireworksRocket_Green.svg",
+    "desc": "Fireworks Rocket Green in Valheim 1.0."
+  },
+  {
+    "id": "FireworksRocket_Purple",
+    "name": "Fireworks Rocket Purple",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FireworksRocket_Purple.svg",
+    "desc": "Fireworks Rocket Purple in Valheim 1.0."
+  },
+  {
+    "id": "FireworksRocket_Red",
+    "name": "Fireworks Rocket Red",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FireworksRocket_Red.svg",
+    "desc": "Fireworks Rocket Red in Valheim 1.0."
+  },
+  {
+    "id": "FireworksRocket_White",
+    "name": "Fireworks Rocket White",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FireworksRocket_White.svg",
+    "desc": "Fireworks Rocket White in Valheim 1.0."
+  },
+  {
+    "id": "FireworksRocket_Yellow",
+    "name": "Fireworks Rocket Yellow",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FireworksRocket_Yellow.svg",
+    "desc": "Fireworks Rocket Yellow in Valheim 1.0."
   },
   {
     "id": "Fists",
@@ -3548,7 +5748,37 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Flametal.png",
-    "desc": "Flametal item in Valheim."
+    "desc": "According to legend, this metal was used by the gods themselves to craft powerful weapons."
+  },
+  {
+    "id": "FlametalNew",
+    "name": "Flametal New",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FlametalNew.svg",
+    "desc": "Flametal New in Valheim 1.0."
+  },
+  {
+    "id": "FlametalOre",
+    "name": "Flametal Ore",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FlametalOre.png",
+    "desc": "Warm to the touch with glowing veins of strange metal. Needs to be refined in a blast furnace."
+  },
+  {
+    "id": "FlametalOreNew",
+    "name": "Flametal Ore New",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FlametalOreNew.svg",
+    "desc": "Flametal Ore New in Valheim 1.0."
   },
   {
     "id": "Flax",
@@ -3558,7 +5788,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Flax.png",
-    "desc": "Flax item in Valheim."
+    "desc": "Unspun fibers from a flax plant."
   },
   {
     "id": "Flint",
@@ -3568,7 +5798,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Flint.png",
-    "desc": "Flint item in Valheim."
+    "desc": "Can be shaped into sharp blades."
   },
   {
     "id": "FragrantBundle",
@@ -3578,7 +5808,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/FragrantBundle.png",
-    "desc": "Fragrant Bundle item in Valheim."
+    "desc": "These plants carry a strong but pleasant scent. However, it's possible that not all creatures agree..."
   },
   {
     "id": "FreezeGland",
@@ -3588,7 +5818,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/FreezeGland.png",
-    "desc": "Freeze Gland item in Valheim."
+    "desc": "This mysterious organ keeps a perfect temperature."
   },
   {
     "id": "FreshSeaweed",
@@ -3598,7 +5828,37 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/FreshSeaweed.png",
-    "desc": "Fresh Seaweed item in Valheim."
+    "desc": "The saltwater scent of this plant makes you think of the wide open ocean."
+  },
+  {
+    "id": "OrbFrostFire",
+    "name": "Frostfire Essence",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/OrbFrostFire.svg",
+    "desc": "Somehow both hot and cold to the touch."
+  },
+  {
+    "id": "BarkaBranch",
+    "name": "Frozen Branch",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/BarkaBranch.svg",
+    "desc": "This piece of wood was once animated and alive. Still a strange, magical air clings to it."
+  },
+  {
+    "id": "GoblinTotem",
+    "name": "Fuling Totem",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/GoblinTotem.svg",
+    "desc": "Channels the ancient power of Yagluth."
   },
   {
     "id": "Furcapbrown",
@@ -3621,6 +5881,16 @@ const VALHEIM_ITEMS = [
     "desc": "Furcapgrey item in Valheim."
   },
   {
+    "id": "GhostSkull",
+    "name": "Ghost Skull",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/GhostSkull.svg",
+    "desc": "Ghost Skull in Valheim 1.0."
+  },
+  {
     "id": "GiantBloodSack",
     "name": "Giant Blood Sack",
     "category": "Materials",
@@ -3628,7 +5898,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/GiantBloodSack.png",
-    "desc": "Giant Blood Sack item in Valheim."
+    "desc": "Giant Blood Sack in Valheim 1.0."
   },
   {
     "id": "GrasslandsHerbalistHarvest",
@@ -3641,6 +5911,16 @@ const VALHEIM_ITEMS = [
     "desc": "Grasslands Herbalist Harvest item in Valheim."
   },
   {
+    "id": "SpicePlains",
+    "name": "Grasslands Herbalist Harvest",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/SpicePlains.svg",
+    "desc": "This blend utilises all aspects of the lovage plant, a rarity in the tenth world. Roots, leaves and seeds have all been gathered, and then mixed together in the perfect quantity."
+  },
+  {
     "id": "Grausten",
     "name": "Grausten",
     "category": "Materials",
@@ -3648,7 +5928,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Grausten.png",
-    "desc": "Grausten item in Valheim."
+    "desc": "Porous yet sturdy."
   },
   {
     "id": "Catapult_ammo",
@@ -3678,7 +5958,27 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/GreydwarfEye.png",
-    "desc": "Greydwarf Eye item in Valheim."
+    "desc": "The milky eyeball of a Greydwarf."
+  },
+  {
+    "id": "Greydwarf_Surprise",
+    "name": "Greydwarf Surprise",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Greydwarf_Surprise.svg",
+    "desc": "Greydwarf Surprise in Valheim 1.0."
+  },
+  {
+    "id": "GreydwarfSurprise",
+    "name": "Greydwarf Surprise",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/GreydwarfSurprise.svg",
+    "desc": "Greydwarf Surprise in Valheim 1.0."
   },
   {
     "id": "Guck",
@@ -3688,7 +5988,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Guck.png",
-    "desc": "Guck item in Valheim."
+    "desc": "It smells like fermented fish."
   },
   {
     "id": "HardAntler",
@@ -3698,7 +5998,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/HardAntler.png",
-    "desc": "Hard Antler item in Valheim."
+    "desc": "A piece of very hard antlers."
   },
   {
     "id": "Headband",
@@ -3711,6 +6011,36 @@ const VALHEIM_ITEMS = [
     "desc": "Headband item in Valheim."
   },
   {
+    "id": "HealthUpgrade_Bonemass",
+    "name": "Health Upgrade Bonemass",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/HealthUpgrade_Bonemass.svg",
+    "desc": "Health Upgrade Bonemass in Valheim 1.0."
+  },
+  {
+    "id": "HealthUpgrade_GDKing",
+    "name": "Health Upgrade GDKing",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/HealthUpgrade_GDKing.svg",
+    "desc": "Health Upgrade GDKing in Valheim 1.0."
+  },
+  {
+    "id": "SpiceMistlands",
+    "name": "Herbs of the Hidden Hills",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/SpiceMistlands.svg",
+    "desc": "A good herbalist knows exactly where to go to find ramsons, but she won't tell you the secrets of her trade! Still, if you have the coin for it you may treat yourself to this blend of finely harvested ramson bulbs and leaves."
+  },
+  {
     "id": "HerbsoftheHiddenHills",
     "name": "Herbsofthe Hidden Hills",
     "category": "Materials",
@@ -3719,6 +6049,36 @@ const VALHEIM_ITEMS = [
     "durability": 100,
     "icon": "icons/HerbsoftheHiddenHills.png",
     "desc": "Herbsofthe Hidden Hills item in Valheim."
+  },
+  {
+    "id": "HildirKey_forestcrypt",
+    "name": "Hildir Key forestcrypt",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/HildirKey_forestcrypt.svg",
+    "desc": "Hildir Key forestcrypt in Valheim 1.0."
+  },
+  {
+    "id": "HildirKey_mountaincave",
+    "name": "Hildir Key mountaincave",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/HildirKey_mountaincave.svg",
+    "desc": "Hildir Key mountaincave in Valheim 1.0."
+  },
+  {
+    "id": "HildirKey_plainsfortress",
+    "name": "Hildir Key plainsfortress",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/HildirKey_plainsfortress.svg",
+    "desc": "Hildir Key plainsfortress in Valheim 1.0."
   },
   {
     "id": "Himminafl",
@@ -3731,6 +6091,16 @@ const VALHEIM_ITEMS = [
     "desc": "Himminafl item in Valheim."
   },
   {
+    "id": "Hook",
+    "name": "Hook",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Hook.svg",
+    "desc": "A finely wrought item, with a gripping potential."
+  },
+  {
     "id": "HornofCelebration",
     "name": "Hornof Celebration",
     "category": "Materials",
@@ -3739,6 +6109,26 @@ const VALHEIM_ITEMS = [
     "durability": 100,
     "icon": "icons/HornofCelebration.png",
     "desc": "Hornof Celebration item in Valheim."
+  },
+  {
+    "id": "Ice",
+    "name": "Ice",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Ice.png",
+    "desc": "So cold..."
+  },
+  {
+    "id": "BloodGoldKey",
+    "name": "Intricate Key",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/BloodGoldKey.svg",
+    "desc": "If there's a key, then surely there must be a lock."
   },
   {
     "id": "Iolite",
@@ -3758,7 +6148,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Iron.png",
-    "desc": "Iron item in Valheim."
+    "desc": "A bar of pure iron ready to be worked."
   },
   {
     "id": "IronNails",
@@ -3768,7 +6158,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/IronNails.png",
-    "desc": "Iron Nails item in Valheim."
+    "desc": "Needed for advanced construction projects."
+  },
+  {
+    "id": "IronOre",
+    "name": "Iron Ore",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/IronOre.png",
+    "desc": "Unrefined iron. Needs to be refined in a smelter."
   },
   {
     "id": "IronPit",
@@ -3778,7 +6178,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/IronPit.png",
-    "desc": "Iron Pit item in Valheim."
+    "desc": "An empty vessel waiting to be filled with firewood and kindling."
   },
   {
     "id": "IvySeeds",
@@ -3821,6 +6221,16 @@ const VALHEIM_ITEMS = [
     "desc": "Jotun Puffs item in Valheim."
   },
   {
+    "id": "KaleSeeds",
+    "name": "Kale Seeds",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/KaleSeeds.svg",
+    "desc": "Plant to grow kale."
+  },
+  {
     "id": "Klossen",
     "name": "Klossen",
     "category": "Materials",
@@ -3841,6 +6251,36 @@ const VALHEIM_ITEMS = [
     "desc": "Krom item in Valheim."
   },
   {
+    "id": "LargeBone",
+    "name": "Large Bone",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/LargeBone.svg",
+    "desc": "Large Bone in Valheim 1.0."
+  },
+  {
+    "id": "LargeBone_half01",
+    "name": "Large Bone half 01",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/LargeBone_half01.svg",
+    "desc": "Large Bone half 01 in Valheim 1.0."
+  },
+  {
+    "id": "LargeBone_half02",
+    "name": "Large Bone half 02",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/LargeBone_half02.svg",
+    "desc": "Large Bone half 02 in Valheim 1.0."
+  },
+  {
     "id": "LeatherScraps",
     "name": "Leather Scraps",
     "category": "Materials",
@@ -3848,7 +6288,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/LeatherScraps.png",
-    "desc": "Leather Scraps item in Valheim."
+    "desc": "A small pile of leather scraps."
+  },
+  {
+    "id": "Leatherstraps",
+    "name": "Leather Straps",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Leatherstraps.svg",
+    "desc": "A sturdy yet flexible material."
   },
   {
     "id": "LinenThread",
@@ -3858,7 +6308,27 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/LinenThread.png",
-    "desc": "Linen Thread item in Valheim."
+    "desc": "A fine linen thread made out of a strong flax filament."
+  },
+  {
+    "id": "FrozenFuel",
+    "name": "Liquid Frost",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FrozenFuel.svg",
+    "desc": "Magic has infused this ice, turning it into something else entirely."
+  },
+  {
+    "id": "MoleClaws",
+    "name": "Long Claws",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MoleClaws.svg",
+    "desc": "A lethal weapon, if one can hold them without getting cut."
   },
   {
     "id": "LoxPelt",
@@ -3868,7 +6338,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/LoxPelt.png",
-    "desc": "Lox Pelt item in Valheim."
+    "desc": "A heavy pelt of thick, musty fur."
   },
   {
     "id": "Magecap",
@@ -3891,6 +6361,16 @@ const VALHEIM_ITEMS = [
     "desc": "Majestic Carapace item in Valheim."
   },
   {
+    "id": "HatefulBlood",
+    "name": "Malicious Blood",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/HatefulBlood.svg",
+    "desc": "Malicious Blood in Valheim 1.0."
+  },
+  {
     "id": "Mandible",
     "name": "Mandible",
     "category": "Materials",
@@ -3898,7 +6378,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Mandible.png",
-    "desc": "Mandible item in Valheim."
+    "desc": "The hand of man could hardly design a more perfect weapon."
   },
   {
     "id": "MarinatedGreens",
@@ -3908,7 +6388,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/MarinatedGreens.png",
-    "desc": "Marinated Greens item in Valheim."
+    "desc": "It's spicy, it's chewy, it's sweet… This mad dish tickles your tongue as well as your mind."
   },
   {
     "id": "MechanicalSpring",
@@ -3918,7 +6398,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/MechanicalSpring.png",
-    "desc": "Mechanical Spring item in Valheim."
+    "desc": "A mysterious contraption built by the Dvergr. Used to build traps."
+  },
+  {
+    "id": "MemorialCoal",
+    "name": "Memorial Coal",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MemorialCoal.svg",
+    "desc": "Somewhere deep within the hot, hazy glow, you can almost see an old memory play out..."
   },
   {
     "id": "MisthareSupreme",
@@ -3928,7 +6418,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/MisthareSupreme.png",
-    "desc": "Misthare Supreme item in Valheim."
+    "desc": "One of life's Great Pleasures."
   },
   {
     "id": "MoltenCore",
@@ -3938,7 +6428,27 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/MoltenCore.png",
-    "desc": "Molten Core item in Valheim."
+    "desc": "Potent energy swirls within, ready to be unleashed."
+  },
+  {
+    "id": "MooseHide",
+    "name": "Moose Hide",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MooseHide.svg",
+    "desc": "This fur is perfectly adapted to northern climates."
+  },
+  {
+    "id": "MooseSinew",
+    "name": "Moose Sinew",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MooseSinew.svg",
+    "desc": "Tough and hardy, this is sure to come in handy."
   },
   {
     "id": "MorgenHeart",
@@ -3948,7 +6458,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/MorgenHeart.png",
-    "desc": "Morgen Heart item in Valheim."
+    "desc": "It's hard to believe it has ever beaten."
   },
   {
     "id": "MorgenSinew",
@@ -3958,7 +6468,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/MorgenSinew.png",
-    "desc": "Morgen Sinew item in Valheim."
+    "desc": "Chewy."
   },
   {
     "id": "MountainPeakPepperPowder",
@@ -3969,6 +6479,16 @@ const VALHEIM_ITEMS = [
     "durability": 100,
     "icon": "icons/MountainPeakPepperPowder.png",
     "desc": "Mountain Peak Pepper Powder item in Valheim."
+  },
+  {
+    "id": "SpiceMountains",
+    "name": "Mountain Peak Pepper Powder",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/SpiceMountains.svg",
+    "desc": "Only the most seasoned herbalist can find the pepperwood tree and harvest its leaves and bark. After careful preparation it's ready to be added to food, and is sure to give it some warming heat."
   },
   {
     "id": "Muckshake",
@@ -3988,7 +6508,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/NeckTail.png",
-    "desc": "Neck Tail item in Valheim."
+    "desc": "Inedible when raw, but proves to be quite a tasty snack if cooked."
   },
   {
     "id": "Needle",
@@ -3998,7 +6518,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Needle.png",
-    "desc": "Needle item in Valheim."
+    "desc": "The pointy end of a Deathsquito."
   },
   {
     "id": "Nidhgg",
@@ -4041,6 +6561,36 @@ const VALHEIM_ITEMS = [
     "desc": "Nidhggthe Thundering item in Valheim."
   },
   {
+    "id": "NornThread",
+    "name": "Nornathread",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/NornThread.svg",
+    "desc": "Don't let the delicate strands fool you. These threads are spun from the power of the world tree itself."
+  },
+  {
+    "id": "OatFlour",
+    "name": "Oat Flour",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/OatFlour.svg",
+    "desc": "Finely ground oats, with plenty of potential."
+  },
+  {
+    "id": "OatSeeds",
+    "name": "Oat Seeds",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/OatSeeds.svg",
+    "desc": "Grind them to oats in the mill, or plant to grow more seeds."
+  },
+  {
     "id": "Obsidian",
     "name": "Obsidian",
     "category": "Materials",
@@ -4048,7 +6598,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Obsidian.png",
-    "desc": "Obsidian item in Valheim."
+    "desc": "Dark volcanic glass."
+  },
+  {
+    "id": "OnionSeeds",
+    "name": "Onion Seeds",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/OnionSeeds.png",
+    "desc": "Plant to grow a healthy onion."
   },
   {
     "id": "Ooze",
@@ -4058,7 +6618,37 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Ooze.png",
-    "desc": "Ooze item in Valheim."
+    "desc": "Rotten and putrid-smelling. Why do you want this?"
+  },
+  {
+    "id": "OozeMork",
+    "name": "Ooze Mork",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/OozeMork.svg",
+    "desc": "Ooze Mork in Valheim 1.0."
+  },
+  {
+    "id": "GoldOre",
+    "name": "Petrified Tissue",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/GoldOre.svg",
+    "desc": "A hard and sturdy material with plenty of potential. Needs to be refined in a Blast Furnace."
+  },
+  {
+    "id": "PineCone",
+    "name": "Pine Cone",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/PineCone.png",
+    "desc": "Plant it to grow a pine tree."
   },
   {
     "id": "PotShard",
@@ -4071,6 +6661,36 @@ const VALHEIM_ITEMS = [
     "desc": "Pot Shard item in Valheim."
   },
   {
+    "id": "Pot_Shard_Green",
+    "name": "Pot Shard",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Pot_Shard_Green.svg",
+    "desc": "Pot Shard in Valheim 1.0."
+  },
+  {
+    "id": "Pot_Shard_Red",
+    "name": "Pot Shard Red",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Pot_Shard_Red.svg",
+    "desc": "Pot Shard Red in Valheim 1.0."
+  },
+  {
+    "id": "PowderedDragonEgg",
+    "name": "Powdered Dragon Eggshells",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/PowderedDragonEgg.svg",
+    "desc": "Dragon egg is a hard and difficult material to work with, yet here it has been ground to a fine, glittering dust..."
+  },
+  {
     "id": "ProustitePowder",
     "name": "Proustite Powder",
     "category": "Materials",
@@ -4078,7 +6698,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/ProustitePowder.png",
-    "desc": "Proustite Powder item in Valheim."
+    "desc": "This unstable powder packs great potential."
   },
   {
     "id": "PungentPebbles",
@@ -4088,7 +6708,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/PungentPebbles.png",
-    "desc": "Pungent Pebbles item in Valheim."
+    "desc": "Pungent Pebbles in Valheim 1.0."
   },
   {
     "id": "QueenBee",
@@ -4098,7 +6718,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/QueenBee.png",
-    "desc": "Queen Bee item in Valheim."
+    "desc": "The queen of the bees!"
+  },
+  {
+    "id": "QueenDrop",
+    "name": "Queen Drop",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/QueenDrop.png",
+    "desc": "Queen Drop in Valheim 1.0."
   },
   {
     "id": "Raspberries",
@@ -4121,6 +6751,26 @@ const VALHEIM_ITEMS = [
     "desc": "Red Jute item in Valheim."
   },
   {
+    "id": "JuteRed",
+    "name": "Red Jute",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/JuteRed.svg",
+    "desc": "A sturdy, rough fabric."
+  },
+  {
+    "id": "Eitr",
+    "name": "Refined Eitr",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Eitr.png",
+    "desc": "This is the stuff of life, the poison that consumes itself. The Dvergr refine it to use in their esoteric designs."
+  },
+  {
     "id": "RefinedEitr",
     "name": "Refined Eitr",
     "category": "Materials",
@@ -4138,7 +6788,27 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Resin.png",
-    "desc": "Resin item in Valheim."
+    "desc": "Sticky tree resin which insulates well. If put to the flame it burns slow and steady."
+  },
+  {
+    "id": "StoneRock",
+    "name": "Rock",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/StoneRock.svg",
+    "desc": "It's a stone."
+  },
+  {
+    "id": "Root",
+    "name": "Root",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Root.png",
+    "desc": "An old root from an ancient tree stump. It feels both flexible and durable at the same time."
   },
   {
     "id": "RootFang",
@@ -4168,7 +6838,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/RoyalJelly.png",
-    "desc": "Royal Jelly item in Valheim."
+    "desc": "Jelly fit for kings and queens."
   },
   {
     "id": "Ruby",
@@ -4178,7 +6848,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Ruby.png",
-    "desc": "Ruby item in Valheim."
+    "desc": "<color=yellow>Valuable</color>"
+  },
+  {
+    "id": "FrozenKingDrop",
+    "name": "Sacrificial Blood",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FrozenKingDrop.svg",
+    "desc": "The sacred essence of Kall Fimbulbringer."
   },
   {
     "id": "SailorsBounty",
@@ -4198,7 +6878,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Sap.png",
-    "desc": "Sap item in Valheim."
+    "desc": "Sacred blood from the Great Tree."
   },
   {
     "id": "ScaleHide",
@@ -4208,7 +6888,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/ScaleHide.png",
-    "desc": "Scale Hide item in Valheim."
+    "desc": "A pelt of glittering scales."
   },
   {
     "id": "ScorchingMedley",
@@ -4218,7 +6898,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/ScorchingMedley.png",
-    "desc": "Scorching Medley item in Valheim."
+    "desc": "A varied diet is important, so why not try this vegetarian option?"
   },
   {
     "id": "BronzeScrap",
@@ -4231,6 +6911,16 @@ const VALHEIM_ITEMS = [
     "desc": "It's old and oxidized but can be smelted and used again."
   },
   {
+    "id": "IronScrap",
+    "name": "Scrap Iron",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/IronScrap.svg",
+    "desc": "It's old and rusty but can be smelted and used again."
+  },
+  {
     "id": "Scythe",
     "name": "Scythe",
     "category": "Materials",
@@ -4238,7 +6928,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Scythe.png",
-    "desc": "Scythe item in Valheim."
+    "desc": "The right tool makes the task at hand so much easier."
   },
   {
     "id": "ScytheHandle",
@@ -4248,7 +6938,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/ScytheHandle.png",
-    "desc": "Scythe Handle item in Valheim."
+    "desc": "A sturdy base for a tool."
+  },
+  {
+    "id": "SpiceOceans",
+    "name": "Seafarer's Herbs",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/SpiceOceans.svg",
+    "desc": "The sour tang of sorrel, mixed with something the herbalist would rather not disclose, is well suitable for fish. Any fisherfolk worth their salt would do well to keep this blend near, in case of a good catch!"
   },
   {
     "id": "SeafarersHerbs",
@@ -4261,6 +6961,26 @@ const VALHEIM_ITEMS = [
     "desc": "Seafarers Herbs item in Valheim."
   },
   {
+    "id": "SealHide",
+    "name": "Seal Pelt",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/SealHide.svg",
+    "desc": "The thick fur helps the animal stay both warm and dry."
+  },
+  {
+    "id": "DvergrKey",
+    "name": "Sealbreaker",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/DvergrKey.svg",
+    "desc": "An object used to break a Dverger seal."
+  },
+  {
     "id": "SealbreakerFragment",
     "name": "Sealbreaker Fragment",
     "category": "Materials",
@@ -4271,6 +6991,36 @@ const VALHEIM_ITEMS = [
     "desc": "Sealbreaker Fragment item in Valheim."
   },
   {
+    "id": "DvergrKeyFragment",
+    "name": "Sealbreaker Fragment",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/DvergrKeyFragment.svg",
+    "desc": "A fragment of a Dvergr sealbreaker."
+  },
+  {
+    "id": "SpiceDeepNorth",
+    "name": "Seasoning of the Gourd",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/SpiceDeepNorth.svg",
+    "desc": "Using cinnamon bark and ginger root, with a touch of nutmeg, the herbalist has travelled far to create this fine and warming blend of spices."
+  },
+  {
+    "id": "PoteitrSeeds",
+    "name": "Seed Poteitr",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/PoteitrSeeds.svg",
+    "desc": "Plant to grow poteitr."
+  },
+  {
     "id": "SeekerAspic",
     "name": "Seeker Aspic",
     "category": "Materials",
@@ -4278,7 +7028,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/SeekerAspic.png",
-    "desc": "Seeker Aspic item in Valheim."
+    "desc": "A quivering jelly with a taste like gentle electricity."
   },
   {
     "id": "SerpentScale",
@@ -4288,7 +7038,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/SerpentScale.png",
-    "desc": "Serpent Scale item in Valheim."
+    "desc": "The shiny metal-like scale from a sea serpent."
   },
   {
     "id": "ServingTray",
@@ -4308,7 +7058,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/SharpeningStone.png",
-    "desc": "Sharpening Stone item in Valheim."
+    "desc": "A whetstone wheel ready to spin."
   },
   {
     "id": "Silver",
@@ -4318,7 +7068,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Silver.png",
-    "desc": "Silver item in Valheim."
+    "desc": "A bar of pure silver ready to be worked."
+  },
+  {
+    "id": "SilverOre",
+    "name": "Silver Ore",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/SilverOre.png",
+    "desc": "Unrefined silver. Needs to be refined in a smelter."
   },
   {
     "id": "Simplecappurple",
@@ -4361,6 +7121,16 @@ const VALHEIM_ITEMS = [
     "desc": "Smoke Puff item in Valheim."
   },
   {
+    "id": "SnowRoller",
+    "name": "Snow Roller",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/SnowRoller.svg",
+    "desc": "Snow Roller in Valheim 1.0."
+  },
+  {
     "id": "SoftTissue",
     "name": "Soft Tissue",
     "category": "Materials",
@@ -4368,7 +7138,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/SoftTissue.png",
-    "desc": "Soft Tissue item in Valheim."
+    "desc": "It still fizzes softly with ancient memories."
   },
   {
     "id": "Sparkler",
@@ -4378,7 +7148,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Sparkler.png",
-    "desc": "Sparkler item in Valheim."
+    "desc": "It's a stick that sparkles. Pretty!"
   },
   {
     "id": "SparklingShroomshake",
@@ -4388,7 +7158,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/SparklingShroomshake.png",
-    "desc": "Sparkling Shroomshake item in Valheim."
+    "desc": "Perhaps it's not the best flavour to start the day with, but it will give you the boost you need."
   },
   {
     "id": "SpicyMarmalade",
@@ -4398,7 +7168,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/SpicyMarmalade.png",
-    "desc": "Spicy Marmalade item in Valheim."
+    "desc": "Sugary honey perfectly balanced with tangy fronds and tart berries."
   },
   {
     "id": "Spinesnap",
@@ -4461,6 +7231,36 @@ const VALHEIM_ITEMS = [
     "desc": "Stagbreaker item in Valheim."
   },
   {
+    "id": "StaminaUpgrade_Greydwarf",
+    "name": "Stamina Upgrade Greydwarf",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/StaminaUpgrade_Greydwarf.svg",
+    "desc": "Stamina Upgrade Greydwarf in Valheim 1.0."
+  },
+  {
+    "id": "StaminaUpgrade_Troll",
+    "name": "Stamina Upgrade Troll",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/StaminaUpgrade_Troll.svg",
+    "desc": "Stamina Upgrade Troll in Valheim 1.0."
+  },
+  {
+    "id": "StaminaUpgrade_Wraith",
+    "name": "Stamina Upgrade Wraith",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/StaminaUpgrade_Wraith.svg",
+    "desc": "Stamina Upgrade Wraith in Valheim 1.0."
+  },
+  {
     "id": "Stone",
     "name": "Stone",
     "category": "Materials",
@@ -4468,7 +7268,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Stone.png",
-    "desc": "Stone item in Valheim."
+    "desc": "It's a rock."
   },
   {
     "id": "StormFang",
@@ -4501,6 +7301,16 @@ const VALHEIM_ITEMS = [
     "desc": "Sulfur item in Valheim."
   },
   {
+    "id": "SulfurStone",
+    "name": "Sulfur",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/SulfurStone.svg",
+    "desc": "Smells like rotten eggs."
+  },
+  {
     "id": "SurtlingCore",
     "name": "Surtling Core",
     "category": "Materials",
@@ -4508,7 +7318,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/SurtlingCore.png",
-    "desc": "Surtling Core item in Valheim."
+    "desc": "It throbs with inner heat."
   },
   {
     "id": "SwampDwellersDelight",
@@ -4521,6 +7331,16 @@ const VALHEIM_ITEMS = [
     "desc": "Swamp Dwellers Delight item in Valheim."
   },
   {
+    "id": "CryptKey",
+    "name": "Swamp Key",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/CryptKey.svg",
+    "desc": "Partly covered in caked mud, it smells foetid."
+  },
+  {
     "id": "Tankard",
     "name": "Tankard",
     "category": "Materials",
@@ -4528,7 +7348,37 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Tankard.png",
-    "desc": "Tankard item in Valheim."
+    "desc": "Skål!"
+  },
+  {
+    "id": "TankardAnniversary",
+    "name": "Tankard Anniversary",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TankardAnniversary.svg",
+    "desc": "Tankard Anniversary in Valheim 1.0."
+  },
+  {
+    "id": "Tankard_dvergr",
+    "name": "Tankard dvergr",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Tankard_dvergr.svg",
+    "desc": "Tankard dvergr in Valheim 1.0."
+  },
+  {
+    "id": "TankardOdin",
+    "name": "Tankard Odin",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TankardOdin.svg",
+    "desc": "Tankard Odin in Valheim 1.0."
   },
   {
     "id": "Tar",
@@ -4538,7 +7388,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Tar.png",
-    "desc": "Tar item in Valheim."
+    "desc": "A sticky lump of tar."
   },
   {
     "id": "Thistle",
@@ -4548,7 +7398,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Thistle.png",
-    "desc": "Thistle item in Valheim."
+    "desc": "Beautiful but prickly."
   },
   {
     "id": "ThunderStone",
@@ -4558,7 +7408,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/ThunderStone.png",
-    "desc": "Thunder Stone item in Valheim."
+    "desc": "It is crackling with energy."
+  },
+  {
+    "id": "OrbThunderBlood",
+    "name": "Thunderblood Essence",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/OrbThunderBlood.svg",
+    "desc": "Unstable, erratic and...alive?"
   },
   {
     "id": "Tiedheadscarfblue",
@@ -4581,6 +7441,16 @@ const VALHEIM_ITEMS = [
     "desc": "Tiedheadscarfyellow item in Valheim."
   },
   {
+    "id": "Frostwood",
+    "name": "Timberwood",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Frostwood.svg",
+    "desc": "A sturdy kind of wood, excellent for mighty halls."
+  },
+  {
     "id": "Tin",
     "name": "Tin",
     "category": "Materials",
@@ -4588,7 +7458,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Tin.png",
-    "desc": "Tin item in Valheim."
+    "desc": "A bar of pure tin ready to be worked."
+  },
+  {
+    "id": "TinOre",
+    "name": "Tin Ore",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TinOre.png",
+    "desc": "Unrefined tin. Needs to be refined in a smelter."
   },
   {
     "id": "Toadstool",
@@ -4618,7 +7498,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/TrollHide.png",
-    "desc": "Troll Hide item in Valheim."
+    "desc": "A thick and sturdy hide. This is why trolls are so hard to kill."
+  },
+  {
+    "id": "TurnipSeeds",
+    "name": "Turnip Seeds",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TurnipSeeds.png",
+    "desc": "These can be planted in cultivated soil."
   },
   {
     "id": "Twistedheadscarfgreen",
@@ -4641,6 +7531,106 @@ const VALHEIM_ITEMS = [
     "desc": "Twistedheadscarfred item in Valheim."
   },
   {
+    "id": "MisthareSupremeUncooked",
+    "name": "Uncooked Misthare Supreme",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MisthareSupremeUncooked.svg",
+    "desc": "Uncooked Misthare Supreme in Valheim 1.0."
+  },
+  {
+    "id": "Upgrader0Weapon",
+    "name": "Upgrader 0Weapon",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Upgrader0Weapon.svg",
+    "desc": "Upgrader 0Weapon in Valheim 1.0."
+  },
+  {
+    "id": "Upgrader1Weapon",
+    "name": "Upgrader 1Weapon",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Upgrader1Weapon.svg",
+    "desc": "Upgrader 1Weapon in Valheim 1.0."
+  },
+  {
+    "id": "Upgrader2Weapon",
+    "name": "Upgrader 2Weapon",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Upgrader2Weapon.svg",
+    "desc": "Upgrader 2Weapon in Valheim 1.0."
+  },
+  {
+    "id": "Upgrader3Weapon",
+    "name": "Upgrader 3Weapon",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Upgrader3Weapon.svg",
+    "desc": "Upgrader 3Weapon in Valheim 1.0."
+  },
+  {
+    "id": "Upgrader4Weapon",
+    "name": "Upgrader 4Weapon",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Upgrader4Weapon.svg",
+    "desc": "Upgrader 4Weapon in Valheim 1.0."
+  },
+  {
+    "id": "Upgrader5Weapon",
+    "name": "Upgrader 5Weapon",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Upgrader5Weapon.svg",
+    "desc": "Upgrader 5Weapon in Valheim 1.0."
+  },
+  {
+    "id": "Upgrader6Weapon",
+    "name": "Upgrader 6Weapon",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Upgrader6Weapon.svg",
+    "desc": "Upgrader 6Weapon in Valheim 1.0."
+  },
+  {
+    "id": "Upgrader7Weapon",
+    "name": "Upgrader 7Weapon",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Upgrader7Weapon.svg",
+    "desc": "Upgrader 7Weapon in Valheim 1.0."
+  },
+  {
+    "id": "VegvisirShard_Bonemass",
+    "name": "Vegvisir Shard Bonemass",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/VegvisirShard_Bonemass.svg",
+    "desc": "Vegvisir Shard Bonemass in Valheim 1.0."
+  },
+  {
     "id": "VileRibcage",
     "name": "Vile Ribcage",
     "category": "Materials",
@@ -4651,6 +7641,36 @@ const VALHEIM_ITEMS = [
     "desc": "Vile Ribcage item in Valheim."
   },
   {
+    "id": "UndeadBjornRibcage",
+    "name": "Vile Ribcage",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/UndeadBjornRibcage.svg",
+    "desc": "A relic of savage strength, perfect for forging armour that bears the wild’s fury."
+  },
+  {
+    "id": "Voidplasm",
+    "name": "Voidplasm",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/Voidplasm.svg",
+    "desc": "Voidplasm in Valheim 1.0."
+  },
+  {
+    "id": "WitheredBone",
+    "name": "Withered Bone",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/WitheredBone.png",
+    "desc": "A giant bone, knotted like old wood."
+  },
+  {
     "id": "WolfFang",
     "name": "Wolf Fang",
     "category": "Materials",
@@ -4658,7 +7678,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/WolfFang.png",
-    "desc": "Wolf Fang item in Valheim."
+    "desc": "Still sharp."
   },
   {
     "id": "WolfPelt",
@@ -4668,7 +7688,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/WolfPelt.png",
-    "desc": "Wolf Pelt item in Valheim."
+    "desc": "A pelt of shaggy fur."
   },
   {
     "id": "WolfSkewer",
@@ -4688,7 +7708,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/Wood.png",
-    "desc": "Wood item in Valheim."
+    "desc": "Good, strong wood to build with."
   },
   {
     "id": "WoodlandHerbBlend",
@@ -4701,6 +7721,36 @@ const VALHEIM_ITEMS = [
     "desc": "Woodland Herb Blend item in Valheim."
   },
   {
+    "id": "SpiceForests",
+    "name": "Woodland Herb Blend",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/SpiceForests.svg",
+    "desc": "Thyme and marjoram carefully harvested and dried, before being mixed together. This blend will turn even the most basic of ingredients into a delicious feast."
+  },
+  {
+    "id": "WrithanRoots",
+    "name": "Writhan Roots",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/WrithanRoots.svg",
+    "desc": "Writhan Roots in Valheim 1.0."
+  },
+  {
+    "id": "YagluthDrop",
+    "name": "Yagluth Drop",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/YagluthDrop.svg",
+    "desc": "Yagluth Drop in Valheim 1.0."
+  },
+  {
     "id": "YggdrasilWood",
     "name": "Yggdrasil Wood",
     "category": "Materials",
@@ -4708,7 +7758,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/YggdrasilWood.png",
-    "desc": "Yggdrasil Wood item in Valheim."
+    "desc": "Godflesh, wood from the Great Tree."
   },
   {
     "id": "YmirFlesh",
@@ -4721,6 +7771,16 @@ const VALHEIM_ITEMS = [
     "desc": "Ymir Flesh item in Valheim."
   },
   {
+    "id": "YmirRemains",
+    "name": "Ymir Flesh",
+    "category": "Materials",
+    "maxStack": 50,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/YmirRemains.svg",
+    "desc": "The earthy remains of the giant Ymir."
+  },
+  {
     "id": "BarleyWineBase",
     "name": "Barley Wine Base: Fire Resistance",
     "category": "Potions",
@@ -4729,6 +7789,16 @@ const VALHEIM_ITEMS = [
     "durability": 100,
     "icon": "icons/BarleyWineBase.png",
     "desc": "Needs to be fermented."
+  },
+  {
+    "id": "FeastMeadows_Material",
+    "name": "Feast Meadows Material",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/FeastMeadows_Material.svg",
+    "desc": "Feast Meadows Material in Valheim 1.0."
   },
   {
     "id": "BarleyWine",
@@ -4741,6 +7811,226 @@ const VALHEIM_ITEMS = [
     "desc": "Fortifies you against fire."
   },
   {
+    "id": "MeadBaseEitrLingering",
+    "name": "Mead Base Eitr Lingering",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadBaseEitrLingering.svg",
+    "desc": "Mead Base Eitr Lingering in Valheim 1.0."
+  },
+  {
+    "id": "MeadBaseEitrMinor",
+    "name": "Mead Base Eitr Minor",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadBaseEitrMinor.svg",
+    "desc": "Mead Base Eitr Minor in Valheim 1.0."
+  },
+  {
+    "id": "MeadBaseHealthLingering",
+    "name": "Mead Base Health Lingering",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadBaseHealthLingering.svg",
+    "desc": "Mead Base Health Lingering in Valheim 1.0."
+  },
+  {
+    "id": "MeadBaseHealthMajor",
+    "name": "Mead Base Health Major",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadBaseHealthMajor.svg",
+    "desc": "Mead Base Health Major in Valheim 1.0."
+  },
+  {
+    "id": "MeadBaseHealthMedium",
+    "name": "Mead Base Health Medium",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadBaseHealthMedium.svg",
+    "desc": "Mead Base Health Medium in Valheim 1.0."
+  },
+  {
+    "id": "MeadBaseHealthMinor",
+    "name": "Mead Base Health Minor",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadBaseHealthMinor.svg",
+    "desc": "Mead Base Health Minor in Valheim 1.0."
+  },
+  {
+    "id": "MeadBaseStaminaLingering",
+    "name": "Mead Base Stamina Lingering",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadBaseStaminaLingering.svg",
+    "desc": "Mead Base Stamina Lingering in Valheim 1.0."
+  },
+  {
+    "id": "MeadBaseStaminaMedium",
+    "name": "Mead Base Stamina Medium",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadBaseStaminaMedium.svg",
+    "desc": "Mead Base Stamina Medium in Valheim 1.0."
+  },
+  {
+    "id": "MeadBaseStaminaMinor",
+    "name": "Mead Base Stamina Minor",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadBaseStaminaMinor.svg",
+    "desc": "Mead Base Stamina Minor in Valheim 1.0."
+  },
+  {
+    "id": "MeadBaseTamer",
+    "name": "Mead Base: Animal Whispers",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadBaseTamer.svg",
+    "desc": "Mead Base: Animal Whispers in Valheim 1.0."
+  },
+  {
+    "id": "MeadBaseBugRepellent",
+    "name": "Mead Base: Anti-Sting",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadBaseBugRepellent.svg",
+    "desc": "Mead Base: Anti-Sting in Valheim 1.0."
+  },
+  {
+    "id": "MeadBaseBzerker",
+    "name": "Mead base: Berserkir",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadBaseBzerker.svg",
+    "desc": "Mead base: Berserkir in Valheim 1.0."
+  },
+  {
+    "id": "MeadBaseFrostResist",
+    "name": "Mead Base: Frost Resistance",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadBaseFrostResist.svg",
+    "desc": "Mead Base: Frost Resistance in Valheim 1.0."
+  },
+  {
+    "id": "MeadBaseLightFoot",
+    "name": "Mead Base: Lightfoot",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadBaseLightFoot.png",
+    "desc": "Mead Base: Lightfoot in Valheim 1.0."
+  },
+  {
+    "id": "MeadBasePoisonResist",
+    "name": "Mead Base: Poison Resistance",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadBasePoisonResist.svg",
+    "desc": "Mead Base: Poison Resistance in Valheim 1.0."
+  },
+  {
+    "id": "MeadBaseHasty",
+    "name": "Mead base: Ratatosk",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadBaseHasty.svg",
+    "desc": "Mead base: Ratatosk in Valheim 1.0."
+  },
+  {
+    "id": "MeadBaseTasty",
+    "name": "Mead Base: Tasty",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadBaseTasty.png",
+    "desc": "Mead Base: Tasty in Valheim 1.0."
+  },
+  {
+    "id": "MeadBaseStrength",
+    "name": "Mead Base: Troll Endurance",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadBaseStrength.svg",
+    "desc": "Mead Base: Troll Endurance in Valheim 1.0."
+  },
+  {
+    "id": "MeadBaseSwimmer",
+    "name": "Mead Base: Vananidir",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadBaseSwimmer.svg",
+    "desc": "Mead Base: Vananidir in Valheim 1.0."
+  },
+  {
+    "id": "MeadBugRepellent",
+    "name": "Mead Bug Repellent",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadBugRepellent.svg",
+    "desc": "Mead Bug Repellent in Valheim 1.0."
+  },
+  {
+    "id": "MeadBzerker",
+    "name": "Mead Bzerker",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadBzerker.svg",
+    "desc": "Mead Bzerker in Valheim 1.0."
+  },
+  {
+    "id": "MeadEitrLingering",
+    "name": "Mead Eitr Lingering",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadEitrLingering.svg",
+    "desc": "Mead Eitr Lingering in Valheim 1.0."
+  },
+  {
     "id": "MeadEitrMinor",
     "name": "Mead Eitr Minor",
     "category": "Potions",
@@ -4748,7 +8038,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/MeadEitrMinor.png",
-    "desc": "Mead Eitr Minor item in Valheim."
+    "desc": "Mead Eitr Minor in Valheim 1.0."
   },
   {
     "id": "MeadFrostResist",
@@ -4758,7 +8048,27 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/MeadFrostResist.png",
-    "desc": "Mead Frost Resist item in Valheim."
+    "desc": "Mead Frost Resist in Valheim 1.0."
+  },
+  {
+    "id": "MeadHasty",
+    "name": "Mead Hasty",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadHasty.svg",
+    "desc": "Mead Hasty in Valheim 1.0."
+  },
+  {
+    "id": "MeadHealthLingering",
+    "name": "Mead Health Lingering",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadHealthLingering.svg",
+    "desc": "Mead Health Lingering in Valheim 1.0."
   },
   {
     "id": "MeadHealthMajor",
@@ -4768,7 +8078,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/MeadHealthMajor.png",
-    "desc": "Mead Health Major item in Valheim."
+    "desc": "Mead Health Major in Valheim 1.0."
   },
   {
     "id": "MeadHealthMedium",
@@ -4778,7 +8088,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/MeadHealthMedium.png",
-    "desc": "Mead Health Medium item in Valheim."
+    "desc": "Mead Health Medium in Valheim 1.0."
   },
   {
     "id": "MeadHealthMinor",
@@ -4788,7 +8098,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/MeadHealthMinor.png",
-    "desc": "Mead Health Minor item in Valheim."
+    "desc": "Mead Health Minor in Valheim 1.0."
   },
   {
     "id": "MeadHornofOdin",
@@ -4799,6 +8109,16 @@ const VALHEIM_ITEMS = [
     "durability": 100,
     "icon": "icons/MeadHornofOdin.png",
     "desc": "Mead Hornof Odin item in Valheim."
+  },
+  {
+    "id": "MeadLightfoot",
+    "name": "Mead Lightfoot",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadLightfoot.svg",
+    "desc": "Mead Lightfoot in Valheim 1.0."
   },
   {
     "id": "MeadLingeringStamina",
@@ -4818,7 +8138,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/MeadPoisonResist.png",
-    "desc": "Mead Poison Resist item in Valheim."
+    "desc": "Mead Poison Resist in Valheim 1.0."
+  },
+  {
+    "id": "MeadStaminaLingering",
+    "name": "Mead Stamina Lingering",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadStaminaLingering.svg",
+    "desc": "Mead Stamina Lingering in Valheim 1.0."
   },
   {
     "id": "MeadStaminaMedium",
@@ -4828,7 +8158,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/MeadStaminaMedium.png",
-    "desc": "Mead Stamina Medium item in Valheim."
+    "desc": "Mead Stamina Medium in Valheim 1.0."
   },
   {
     "id": "MeadStaminaMinor",
@@ -4838,7 +8168,57 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/MeadStaminaMinor.png",
-    "desc": "Mead Stamina Minor item in Valheim."
+    "desc": "Mead Stamina Minor in Valheim 1.0."
+  },
+  {
+    "id": "MeadStrength",
+    "name": "Mead Strength",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadStrength.svg",
+    "desc": "Mead Strength in Valheim 1.0."
+  },
+  {
+    "id": "MeadSwimmer",
+    "name": "Mead Swimmer",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadSwimmer.svg",
+    "desc": "Mead Swimmer in Valheim 1.0."
+  },
+  {
+    "id": "MeadTamer",
+    "name": "Mead Tamer",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadTamer.svg",
+    "desc": "Mead Tamer in Valheim 1.0."
+  },
+  {
+    "id": "MeadTasty",
+    "name": "Mead Tasty",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadTasty.svg",
+    "desc": "Mead Tasty in Valheim 1.0."
+  },
+  {
+    "id": "MeadTrollPheromones",
+    "name": "Mead Troll Pheromones",
+    "category": "Potions",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/MeadTrollPheromones.svg",
+    "desc": "Mead Troll Pheromones in Valheim 1.0."
   },
   {
     "id": "WholeRoastedMeadowBoar",
@@ -4859,6 +8239,16 @@ const VALHEIM_ITEMS = [
     "durability": 250,
     "icon": "icons/BandedShield.png",
     "desc": "Banded Shield item in Valheim."
+  },
+  {
+    "id": "ShieldBanded",
+    "name": "Banded Shield",
+    "category": "Shields",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 250,
+    "icon": "icons/ShieldBanded.png",
+    "desc": "Banded with hoops of iron, a true warrior's companion."
   },
   {
     "id": "BlackMetalShield",
@@ -4891,6 +8281,16 @@ const VALHEIM_ITEMS = [
     "desc": "Bone Tower Shield item in Valheim."
   },
   {
+    "id": "ShieldBoneTower",
+    "name": "Bone Tower Shield",
+    "category": "Shields",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 250,
+    "icon": "icons/ShieldBoneTower.png",
+    "desc": "The bones of dead warriors make for a good protection."
+  },
+  {
     "id": "BronzeBuckler",
     "name": "Bronze Buckler",
     "category": "Shields",
@@ -4899,6 +8299,16 @@ const VALHEIM_ITEMS = [
     "durability": 250,
     "icon": "icons/BronzeBuckler.png",
     "desc": "Bronze Buckler item in Valheim."
+  },
+  {
+    "id": "ShieldBronzeBuckler",
+    "name": "Bronze Buckler",
+    "category": "Shields",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 250,
+    "icon": "icons/ShieldBronzeBuckler.png",
+    "desc": "A shield of burnished bronze, good to turn a blade or two."
   },
   {
     "id": "CarapaceBuckler",
@@ -4931,6 +8341,16 @@ const VALHEIM_ITEMS = [
     "desc": "Flametal Shield item in Valheim."
   },
   {
+    "id": "ShieldFlametal",
+    "name": "Flametal Shield",
+    "category": "Shields",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 250,
+    "icon": "icons/ShieldFlametal.png",
+    "desc": "The shield is and always will be a viking's most important weapon."
+  },
+  {
     "id": "FlametalTowerShield",
     "name": "Flametal Tower Shield",
     "category": "Shields",
@@ -4949,6 +8369,16 @@ const VALHEIM_ITEMS = [
     "durability": 250,
     "icon": "icons/IronBuckler.png",
     "desc": "Iron Buckler item in Valheim."
+  },
+  {
+    "id": "ShieldIronBuckler",
+    "name": "Iron Buckler",
+    "category": "Shields",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 250,
+    "icon": "icons/ShieldIronBuckler.png",
+    "desc": "Its lightness and curved center makes it excellent for deflecting attacks."
   },
   {
     "id": "IronTowerShield",
@@ -4971,6 +8401,26 @@ const VALHEIM_ITEMS = [
     "desc": "Ironshield item in Valheim."
   },
   {
+    "id": "ShieldCarapaceBuckler",
+    "name": "item_shieldcarapacebuckler",
+    "category": "Shields",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 250,
+    "icon": "icons/ShieldCarapaceBuckler.png",
+    "desc": "item_shieldcarapacebuckler_description"
+  },
+  {
+    "id": "ShieldKnight",
+    "name": "Knight shield UNUSED",
+    "category": "Shields",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 250,
+    "icon": "icons/ShieldKnight.png",
+    "desc": "A wooden shield reinforced with iron. UNUSED"
+  },
+  {
     "id": "Knightshield",
     "name": "Knightshield",
     "category": "Shields",
@@ -4979,6 +8429,66 @@ const VALHEIM_ITEMS = [
     "durability": 250,
     "icon": "icons/Knightshield.png",
     "desc": "Knightshield item in Valheim."
+  },
+  {
+    "id": "MoldShieldBuckler",
+    "name": "Mold Shield Buckler",
+    "category": "Shields",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 250,
+    "icon": "icons/MoldShieldBuckler.svg",
+    "desc": "Mold Shield Buckler in Valheim 1.0."
+  },
+  {
+    "id": "MoldShieldRound",
+    "name": "Mold Shield Round",
+    "category": "Shields",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 250,
+    "icon": "icons/MoldShieldRound.svg",
+    "desc": "Mold Shield Round in Valheim 1.0."
+  },
+  {
+    "id": "MoldShieldTower",
+    "name": "Mold Shield Tower",
+    "category": "Shields",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 250,
+    "icon": "icons/MoldShieldTower.svg",
+    "desc": "Mold Shield Tower in Valheim 1.0."
+  },
+  {
+    "id": "ShieldGoldBuckler",
+    "name": "Nord Buckler",
+    "category": "Shields",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 250,
+    "icon": "icons/ShieldGoldBuckler.svg",
+    "desc": "A nimble parrying buckler cast from refined bloodgold."
+  },
+  {
+    "id": "ShieldGold",
+    "name": "Nord Shield",
+    "category": "Shields",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 250,
+    "icon": "icons/ShieldGold.svg",
+    "desc": "A sturdy round shield adorned with bloodgold rim."
+  },
+  {
+    "id": "ShieldGoldTower",
+    "name": "Nord Tower Shield",
+    "category": "Shields",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 250,
+    "icon": "icons/ShieldGoldTower.svg",
+    "desc": "A towering shield offering impenetrable protection."
   },
   {
     "id": "SerpentScaleShield",
@@ -4991,6 +8501,16 @@ const VALHEIM_ITEMS = [
     "desc": "Serpent Scale Shield item in Valheim."
   },
   {
+    "id": "ShieldSerpentscale",
+    "name": "Serpent Scale Shield",
+    "category": "Shields",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 250,
+    "icon": "icons/ShieldSerpentscale.png",
+    "desc": "A sturdy shield of overlapping scales."
+  },
+  {
     "id": "ShieldBlackmetal",
     "name": "Shield Blackmetal",
     "category": "Shields",
@@ -4998,7 +8518,27 @@ const VALHEIM_ITEMS = [
     "maxQuality": 3,
     "durability": 250,
     "icon": "icons/ShieldBlackmetal.png",
-    "desc": "Shield Blackmetal item in Valheim."
+    "desc": "Fashioned from the strongest metal, able to turn even the deadliest blades."
+  },
+  {
+    "id": "ShieldBlackmetalTower",
+    "name": "Shield Blackmetal Tower",
+    "category": "Shields",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 250,
+    "icon": "icons/ShieldBlackmetalTower.png",
+    "desc": "Shield Blackmetal Tower in Valheim 1.0."
+  },
+  {
+    "id": "ShieldBucklerGoldUncooked",
+    "name": "Shield Buckler Gold Uncooked",
+    "category": "Shields",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 250,
+    "icon": "icons/ShieldBucklerGoldUncooked.svg",
+    "desc": "Shield Buckler Gold Uncooked in Valheim 1.0."
   },
   {
     "id": "ShieldCarapace",
@@ -5008,7 +8548,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 3,
     "durability": 250,
     "icon": "icons/ShieldCarapace.png",
-    "desc": "Shield Carapace item in Valheim."
+    "desc": "The almost unbreakable carapace of your enemies makes an excellent shield."
   },
   {
     "id": "ShieldCore",
@@ -5018,7 +8558,27 @@ const VALHEIM_ITEMS = [
     "maxQuality": 3,
     "durability": 250,
     "icon": "icons/ShieldCore.png",
-    "desc": "Shield Core item in Valheim."
+    "desc": "A protective force within is ready to be unleashed."
+  },
+  {
+    "id": "ShieldFlametalTower",
+    "name": "Shield Flametal Tower",
+    "category": "Shields",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 250,
+    "icon": "icons/ShieldFlametalTower.png",
+    "desc": "Shield Flametal Tower in Valheim 1.0."
+  },
+  {
+    "id": "ShieldIronSquare",
+    "name": "Shield Iron Square",
+    "category": "Shields",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 250,
+    "icon": "icons/ShieldIronSquare.svg",
+    "desc": "Shield Iron Square in Valheim 1.0."
   },
   {
     "id": "ShieldIronTower",
@@ -5028,7 +8588,27 @@ const VALHEIM_ITEMS = [
     "maxQuality": 3,
     "durability": 250,
     "icon": "icons/ShieldIronTower.png",
-    "desc": "Shield Iron Tower item in Valheim."
+    "desc": "Shield Iron Tower in Valheim 1.0."
+  },
+  {
+    "id": "ShieldRoots",
+    "name": "Shield Roots",
+    "category": "Shields",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 250,
+    "icon": "icons/ShieldRoots.svg",
+    "desc": "Shield Roots in Valheim 1.0."
+  },
+  {
+    "id": "ShieldRoundGoldUncooked",
+    "name": "Shield Round Gold Uncooked",
+    "category": "Shields",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 250,
+    "icon": "icons/ShieldRoundGoldUncooked.svg",
+    "desc": "Shield Round Gold Uncooked in Valheim 1.0."
   },
   {
     "id": "ShieldSilver",
@@ -5038,7 +8618,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 3,
     "durability": 250,
     "icon": "icons/ShieldSilver.png",
-    "desc": "Shield Silver item in Valheim."
+    "desc": "A shield of radiant silver."
+  },
+  {
+    "id": "ShieldTowerGoldUncooked",
+    "name": "Shield Tower Gold Uncooked",
+    "category": "Shields",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 250,
+    "icon": "icons/ShieldTowerGoldUncooked.svg",
+    "desc": "Shield Tower Gold Uncooked in Valheim 1.0."
   },
   {
     "id": "SilverShield",
@@ -5061,6 +8651,16 @@ const VALHEIM_ITEMS = [
     "desc": "Wood Shield item in Valheim."
   },
   {
+    "id": "ShieldWood",
+    "name": "Wood Shield",
+    "category": "Shields",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 250,
+    "icon": "icons/ShieldWood.png",
+    "desc": "A simple wooden shield."
+  },
+  {
     "id": "WoodTowerShield",
     "name": "Wood Tower Shield",
     "category": "Shields",
@@ -5071,6 +8671,26 @@ const VALHEIM_ITEMS = [
     "desc": "Wood Tower Shield item in Valheim."
   },
   {
+    "id": "ShieldWoodTower",
+    "name": "Wood Tower Shield",
+    "category": "Shields",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 250,
+    "icon": "icons/ShieldWoodTower.png",
+    "desc": "A rough but heavy wooden shield."
+  },
+  {
+    "id": "SaddleAsksvin",
+    "name": "Asksvin Saddle",
+    "category": "Tools",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 300,
+    "icon": "icons/SaddleAsksvin.svg",
+    "desc": "The back of an asksvin is rather lumpy, so you'll need a saddle if you want to ride one."
+  },
+  {
     "id": "Cultivator",
     "name": "Cultivator",
     "category": "Tools",
@@ -5078,7 +8698,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 3,
     "durability": 200,
     "icon": "icons/Cultivator.png",
-    "desc": "Cultivator item in Valheim."
+    "desc": "A farming tool for tilling soil."
   },
   {
     "id": "FishingRod",
@@ -5088,7 +8708,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 3,
     "durability": 200,
     "icon": "icons/FishingRod.png",
-    "desc": "Fishing Rod item in Valheim."
+    "desc": "Standard issue dvergr fishing rod."
   },
   {
     "id": "Hammer",
@@ -5098,7 +8718,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 3,
     "durability": 200,
     "icon": "icons/Hammer.png",
-    "desc": "Hammer item in Valheim."
+    "desc": "With this to your hand, you can raise high halls and mighty fortifications."
   },
   {
     "id": "Hoe",
@@ -5108,7 +8728,57 @@ const VALHEIM_ITEMS = [
     "maxQuality": 3,
     "durability": 200,
     "icon": "icons/Hoe.png",
-    "desc": "Hoe item in Valheim."
+    "desc": "A farmer's tool for working the earth."
+  },
+  {
+    "id": "IceShoes",
+    "name": "Ice Shoes",
+    "category": "Tools",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 300,
+    "icon": "icons/IceShoes.svg",
+    "desc": "Ice Shoes in Valheim 1.0."
+  },
+  {
+    "id": "SaddleLox",
+    "name": "Lox Saddle",
+    "category": "Tools",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 300,
+    "icon": "icons/SaddleLox.svg",
+    "desc": "Use on a lox to be able to ride it."
+  },
+  {
+    "id": "SaddleMoose",
+    "name": "Moose Saddle",
+    "category": "Tools",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 300,
+    "icon": "icons/SaddleMoose.svg",
+    "desc": "A moose is a noble creature, but with a saddle this fine it might just allow a rider."
+  },
+  {
+    "id": "Feaster",
+    "name": "Serving Tray",
+    "category": "Tools",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 300,
+    "icon": "icons/Feaster.svg",
+    "desc": "Set the table with whatever food and drink you fancy, and impress your guests with a delicious feast."
+  },
+  {
+    "id": "Shovel",
+    "name": "Snow Shovel",
+    "category": "Tools",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 300,
+    "icon": "icons/Shovel.svg",
+    "desc": "Useful for clearing away the deepest of snow."
   },
   {
     "id": "Torch",
@@ -5118,7 +8788,497 @@ const VALHEIM_ITEMS = [
     "maxQuality": 3,
     "durability": 200,
     "icon": "icons/Torch.png",
-    "desc": "Torch item in Valheim."
+    "desc": "It brings light and warmth, drives back the darkness."
+  },
+  {
+    "id": "TrophyAbomination",
+    "name": "Abomination Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyAbomination.png",
+    "desc": "A tangled mess of roots and bark."
+  },
+  {
+    "id": "TrophyAsksvin",
+    "name": "Asksvin Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyAsksvin.png",
+    "desc": "Don't let yourself be fooled by the friendly smile, for it could easily bite your arm off."
+  },
+  {
+    "id": "TrophyBarka",
+    "name": "Barka Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyBarka.svg",
+    "desc": "The frozen head of a once-living tree."
+  },
+  {
+    "id": "TrophyBjorn",
+    "name": "Bear Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyBjorn.svg",
+    "desc": "That stare is still frightening..."
+  },
+  {
+    "id": "TrophyBlob",
+    "name": "Blob Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyBlob.png",
+    "desc": "A smelly lump of sticky matter."
+  },
+  {
+    "id": "TrophyBoar",
+    "name": "Boar Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyBoar.png",
+    "desc": "This boar head would make for a nice decoration in any house."
+  },
+  {
+    "id": "TrophyCultist",
+    "name": "Cultist Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyCultist.png",
+    "desc": "My, what big teeth it has..."
+  },
+  {
+    "id": "TrophyDeer",
+    "name": "Deer Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyDeer.png",
+    "desc": "A fine specimen, but you'll need to kill more than deer to enter Valhalla."
+  },
+  {
+    "id": "TrophyHatchling",
+    "name": "Drake Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyHatchling.svg",
+    "desc": "Still cold to the touch."
+  },
+  {
+    "id": "TrophyDraugrElite",
+    "name": "Draugr Elite Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyDraugrElite.png",
+    "desc": "The dead stare of the glowing red eyes sends a shiver through your bones."
+  },
+  {
+    "id": "TrophyDraugr",
+    "name": "Draugr Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyDraugr.png",
+    "desc": "Bind up the mouth if it starts to whisper in the night..."
+  },
+  {
+    "id": "TrophyDvergr",
+    "name": "Dvergr Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyDvergr.png",
+    "desc": "It's frankly a little troubling that you would consider hanging these on your wall..."
+  },
+  {
+    "id": "TrophyElaking",
+    "name": "Elaking Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyElaking.svg",
+    "desc": "Mean little eyes stare back at you."
+  },
+  {
+    "id": "TrophyMole",
+    "name": "Eyeless One Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyMole.svg",
+    "desc": "Getting slashed by these claws would be very unpleasant."
+  },
+  {
+    "id": "TrophyFader",
+    "name": "Fader Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyFader.png",
+    "desc": "The green dragon, corrupted beyond redemption."
+  },
+  {
+    "id": "TrophyFallenValkyrie",
+    "name": "Fallen Valkyrie Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyFallenValkyrie.png",
+    "desc": "Though she is dead, she yearns for the blood to flow."
+  },
+  {
+    "id": "TrophyFenring",
+    "name": "Fenring Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyFenring.png",
+    "desc": "A strange, elongated paw, its claws razor sharp."
+  },
+  {
+    "id": "TrophyForestTroll",
+    "name": "Forest Troll Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyForestTroll.png",
+    "desc": "The leathery skin bears the faded tracery of ancient symbols."
+  },
+  {
+    "id": "TrophyBlob_Frost",
+    "name": "Frost Blob Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyBlob_Frost.svg",
+    "desc": "It's like a shard of ice, only...slimy?"
+  },
+  {
+    "id": "TrophyGoblinBrute",
+    "name": "Fuling Berserker Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyGoblinBrute.svg",
+    "desc": "The huge grizzled head is as heavy as a boulder."
+  },
+  {
+    "id": "TrophyGoblinShaman",
+    "name": "Fuling Shaman Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyGoblinShaman.svg",
+    "desc": "It shall cast no more spells against you."
+  },
+  {
+    "id": "TrophyGoblin",
+    "name": "Fuling Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyGoblin.svg",
+    "desc": "Loose folds of greenish skin gathered in around a pair of dark and hateful eyes."
+  },
+  {
+    "id": "TrophyCultist_Hildir",
+    "name": "Geirrhafa Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyCultist_Hildir.svg",
+    "desc": "He's giving you an icy stare."
+  },
+  {
+    "id": "TrophyGhost",
+    "name": "Ghost Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyGhost.png",
+    "desc": "Does it still whisper about unfinished business?"
+  },
+  {
+    "id": "TrophyGjall",
+    "name": "Gjall Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyGjall.png",
+    "desc": "Hopefully it won't float away."
+  },
+  {
+    "id": "TrophyGreydwarfBrute",
+    "name": "Greydwarf Brute Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyGreydwarfBrute.png",
+    "desc": "It took seven blows to hack this gnarled head from its body."
+  },
+  {
+    "id": "TrophyGreydwarfShaman",
+    "name": "Greydwarf Shaman Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyGreydwarfShaman.png",
+    "desc": "It may try to come back so be sure to prune any new shoots..."
+  },
+  {
+    "id": "TrophyGreydwarf",
+    "name": "Greydwarf Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyGreydwarf.png",
+    "desc": "The mossy, severed head of a Greydwarf."
+  },
+  {
+    "id": "TrophyGrowth",
+    "name": "Growth Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyGrowth.png",
+    "desc": "A black and sticky mess."
+  },
+  {
+    "id": "TrophyHare",
+    "name": "Hare Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyHare.png",
+    "desc": "These are said to bring luck. But not for their original owner."
+  },
+  {
+    "id": "TrophyJotunWitch",
+    "name": "Hexen Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyJotunWitch.svg",
+    "desc": "Before her death, her eyes sparked with magic. Now they're empty and void."
+  },
+  {
+    "id": "TrophyJotunWarrior",
+    "name": "Krigen Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyJotunWarrior.svg",
+    "desc": "Once a mighty warrior, now nought but a husk remains."
+  },
+  {
+    "id": "TrophyBlob_Lava",
+    "name": "Lava Blob Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyBlob_Lava.svg",
+    "desc": "It's probably dead, right?"
+  },
+  {
+    "id": "TrophyLeech",
+    "name": "Leech Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyLeech.png",
+    "desc": "Although slimy, the skin is beautifully patterned in red and black."
+  },
+  {
+    "id": "TrophyLox",
+    "name": "Lox Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyLox.png",
+    "desc": "A giant beast's head, thatched with thick fur."
+  },
+  {
+    "id": "TrophyCharredArcher",
+    "name": "Marksman Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyCharredArcher.svg",
+    "desc": "These legs could hold infinite power."
+  },
+  {
+    "id": "TrophyMoose",
+    "name": "Moose Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyMoose.svg",
+    "desc": "The mighty ruler of the northern forests."
+  },
+  {
+    "id": "TrophyMorgen",
+    "name": "Morgen Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyMorgen.png",
+    "desc": "The waking nightmare has met its end."
+  },
+  {
+    "id": "TrophyNeck",
+    "name": "Neck Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyNeck.png",
+    "desc": "The beady eyes and razor sharp teeth belie the ostensibly calm nature of this small lizard."
+  },
+  {
+    "id": "TrophyBlob_Morkhalla",
+    "name": "Pulp Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyBlob_Morkhalla.svg",
+    "desc": "Remains of unfortunate adventurers, digested and jellified over time."
+  },
+  {
+    "id": "TrophySkeletonPoison",
+    "name": "Rancid Remains Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophySkeletonPoison.svg",
+    "desc": "A rank and rotten skull. You're not sure why you kept it..."
+  },
+  {
+    "id": "TrophySeal",
+    "name": "Seal Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophySeal.svg",
+    "desc": "This animal never did any harm, yet it met an untimely end."
+  },
+  {
+    "id": "TrophySeeker",
+    "name": "Seeker Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophySeeker.png",
+    "desc": "Less delicate than they look. The leather of the wings catches the firelight as if remembering flight."
+  },
+  {
+    "id": "TrophySerpent",
+    "name": "Serpent Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophySerpent.png",
+    "desc": "The scales have dulled but the eyes are still bright."
+  },
+  {
+    "id": "TrophySkeleton",
+    "name": "Skeleton Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophySkeleton.png",
+    "desc": "The expressionless grin of this skull reminds you of the inevitability of death."
+  },
+  {
+    "id": "TrophySGolem",
+    "name": "Stone Golem Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophySGolem.svg",
+    "desc": "This crystalline rock formation would make for an impressive floor decoration."
+  },
+  {
+    "id": "TrophySurtling",
+    "name": "Surtling Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophySurtling.png",
+    "desc": "Wreathed in pale flame, it still smoulders like an ember."
+  },
+  {
+    "id": "TrophyTick",
+    "name": "Tick Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyTick.png",
+    "desc": "It's a conversation piece..."
+  },
+  {
+    "id": "TrophyBjornUndead",
+    "name": "Trophy Bjorn Undead",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyBjornUndead.svg",
+    "desc": "Trophy Bjorn Undead in Valheim 1.0."
   },
   {
     "id": "TrophyBonemass",
@@ -5128,7 +9288,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/TrophyBonemass.png",
-    "desc": "Trophy Bonemass item in Valheim."
+    "desc": "Bones and viscous goo, held together by some unseen force."
+  },
+  {
+    "id": "TrophyBonemawSerpent",
+    "name": "Trophy Bonemaw Serpent",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyBonemawSerpent.svg",
+    "desc": "Trophy Bonemaw Serpent in Valheim 1.0."
   },
   {
     "id": "TrophyDeathsquito",
@@ -5138,7 +9308,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/TrophyDeathsquito.png",
-    "desc": "Trophy Deathsquito item in Valheim."
+    "desc": "You don't like touching this thing even when it's dead."
+  },
+  {
+    "id": "TrophyDeerWhite",
+    "name": "Trophy Deer White",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyDeerWhite.svg",
+    "desc": "Trophy Deer White in Valheim 1.0."
   },
   {
     "id": "TrophyDragonQueen",
@@ -5148,7 +9328,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/TrophyDragonQueen.png",
-    "desc": "Trophy Dragon Queen item in Valheim."
+    "desc": "The head of a dragon, majestic even in the rigor of death."
+  },
+  {
+    "id": "TrophyDraugrFem",
+    "name": "Trophy Draugr Fem",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyDraugrFem.png",
+    "desc": "Trophy Draugr Fem in Valheim 1.0."
   },
   {
     "id": "TrophyEikthyr",
@@ -5158,7 +9348,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/TrophyEikthyr.png",
-    "desc": "Trophy Eikthyr item in Valheim."
+    "desc": "This severed head oozes power."
   },
   {
     "id": "TrophyFrostTroll",
@@ -5168,7 +9358,27 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/TrophyFrostTroll.png",
-    "desc": "Trophy Frost Troll item in Valheim."
+    "desc": "The eyes still glitter and swirl with silvery flecks. Don't look into them for too long..."
+  },
+  {
+    "id": "TrophyGoblinBruteBrosBrute",
+    "name": "Trophy Goblin Brute Bros Brute",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyGoblinBruteBrosBrute.svg",
+    "desc": "Trophy Goblin Brute Bros Brute in Valheim 1.0."
+  },
+  {
+    "id": "TrophyGoblinBruteBrosShaman",
+    "name": "Trophy Goblin Brute Bros Shaman",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyGoblinBruteBrosShaman.svg",
+    "desc": "Trophy Goblin Brute Bros Shaman in Valheim 1.0."
   },
   {
     "id": "TrophyGoblinKing",
@@ -5178,7 +9388,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/TrophyGoblinKing.png",
-    "desc": "Trophy Goblin King item in Valheim."
+    "desc": "The crownless head of a dead king."
+  },
+  {
+    "id": "TrophySeekerBrute",
+    "name": "Trophy Seeker Brute",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophySeekerBrute.svg",
+    "desc": "Trophy Seeker Brute in Valheim 1.0."
   },
   {
     "id": "TrophySeekerQueen",
@@ -5188,7 +9408,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/TrophySeekerQueen.png",
-    "desc": "Trophy Seeker Queen item in Valheim."
+    "desc": "She has seen enough."
+  },
+  {
+    "id": "TrophySkeletonHildir",
+    "name": "Trophy Skeleton Hildir",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophySkeletonHildir.svg",
+    "desc": "Trophy Skeleton Hildir in Valheim 1.0."
   },
   {
     "id": "TrophyTheElder",
@@ -5198,7 +9428,77 @@ const VALHEIM_ITEMS = [
     "maxQuality": 1,
     "durability": 100,
     "icon": "icons/TrophyTheElder.png",
-    "desc": "Trophy The Elder item in Valheim."
+    "desc": "Trophy The Elder in Valheim 1.0."
+  },
+  {
+    "id": "TrophyWrithan",
+    "name": "Trophy Writhan",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyWrithan.svg",
+    "desc": "Trophy Writhan in Valheim 1.0."
+  },
+  {
+    "id": "TrophyUlv",
+    "name": "Ulv Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyUlv.png",
+    "desc": "A rugged tail from a not so good boy."
+  },
+  {
+    "id": "TrophyVolture",
+    "name": "Volture Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyVolture.png",
+    "desc": "It's like a vulture, but it thrives in volcanic climates."
+  },
+  {
+    "id": "TrophyCharredMage",
+    "name": "Warlock Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyCharredMage.svg",
+    "desc": "A warm glow seems to almost emanate from within. Handle with care."
+  },
+  {
+    "id": "TrophyCharredMelee",
+    "name": "Warrior Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyCharredMelee.svg",
+    "desc": "Fractures line this skull, as if it has taken many hits over the years."
+  },
+  {
+    "id": "TrophyWolf",
+    "name": "Wolf Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyWolf.png",
+    "desc": "Frozen in death, the hair matted with blood and a silent howl lodged in its throat."
+  },
+  {
+    "id": "TrophyWraith",
+    "name": "Wraith Trophy",
+    "category": "Trophies",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
+    "icon": "icons/TrophyWraith.png",
+    "desc": "The shed skin of a wraith, a flowing robe only visible by moonlight."
   },
   {
     "id": "AbyssalHarpoon",
@@ -5251,6 +9551,16 @@ const VALHEIM_ITEMS = [
     "desc": "Arbalest item in Valheim."
   },
   {
+    "id": "ArrowBloodGold",
+    "name": "Arrow Blood Gold",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/ArrowBloodGold.svg",
+    "desc": "Arrow Blood Gold in Valheim 1.0."
+  },
+  {
     "id": "BowAshlands",
     "name": "Ash Fang",
     "category": "Weapons",
@@ -5271,6 +9581,36 @@ const VALHEIM_ITEMS = [
     "desc": "Ashlands Gourmet Bowl item in Valheim."
   },
   {
+    "id": "AtgeirGold_BloodLightning",
+    "name": "Atgeir Gold Blood Lightning",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/AtgeirGold_BloodLightning.svg",
+    "desc": "Atgeir Gold Blood Lightning in Valheim 1.0."
+  },
+  {
+    "id": "AtgeirGoldUncooked",
+    "name": "Atgeir Gold Uncooked",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/AtgeirGoldUncooked.svg",
+    "desc": "Atgeir Gold Uncooked in Valheim 1.0."
+  },
+  {
+    "id": "AxeGoldUncooked",
+    "name": "Axe Gold Uncooked",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/AxeGoldUncooked.svg",
+    "desc": "Axe Gold Uncooked in Valheim 1.0."
+  },
+  {
     "id": "Battleaxe",
     "name": "Battleaxe",
     "category": "Weapons",
@@ -5279,6 +9619,16 @@ const VALHEIM_ITEMS = [
     "durability": 250,
     "icon": "icons/Battleaxe.png",
     "desc": "Skull-splitter, a warrior's joy."
+  },
+  {
+    "id": "BattleaxeGoldUncooked",
+    "name": "Battleaxe Gold Uncooked",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/BattleaxeGoldUncooked.svg",
+    "desc": "Battleaxe Gold Uncooked in Valheim 1.0."
   },
   {
     "id": "AxeBerzerkr",
@@ -5371,6 +9721,16 @@ const VALHEIM_ITEMS = [
     "desc": "Black Metal Knife item in Valheim."
   },
   {
+    "id": "TurretBolt",
+    "name": "Black Metal Missile",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/TurretBolt.svg",
+    "desc": "These thick missiles can punch through the hide of even the toughest foes."
+  },
+  {
     "id": "BlackMetalPickaxe",
     "name": "Black Metal Pickaxe",
     "category": "Weapons",
@@ -5411,6 +9771,16 @@ const VALHEIM_ITEMS = [
     "desc": "Bleeding Berserkir Axes item in Valheim."
   },
   {
+    "id": "BombBlob_Morkhalla",
+    "name": "Blob Bomb: Pulp",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/BombBlob_Morkhalla.svg",
+    "desc": "A dungeon is where the blob is."
+  },
+  {
     "id": "BowAshlandsBlood",
     "name": "Blood Fang",
     "category": "Weapons",
@@ -5419,6 +9789,26 @@ const VALHEIM_ITEMS = [
     "durability": 250,
     "icon": "icons/BowAshlandsBlood.png",
     "desc": "Arrows loosed from this bow will tear into flesh with unmatched ferocity."
+  },
+  {
+    "id": "BoltBloodGold",
+    "name": "Bolt Blood Gold",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/BoltBloodGold.svg",
+    "desc": "Bolt Blood Gold in Valheim 1.0."
+  },
+  {
+    "id": "BombDynamite",
+    "name": "Bomb Dynamite",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/BombDynamite.svg",
+    "desc": "Bomb Dynamite in Valheim 1.0."
   },
   {
     "id": "charred_bow",
@@ -5459,6 +9849,16 @@ const VALHEIM_ITEMS = [
     "durability": 250,
     "icon": "icons/charred_bow_volley_Fader.png",
     "desc": "A simple bow."
+  },
+  {
+    "id": "BowGoldUncooked",
+    "name": "Bow Gold Uncooked",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/BowGoldUncooked.svg",
+    "desc": "Bow Gold Uncooked in Valheim 1.0."
   },
   {
     "id": "AtgeirBronze",
@@ -5578,7 +9978,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 4,
     "durability": 250,
     "icon": "icons/Club.png",
-    "desc": "Club item in Valheim."
+    "desc": "A crude but useful weapon."
   },
   {
     "id": "CopperKnife",
@@ -5598,7 +9998,57 @@ const VALHEIM_ITEMS = [
     "maxQuality": 4,
     "durability": 250,
     "icon": "icons/CrossbowArbalest.png",
-    "desc": "Crossbow Arbalest item in Valheim."
+    "desc": "Crossbow Arbalest in Valheim 1.0."
+  },
+  {
+    "id": "CrossbowGoldUncooked",
+    "name": "Crossbow Gold Uncooked",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/CrossbowGoldUncooked.svg",
+    "desc": "Crossbow Gold Uncooked in Valheim 1.0."
+  },
+  {
+    "id": "CrossbowRipper",
+    "name": "Crossbow Ripper",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/CrossbowRipper.svg",
+    "desc": "Crossbow Ripper in Valheim 1.0."
+  },
+  {
+    "id": "CrossbowRipperBlood",
+    "name": "Crossbow Ripper Blood",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/CrossbowRipperBlood.svg",
+    "desc": "Crossbow Ripper Blood in Valheim 1.0."
+  },
+  {
+    "id": "CrossbowRipperLightning",
+    "name": "Crossbow Ripper Lightning",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/CrossbowRipperLightning.svg",
+    "desc": "Crossbow Ripper Lightning in Valheim 1.0."
+  },
+  {
+    "id": "CrossbowRipperNature",
+    "name": "Crossbow Ripper Nature",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/CrossbowRipperNature.svg",
+    "desc": "Crossbow Ripper Nature in Valheim 1.0."
   },
   {
     "id": "Bow",
@@ -5671,6 +10121,16 @@ const VALHEIM_ITEMS = [
     "desc": "Dark wood strung with glistening sinew. A vicious thing."
   },
   {
+    "id": "Lantern",
+    "name": "Dvergr Lantern",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/Lantern.svg",
+    "desc": "A simple torch would just be so old fashioned."
+  },
+  {
     "id": "Dyrnwyn",
     "name": "Dyrnwyn",
     "category": "Weapons",
@@ -5731,6 +10191,46 @@ const VALHEIM_ITEMS = [
     "desc": "Finewood Bow item in Valheim."
   },
   {
+    "id": "FistBjornClaw",
+    "name": "Fist Bjorn Claw",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/FistBjornClaw.svg",
+    "desc": "Fist Bjorn Claw in Valheim 1.0."
+  },
+  {
+    "id": "FistBjornUndeadClaw",
+    "name": "Fist Bjorn Undead Claw",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/FistBjornUndeadClaw.svg",
+    "desc": "Fist Bjorn Undead Claw in Valheim 1.0."
+  },
+  {
+    "id": "FistFenrirClaw",
+    "name": "Fist Fenrir Claw",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/FistFenrirClaw.svg",
+    "desc": "Fist Fenrir Claw in Valheim 1.0."
+  },
+  {
+    "id": "FistGoldUncooked",
+    "name": "Fist Gold Uncooked",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/FistGoldUncooked.svg",
+    "desc": "Fist Gold Uncooked in Valheim 1.0."
+  },
+  {
     "id": "FlametalMace",
     "name": "Flametal Mace",
     "category": "Weapons",
@@ -5781,6 +10281,126 @@ const VALHEIM_ITEMS = [
     "desc": "Flint Spear item in Valheim."
   },
   {
+    "id": "AtgeirGold_FrostFire",
+    "name": "Frostfire Atgeir",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/AtgeirGold_FrostFire.svg",
+    "desc": "Let the flames begin to devour, while the ice claims whatever remains."
+  },
+  {
+    "id": "AxeGold_FrostFire",
+    "name": "Frostfire Axe",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/AxeGold_FrostFire.svg",
+    "desc": "Burn it all to the ground, or freeze it in an eternal moment of destruction..."
+  },
+  {
+    "id": "BowGold_FrostFire",
+    "name": "Frostfire Bow",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/BowGold_FrostFire.svg",
+    "desc": "Keep your head cool as you draw, and then let your fury loose with your arrows."
+  },
+  {
+    "id": "CrossbowGold_FrostFire",
+    "name": "Frostfire Crossbow",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/CrossbowGold_FrostFire.svg",
+    "desc": "If your enemies don't freeze as you take aim, they are sure to do so once they are hit."
+  },
+  {
+    "id": "KnifeGold_FrostFire",
+    "name": "Frostfire Dagger",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/KnifeGold_FrostFire.svg",
+    "desc": "A cut from this blade stings like ice, then burns like the flame."
+  },
+  {
+    "id": "BattleaxeGold_FrostFire",
+    "name": "Frostfire Greataxe",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/BattleaxeGold_FrostFire.svg",
+    "desc": "Strike your foes with a frozen inferno!"
+  },
+  {
+    "id": "THSwordGold_FrostFire",
+    "name": "Frostfire Greatsword",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/THSwordGold_FrostFire.svg",
+    "desc": "The choice between a fiery end and a frozen one is simple: Both at the same time."
+  },
+  {
+    "id": "FistGold_FrostFire",
+    "name": "Frostfire Knucklechains",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/FistGold_FrostFire.svg",
+    "desc": "A slight risk of frostbite is inevitable."
+  },
+  {
+    "id": "MaceGold_FrostFire",
+    "name": "Frostfire Mace",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/MaceGold_FrostFire.svg",
+    "desc": "Are those sparks that fly as this weapon finds its impact, or are they shards of ice?"
+  },
+  {
+    "id": "SledgeGold_FrostFire",
+    "name": "Frostfire Sledge",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SledgeGold_FrostFire.svg",
+    "desc": "Is it so cold that it's burning, or so hot that it's freezing?"
+  },
+  {
+    "id": "SpearGold_FrostFire",
+    "name": "Frostfire Spear",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SpearGold_FrostFire.svg",
+    "desc": "Dipped in frozen flames, this spear spells certain doom."
+  },
+  {
+    "id": "SwordGold_FrostFire",
+    "name": "Frostfire Sword",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SwordGold_FrostFire.svg",
+    "desc": "Flames dance along this blade, but are they hot or cold?"
+  },
+  {
     "id": "Frostner",
     "name": "Frostner",
     "category": "Weapons",
@@ -5789,6 +10409,16 @@ const VALHEIM_ITEMS = [
     "durability": 250,
     "icon": "icons/Frostner.png",
     "desc": "Frostner item in Valheim."
+  },
+  {
+    "id": "GrapplingHook",
+    "name": "Grappling Hook",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/GrapplingHook.svg",
+    "desc": "Grappling Hook in Valheim 1.0."
   },
   {
     "id": "AtgeirHimminAfl",
@@ -5911,6 +10541,136 @@ const VALHEIM_ITEMS = [
     "desc": "Not even the giants of old could weather the poisonous bite of this weapon."
   },
   {
+    "id": "KnifeBlackMetal",
+    "name": "Knife Black Metal",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/KnifeBlackMetal.svg",
+    "desc": "Knife Black Metal in Valheim 1.0."
+  },
+  {
+    "id": "KnifeButcher",
+    "name": "Knife Butcher",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/KnifeButcher.svg",
+    "desc": "Knife Butcher in Valheim 1.0."
+  },
+  {
+    "id": "KnifeChitin",
+    "name": "Knife Chitin",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/KnifeChitin.svg",
+    "desc": "Knife Chitin in Valheim 1.0."
+  },
+  {
+    "id": "KnifeCopper",
+    "name": "Knife Copper",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/KnifeCopper.svg",
+    "desc": "Knife Copper in Valheim 1.0."
+  },
+  {
+    "id": "KnifeFlint",
+    "name": "Knife Flint",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/KnifeFlint.svg",
+    "desc": "Knife Flint in Valheim 1.0."
+  },
+  {
+    "id": "KnifeGoldUncooked",
+    "name": "Knife Gold Uncooked",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/KnifeGoldUncooked.svg",
+    "desc": "Knife Gold Uncooked in Valheim 1.0."
+  },
+  {
+    "id": "KnifeSilver",
+    "name": "Knife Silver",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/KnifeSilver.svg",
+    "desc": "Knife Silver in Valheim 1.0."
+  },
+  {
+    "id": "KnifeSkollAndHati",
+    "name": "Knife Skoll And Hati",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/KnifeSkollAndHati.svg",
+    "desc": "Knife Skoll And Hati in Valheim 1.0."
+  },
+  {
+    "id": "KnifeVoid",
+    "name": "Knife Void",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/KnifeVoid.svg",
+    "desc": "Knife Void in Valheim 1.0."
+  },
+  {
+    "id": "KnifeWood",
+    "name": "Knife Wood",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/KnifeWood.svg",
+    "desc": "Knife Wood in Valheim 1.0."
+  },
+  {
+    "id": "Lantern_DN",
+    "name": "Lantern DN",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/Lantern_DN.svg",
+    "desc": "Lantern DN in Valheim 1.0."
+  },
+  {
+    "id": "Lantern_hooded",
+    "name": "Lantern hooded",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/Lantern_hooded.svg",
+    "desc": "Lantern hooded in Valheim 1.0."
+  },
+  {
+    "id": "StaffThunderBlood",
+    "name": "Lightning Strike",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/StaffThunderBlood.svg",
+    "desc": "Channels the wrath of ancient thunder into a devastating bolt."
+  },
+  {
     "id": "MaceBronze",
     "name": "Mace Bronze",
     "category": "Weapons",
@@ -5918,7 +10678,57 @@ const VALHEIM_ITEMS = [
     "maxQuality": 4,
     "durability": 250,
     "icon": "icons/MaceBronze.png",
-    "desc": "Mace Bronze item in Valheim."
+    "desc": "Mace Bronze in Valheim 1.0."
+  },
+  {
+    "id": "MaceEldner",
+    "name": "Mace Eldner",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/MaceEldner.svg",
+    "desc": "Mace Eldner in Valheim 1.0."
+  },
+  {
+    "id": "MaceEldnerBlood",
+    "name": "Mace Eldner Blood",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/MaceEldnerBlood.svg",
+    "desc": "Mace Eldner Blood in Valheim 1.0."
+  },
+  {
+    "id": "MaceEldnerLightning",
+    "name": "Mace Eldner Lightning",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/MaceEldnerLightning.svg",
+    "desc": "Mace Eldner Lightning in Valheim 1.0."
+  },
+  {
+    "id": "MaceEldnerNature",
+    "name": "Mace Eldner Nature",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/MaceEldnerNature.svg",
+    "desc": "Mace Eldner Nature in Valheim 1.0."
+  },
+  {
+    "id": "MaceGoldUncooked",
+    "name": "Mace Gold Uncooked",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/MaceGoldUncooked.svg",
+    "desc": "Mace Gold Uncooked in Valheim 1.0."
   },
   {
     "id": "MaceIron",
@@ -5928,7 +10738,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 4,
     "durability": 250,
     "icon": "icons/MaceIron.png",
-    "desc": "Mace Iron item in Valheim."
+    "desc": "Mace Iron in Valheim 1.0."
   },
   {
     "id": "MaceNeedle",
@@ -5938,7 +10748,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 4,
     "durability": 250,
     "icon": "icons/MaceNeedle.png",
-    "desc": "Mace Needle item in Valheim."
+    "desc": "Mace Needle in Valheim 1.0."
   },
   {
     "id": "MaceSilver",
@@ -5948,7 +10758,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 4,
     "durability": 250,
     "icon": "icons/MaceSilver.png",
-    "desc": "Mace Silver item in Valheim."
+    "desc": "Mace Silver in Valheim 1.0."
+  },
+  {
+    "id": "MaceWood",
+    "name": "Mace Wood",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/MaceWood.svg",
+    "desc": "Mace Wood in Valheim 1.0."
   },
   {
     "id": "Mistwalker",
@@ -5961,6 +10781,126 @@ const VALHEIM_ITEMS = [
     "desc": "Mistwalker item in Valheim."
   },
   {
+    "id": "MoldAtgeir",
+    "name": "Mold Atgeir",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/MoldAtgeir.svg",
+    "desc": "Mold Atgeir in Valheim 1.0."
+  },
+  {
+    "id": "MoldAxe",
+    "name": "Mold Axe",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/MoldAxe.svg",
+    "desc": "Mold Axe in Valheim 1.0."
+  },
+  {
+    "id": "MoldAxe2H",
+    "name": "Mold Axe 2H",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/MoldAxe2H.svg",
+    "desc": "Mold Axe 2H in Valheim 1.0."
+  },
+  {
+    "id": "MoldBow",
+    "name": "Mold Bow",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/MoldBow.svg",
+    "desc": "Mold Bow in Valheim 1.0."
+  },
+  {
+    "id": "MoldCrossbow",
+    "name": "Mold Crossbow",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/MoldCrossbow.svg",
+    "desc": "Mold Crossbow in Valheim 1.0."
+  },
+  {
+    "id": "MoldFistweapon",
+    "name": "Mold Fistweapon",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/MoldFistweapon.svg",
+    "desc": "Mold Fistweapon in Valheim 1.0."
+  },
+  {
+    "id": "MoldKnife",
+    "name": "Mold Knife",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/MoldKnife.svg",
+    "desc": "Mold Knife in Valheim 1.0."
+  },
+  {
+    "id": "MoldMace",
+    "name": "Mold Mace",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/MoldMace.svg",
+    "desc": "Mold Mace in Valheim 1.0."
+  },
+  {
+    "id": "MoldMace2H",
+    "name": "Mold Mace 2H",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/MoldMace2H.svg",
+    "desc": "Mold Mace 2H in Valheim 1.0."
+  },
+  {
+    "id": "MoldSpear",
+    "name": "Mold Spear",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/MoldSpear.svg",
+    "desc": "Mold Spear in Valheim 1.0."
+  },
+  {
+    "id": "MoldSword",
+    "name": "Mold Sword",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/MoldSword.svg",
+    "desc": "Mold Sword in Valheim 1.0."
+  },
+  {
+    "id": "MoldSword2H",
+    "name": "Mold Sword 2H",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/MoldSword2H.svg",
+    "desc": "Mold Sword 2H in Valheim 1.0."
+  },
+  {
     "id": "AxeHead2",
     "name": "Mysterious Axe Head",
     "category": "Weapons",
@@ -5971,6 +10911,136 @@ const VALHEIM_ITEMS = [
     "desc": "What battles has this weapon borne witness to? You cannot see its past, only shape its future..."
   },
   {
+    "id": "AtgeirGold",
+    "name": "Nord Atgeir",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/AtgeirGold.svg",
+    "desc": "The edge of this weapon is as deadly as it is shiny."
+  },
+  {
+    "id": "AxeGold",
+    "name": "Nord Axe",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/AxeGold.svg",
+    "desc": "A finely detailed axe, for finely cutting down your enemies."
+  },
+  {
+    "id": "BowGold",
+    "name": "Nord Bow",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/BowGold.svg",
+    "desc": "This bow shall find its target with a golden precision."
+  },
+  {
+    "id": "CrossbowGold",
+    "name": "Nord Crossbow",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/CrossbowGold.svg",
+    "desc": "An incredible force is bound to this weapon, waiting to be unleashed."
+  },
+  {
+    "id": "KnifeGold",
+    "name": "Nord Dagger",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/KnifeGold.svg",
+    "desc": "A flash of gold is the last thing your foes will ever see."
+  },
+  {
+    "id": "BattleaxeGold",
+    "name": "Nord Greataxe",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/BattleaxeGold.svg",
+    "desc": "A mighty axe fit for a mighty warrior."
+  },
+  {
+    "id": "THSwordGold",
+    "name": "Nord Greatsword",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/THSwordGold.svg",
+    "desc": "A colossal blade forged from bloodgold, cleaving through the deepest frost."
+  },
+  {
+    "id": "FistGold",
+    "name": "Nord Knucklechains",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/FistGold.svg",
+    "desc": "Bloodgold chains wrapped around the knuckles, striking with brutal force."
+  },
+  {
+    "id": "MaceGold",
+    "name": "Nord Mace",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/MaceGold.svg",
+    "desc": "Hit hard and fast, and leave your foe no time to recover."
+  },
+  {
+    "id": "SledgeGold",
+    "name": "Nord Sledge",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SledgeGold.svg",
+    "desc": "With this weapon, your blows will be heavy as that of a troll."
+  },
+  {
+    "id": "SpearGold",
+    "name": "Nord Spear",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SpearGold.svg",
+    "desc": "A golden opportunity to strike."
+  },
+  {
+    "id": "SwordGold",
+    "name": "Nord Sword",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SwordGold.svg",
+    "desc": "Even in the faintest sunlight, this weapon glimmers."
+  },
+  {
+    "id": "PickaxeAntler",
+    "name": "Pickaxe Antler",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/PickaxeAntler.png",
+    "desc": "Pickaxe Antler in Valheim 1.0."
+  },
+  {
     "id": "PickaxeBlackMetal",
     "name": "Pickaxe Black Metal",
     "category": "Weapons",
@@ -5978,7 +11048,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 4,
     "durability": 250,
     "icon": "icons/PickaxeBlackMetal.png",
-    "desc": "Pickaxe Black Metal item in Valheim."
+    "desc": "Pickaxe Black Metal in Valheim 1.0."
+  },
+  {
+    "id": "PickaxeBronze",
+    "name": "Pickaxe Bronze",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/PickaxeBronze.png",
+    "desc": "Pickaxe Bronze in Valheim 1.0."
   },
   {
     "id": "PickaxeIron",
@@ -5988,7 +11068,27 @@ const VALHEIM_ITEMS = [
     "maxQuality": 4,
     "durability": 250,
     "icon": "icons/PickaxeIron.png",
-    "desc": "Pickaxe Iron item in Valheim."
+    "desc": "Pickaxe Iron in Valheim 1.0."
+  },
+  {
+    "id": "PickaxeStone",
+    "name": "Pickaxe Stone",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/PickaxeStone.svg",
+    "desc": "Pickaxe Stone in Valheim 1.0."
+  },
+  {
+    "id": "PlayerUnarmed",
+    "name": "Player Unarmed",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/PlayerUnarmed.svg",
+    "desc": "Player Unarmed in Valheim 1.0."
   },
   {
     "id": "Porcupine",
@@ -6111,6 +11211,216 @@ const VALHEIM_ITEMS = [
     "desc": "Slayer item in Valheim."
   },
   {
+    "id": "SledgeCheat",
+    "name": "Sledge Cheat",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SledgeCheat.svg",
+    "desc": "Sledge Cheat in Valheim 1.0."
+  },
+  {
+    "id": "SledgeDemolisher",
+    "name": "Sledge Demolisher",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SledgeDemolisher.svg",
+    "desc": "Sledge Demolisher in Valheim 1.0."
+  },
+  {
+    "id": "SledgeGold_BloodLightning",
+    "name": "Sledge Gold Blood Lightning",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SledgeGold_BloodLightning.svg",
+    "desc": "Sledge Gold Blood Lightning in Valheim 1.0."
+  },
+  {
+    "id": "SledgeGoldUncooked",
+    "name": "Sledge Gold Uncooked",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SledgeGoldUncooked.svg",
+    "desc": "Sledge Gold Uncooked in Valheim 1.0."
+  },
+  {
+    "id": "SledgeIron",
+    "name": "Sledge Iron",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SledgeIron.svg",
+    "desc": "Sledge Iron in Valheim 1.0."
+  },
+  {
+    "id": "SledgeStagbreaker",
+    "name": "Sledge Stagbreaker",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SledgeStagbreaker.png",
+    "desc": "Sledge Stagbreaker in Valheim 1.0."
+  },
+  {
+    "id": "SledgeWood",
+    "name": "Sledge Wood",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SledgeWood.svg",
+    "desc": "Sledge Wood in Valheim 1.0."
+  },
+  {
+    "id": "Snowball",
+    "name": "Snowball",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/Snowball.svg",
+    "desc": "Looks like a perfect thing to throw..."
+  },
+  {
+    "id": "SnowballBig",
+    "name": "Snowball Big",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SnowballBig.svg",
+    "desc": "Snowball Big in Valheim 1.0."
+  },
+  {
+    "id": "SpearBronze",
+    "name": "Spear Bronze",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SpearBronze.png",
+    "desc": "Spear Bronze in Valheim 1.0."
+  },
+  {
+    "id": "SpearCarapace",
+    "name": "Spear Carapace",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SpearCarapace.svg",
+    "desc": "Spear Carapace in Valheim 1.0."
+  },
+  {
+    "id": "SpearChitin",
+    "name": "Spear Chitin",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SpearChitin.svg",
+    "desc": "Spear Chitin in Valheim 1.0."
+  },
+  {
+    "id": "SpearElderbark",
+    "name": "Spear Elderbark",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SpearElderbark.svg",
+    "desc": "Spear Elderbark in Valheim 1.0."
+  },
+  {
+    "id": "SpearFlint",
+    "name": "Spear Flint",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SpearFlint.svg",
+    "desc": "Spear Flint in Valheim 1.0."
+  },
+  {
+    "id": "SpearGoldUncooked",
+    "name": "Spear Gold Uncooked",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SpearGoldUncooked.svg",
+    "desc": "Spear Gold Uncooked in Valheim 1.0."
+  },
+  {
+    "id": "SpearSplitner",
+    "name": "Spear Splitner",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SpearSplitner.svg",
+    "desc": "Spear Splitner in Valheim 1.0."
+  },
+  {
+    "id": "SpearSplitner_Blood",
+    "name": "Spear Splitner Blood",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SpearSplitner_Blood.svg",
+    "desc": "Spear Splitner Blood in Valheim 1.0."
+  },
+  {
+    "id": "SpearSplitner_Lightning",
+    "name": "Spear Splitner Lightning",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SpearSplitner_Lightning.svg",
+    "desc": "Spear Splitner Lightning in Valheim 1.0."
+  },
+  {
+    "id": "SpearSplitner_Nature",
+    "name": "Spear Splitner Nature",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SpearSplitner_Nature.svg",
+    "desc": "Spear Splitner Nature in Valheim 1.0."
+  },
+  {
+    "id": "SpearWolfFang",
+    "name": "Spear Wolf Fang",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SpearWolfFang.svg",
+    "desc": "Spear Wolf Fang in Valheim 1.0."
+  },
+  {
+    "id": "SpearWood",
+    "name": "Spear Wood",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SpearWood.svg",
+    "desc": "Spear Wood in Valheim 1.0."
+  },
+  {
     "id": "BowSpineSnap",
     "name": "Spinesnap",
     "category": "Weapons",
@@ -6119,6 +11429,106 @@ const VALHEIM_ITEMS = [
     "durability": 250,
     "icon": "icons/BowSpineSnap.png",
     "desc": "Using this bow is backbreaking work but so worth it."
+  },
+  {
+    "id": "StaffSpiritCaller",
+    "name": "Spirit Caller",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/StaffSpiritCaller.svg",
+    "desc": "Summons guardian spirits from the ancestral realm."
+  },
+  {
+    "id": "StaffFrostOrbs",
+    "name": "Staff Frost Orbs",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/StaffFrostOrbs.svg",
+    "desc": "Staff Frost Orbs in Valheim 1.0."
+  },
+  {
+    "id": "StaffFrostOrbsUncooked",
+    "name": "Staff Frost Orbs Uncooked",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/StaffFrostOrbsUncooked.svg",
+    "desc": "Staff Frost Orbs Uncooked in Valheim 1.0."
+  },
+  {
+    "id": "StaffLightning",
+    "name": "Staff Lightning",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/StaffLightning.svg",
+    "desc": "Staff Lightning in Valheim 1.0."
+  },
+  {
+    "id": "StaffClusterbomb",
+    "name": "Staff of Fracturing",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/StaffClusterbomb.svg",
+    "desc": "Only those with patience and focus will be able to harness the true power of this staff."
+  },
+  {
+    "id": "StaffGreenRoots",
+    "name": "Staff of the Wild",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/StaffGreenRoots.svg",
+    "desc": "Ancient natural forces lie curled and dormant within this staff, ready to be unleashed."
+  },
+  {
+    "id": "StaffOrbofAhri",
+    "name": "Staff Orbof Ahri",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/StaffOrbofAhri.svg",
+    "desc": "Staff Orbof Ahri in Valheim 1.0."
+  },
+  {
+    "id": "StaffOrbofAhriUncooked",
+    "name": "Staff Orbof Ahri Uncooked",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/StaffOrbofAhriUncooked.svg",
+    "desc": "Staff Orbof Ahri Uncooked in Valheim 1.0."
+  },
+  {
+    "id": "StaffSpiritCallerUncooked",
+    "name": "Staff Spirit Caller Uncooked",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/StaffSpiritCallerUncooked.svg",
+    "desc": "Staff Spirit Caller Uncooked in Valheim 1.0."
+  },
+  {
+    "id": "StaffThunderbloodUncooked",
+    "name": "Staff Thunderblood Uncooked",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/StaffThunderbloodUncooked.svg",
+    "desc": "Staff Thunderblood Uncooked in Valheim 1.0."
   },
   {
     "id": "AxeStone",
@@ -6168,7 +11578,7 @@ const VALHEIM_ITEMS = [
     "maxQuality": 4,
     "durability": 250,
     "icon": "icons/SwordBlackmetal.png",
-    "desc": "Sword Blackmetal item in Valheim."
+    "desc": "Sword Blackmetal in Valheim 1.0."
   },
   {
     "id": "SwordBronze",
@@ -6178,7 +11588,27 @@ const VALHEIM_ITEMS = [
     "maxQuality": 4,
     "durability": 250,
     "icon": "icons/SwordBronze.png",
-    "desc": "Sword Bronze item in Valheim."
+    "desc": "Sword Bronze in Valheim 1.0."
+  },
+  {
+    "id": "SwordCheat",
+    "name": "Sword Cheat",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SwordCheat.png",
+    "desc": "Sword Cheat in Valheim 1.0."
+  },
+  {
+    "id": "SwordDyrnwyn",
+    "name": "Sword Dyrnwyn",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SwordDyrnwyn.svg",
+    "desc": "Sword Dyrnwyn in Valheim 1.0."
   },
   {
     "id": "SwordFlametal",
@@ -6191,6 +11621,16 @@ const VALHEIM_ITEMS = [
     "desc": "Sword Flametal item in Valheim."
   },
   {
+    "id": "SwordGoldUncooked",
+    "name": "Sword Gold Uncooked",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SwordGoldUncooked.svg",
+    "desc": "Sword Gold Uncooked in Valheim 1.0."
+  },
+  {
     "id": "SwordIron",
     "name": "Sword Iron",
     "category": "Weapons",
@@ -6198,7 +11638,17 @@ const VALHEIM_ITEMS = [
     "maxQuality": 4,
     "durability": 250,
     "icon": "icons/SwordIron.png",
-    "desc": "Sword Iron item in Valheim."
+    "desc": "Sword Iron in Valheim 1.0."
+  },
+  {
+    "id": "SwordIronFire",
+    "name": "Sword Iron Fire",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SwordIronFire.svg",
+    "desc": "Sword Iron Fire in Valheim 1.0."
   },
   {
     "id": "SwordMistwalker",
@@ -6208,7 +11658,47 @@ const VALHEIM_ITEMS = [
     "maxQuality": 4,
     "durability": 250,
     "icon": "icons/SwordMistwalker.png",
-    "desc": "Sword Mistwalker item in Valheim."
+    "desc": "Sword Mistwalker in Valheim 1.0."
+  },
+  {
+    "id": "SwordNiedhogg",
+    "name": "Sword Niedhogg",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SwordNiedhogg.svg",
+    "desc": "Sword Niedhogg in Valheim 1.0."
+  },
+  {
+    "id": "SwordNiedhoggBlood",
+    "name": "Sword Niedhogg Blood",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SwordNiedhoggBlood.svg",
+    "desc": "Sword Niedhogg Blood in Valheim 1.0."
+  },
+  {
+    "id": "SwordNiedhoggLightning",
+    "name": "Sword Niedhogg Lightning",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SwordNiedhoggLightning.svg",
+    "desc": "Sword Niedhogg Lightning in Valheim 1.0."
+  },
+  {
+    "id": "SwordNiedhoggNature",
+    "name": "Sword Niedhogg Nature",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SwordNiedhoggNature.svg",
+    "desc": "Sword Niedhogg Nature in Valheim 1.0."
   },
   {
     "id": "SwordSilver",
@@ -6218,7 +11708,187 @@ const VALHEIM_ITEMS = [
     "maxQuality": 4,
     "durability": 250,
     "icon": "icons/SwordSilver.png",
-    "desc": "Sword Silver item in Valheim."
+    "desc": "Sword Silver in Valheim 1.0."
+  },
+  {
+    "id": "SwordWood",
+    "name": "Sword Wood",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SwordWood.svg",
+    "desc": "Sword Wood in Valheim 1.0."
+  },
+  {
+    "id": "THSwordGoldUncooked",
+    "name": "THSword Gold Uncooked",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/THSwordGoldUncooked.svg",
+    "desc": "THSword Gold Uncooked in Valheim 1.0."
+  },
+  {
+    "id": "THSwordKrom",
+    "name": "THSword Krom",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/THSwordKrom.svg",
+    "desc": "THSword Krom in Valheim 1.0."
+  },
+  {
+    "id": "THSwordSlayer",
+    "name": "THSword Slayer",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/THSwordSlayer.svg",
+    "desc": "THSword Slayer in Valheim 1.0."
+  },
+  {
+    "id": "THSwordSlayerBlood",
+    "name": "THSword Slayer Blood",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/THSwordSlayerBlood.svg",
+    "desc": "THSword Slayer Blood in Valheim 1.0."
+  },
+  {
+    "id": "THSwordSlayerLightning",
+    "name": "THSword Slayer Lightning",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/THSwordSlayerLightning.svg",
+    "desc": "THSword Slayer Lightning in Valheim 1.0."
+  },
+  {
+    "id": "THSwordSlayerNature",
+    "name": "THSword Slayer Nature",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/THSwordSlayerNature.svg",
+    "desc": "THSword Slayer Nature in Valheim 1.0."
+  },
+  {
+    "id": "THSwordWood",
+    "name": "THSword Wood",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/THSwordWood.svg",
+    "desc": "THSword Wood in Valheim 1.0."
+  },
+  {
+    "id": "AxeGold_BloodLightning",
+    "name": "Thunderblood Axe",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/AxeGold_BloodLightning.svg",
+    "desc": "As this axe cuts through wood and blood alike, a resounding thunderous crack shall be heard throughout the land."
+  },
+  {
+    "id": "BowGold_BloodLightning",
+    "name": "Thunderblood Bow",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/BowGold_BloodLightning.svg",
+    "desc": "Lightning dances along the string, waiting to be unleashed."
+  },
+  {
+    "id": "CrossbowGold_BloodLightning",
+    "name": "Thunderblood Crossbow",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/CrossbowGold_BloodLightning.svg",
+    "desc": "The bow is pulled taut with unreleased power, like the air before a lightning strike."
+  },
+  {
+    "id": "KnifeGold_BloodLightning",
+    "name": "Thunderblood Dagger",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/KnifeGold_BloodLightning.svg",
+    "desc": "The blade is already bloodied, yet it sparks in want of more."
+  },
+  {
+    "id": "BattleaxeGold_BloodLightning",
+    "name": "Thunderblood Greataxe",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/BattleaxeGold_BloodLightning.svg",
+    "desc": "As you cleave your foes in two, their blood shall sing like a thunderstorm."
+  },
+  {
+    "id": "THSwordGold_BloodLightning",
+    "name": "Thunderblood Greatsword",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/THSwordGold_BloodLightning.svg",
+    "desc": "Anyone wielding this weapon is sure to be very frightening indeed."
+  },
+  {
+    "id": "FistGold_BloodLightning",
+    "name": "Thunderblood Knucklechains",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/FistGold_BloodLightning.svg",
+    "desc": "A fury comes over you as you fight with these weapons, your blood roaring like thunder in your ears... It seems appropriate."
+  },
+  {
+    "id": "MaceGold_BloodLightning",
+    "name": "Thunderblood Mace",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/MaceGold_BloodLightning.svg",
+    "desc": "A weapon to rival perhaps even that of the thunder god himself..."
+  },
+  {
+    "id": "SpearGold_BloodLightning",
+    "name": "Thunderblood Spear",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SpearGold_BloodLightning.svg",
+    "desc": "May it strike like lightning, quick and fierce."
+  },
+  {
+    "id": "SwordGold_BloodLightning",
+    "name": "Thunderblood Sword",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/SwordGold_BloodLightning.svg",
+    "desc": "As the blood runs along the blade, it awakens the storm within."
   },
   {
     "id": "AxeBerzerkrLightning",
@@ -6239,6 +11909,56 @@ const VALHEIM_ITEMS = [
     "durability": 250,
     "icon": "icons/ThunderingBerserkirAxes.png",
     "desc": "Thundering Berserkir Axes item in Valheim."
+  },
+  {
+    "id": "TorchMist",
+    "name": "Torch Mist",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/TorchMist.svg",
+    "desc": "Torch Mist in Valheim 1.0."
+  },
+  {
+    "id": "StaffRedTroll",
+    "name": "Trollstav",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/StaffRedTroll.svg",
+    "desc": "Summons a raging beast to cause death and destruction."
+  },
+  {
+    "id": "TurretBoltBloodgold",
+    "name": "Turret Bolt Bloodgold",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/TurretBoltBloodgold.svg",
+    "desc": "Turret Bolt Bloodgold in Valheim 1.0."
+  },
+  {
+    "id": "TurretBoltBone",
+    "name": "Turret Bolt Bone",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/TurretBoltBone.svg",
+    "desc": "Turret Bolt Bone in Valheim 1.0."
+  },
+  {
+    "id": "TurretBoltFlametal",
+    "name": "Turret Bolt Flametal",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/TurretBoltFlametal.svg",
+    "desc": "Turret Bolt Flametal in Valheim 1.0."
   },
   {
     "id": "AtgeirWood",
@@ -6269,6 +11989,16 @@ const VALHEIM_ITEMS = [
     "durability": 250,
     "icon": "icons/BattleaxeWood.png",
     "desc": "Intimidating, but not as intimidating as the real thing."
+  },
+  {
+    "id": "TurretBoltWood",
+    "name": "Wooden Missile",
+    "category": "Weapons",
+    "maxStack": 1,
+    "maxQuality": 4,
+    "durability": 200,
+    "icon": "icons/TurretBoltWood.svg",
+    "desc": "Sturdy wooden missiles that can provide a tough defense against foes."
   },
   {
     "id": "WoundRipper",

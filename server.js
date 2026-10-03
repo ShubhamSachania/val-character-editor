@@ -20,21 +20,42 @@ const MIME_TYPES = {
 function getKnownSaveDirectories() {
   const dirs = [];
   
-  // 1. OnlineFix / Steam Platform save location
+  // 1. OnlineFix / Platform save location
   const onlineFixDir = 'C:\\Users\\Public\\Documents\\OnlineFix\\892970\\Saves\\characters';
   if (fs.existsSync(onlineFixDir)) {
     dirs.push({ name: 'Active Game Saves (OnlineFix/Platform)', path: onlineFixDir, active: true });
   }
 
-  // 2. Standard LocalLow location
+  // 2. Standard LocalLow locations (Cloud sync & Local)
   if (process.env.USERPROFILE) {
-    const localLowDir = path.join(process.env.USERPROFILE, 'AppData', 'LocalLow', 'IronGate', 'Valheim', 'characters_local');
-    if (fs.existsSync(localLowDir)) {
-      dirs.push({ name: 'LocalLow Characters (Local)', path: localLowDir, active: false });
+    const localLowBase = path.join(process.env.USERPROFILE, 'AppData', 'LocalLow', 'IronGate', 'Valheim');
+    const localChars = path.join(localLowBase, 'characters_local');
+    const cloudChars = path.join(localLowBase, 'characters');
+    if (fs.existsSync(localChars)) {
+      dirs.push({ name: 'LocalLow Characters (Local)', path: localChars, active: false });
+    }
+    if (fs.existsSync(cloudChars)) {
+      dirs.push({ name: 'LocalLow Characters (Cloud)', path: cloudChars, active: false });
     }
   }
 
-  // 3. Workspace directory
+  // 3. Steam userdata locations
+  const steamBases = ['C:\\Program Files (x86)\\Steam\\userdata', 'D:\\Steam\\userdata', 'D:\\Games\\Steam\\userdata'];
+  for (const sBase of steamBases) {
+    if (fs.existsSync(sBase)) {
+      try {
+        const users = fs.readdirSync(sBase);
+        for (const u of users) {
+          const charPath = path.join(sBase, u, '892970', 'remote', 'characters');
+          if (fs.existsSync(charPath)) {
+            dirs.push({ name: `Steam Cloud Saves (${u})`, path: charPath, active: false });
+          }
+        }
+      } catch (e) {}
+    }
+  }
+
+  // 4. Workspace directory
   dirs.push({ name: 'Editor Workspace Folder', path: WORKSPACE_DIR, active: false });
 
   return dirs;

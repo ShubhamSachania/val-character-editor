@@ -68,11 +68,27 @@ function getItemIconHtml(itemName) {
   if (info && info.icon) {
     iconPath = info.icon;
   } else {
-    // Try clean alphanumeric name
-    const cleanId = itemName.replace(/[^a-zA-Z0-9]/g, '');
+    const cleanId = itemName.replace(/[^a-zA-Z0-9_]/g, '');
     iconPath = `icons/${cleanId}.png`;
   }
-  return `<img src="${iconPath}" class="item-sprite-img" alt="${itemName}" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling ? this.nextElementSibling.style.display='inline' : '';"><span class="fallback-icon" style="display:none; font-size:1.4rem;">⚔️</span>`;
+
+  const cat = info ? info.category : 'Weapons';
+  const emojiMap = {
+    Weapons: '⚔️',
+    Shields: '🛡️',
+    Armor: '🪖',
+    Magic: '🔮',
+    Tools: '⛏️',
+    Food: '🍖',
+    Potions: '🧪',
+    Ammo: '🏹',
+    Trophies: '🏆',
+    Accessories: '💍',
+    Materials: '💎'
+  };
+  const fallbackEmoji = emojiMap[cat] || '⚔️';
+
+  return `<img src="${iconPath}" class="item-sprite-img" alt="${itemName}" onerror="if (!this.dataset.triedSvg) { this.dataset.triedSvg = '1'; this.src = this.src.replace(/\\.png$/, '.svg'); } else { this.style.display='none'; if (this.nextElementSibling) this.nextElementSibling.style.display='inline'; }"><span class="fallback-icon" style="display:none; font-size:1.4rem;">${fallbackEmoji}</span>`;
 }
 
 // Toast Notifications
@@ -186,13 +202,13 @@ function calculateInGameStats() {
     // Weight approximation
     let itemWeight = 1.0;
     const lower = item.name.toLowerCase();
-    if (lower.includes('scrap') || lower.includes('bar') || lower.includes('ore') || lower.includes('metal') || lower.includes('silver') || lower.includes('iron') || lower.includes('copper')) {
+    if (lower.includes('scrap') || lower.includes('bar') || lower.includes('ore') || lower.includes('metal') || lower.includes('silver') || lower.includes('iron') || lower.includes('copper') || lower.includes('gold')) {
       itemWeight = 10.0;
     } else if (lower.includes('wood') || lower.includes('stone') || lower.includes('marble')) {
       itemWeight = 2.0;
-    } else if (lower.includes('cuirass') || lower.includes('breastplate') || lower.includes('towershield')) {
+    } else if (lower.includes('cuirass') || lower.includes('breastplate') || lower.includes('towershield') || lower.includes('heavychest')) {
       itemWeight = 10.0;
-    } else if (lower.includes('greaves') || lower.includes('atgeir') || lower.includes('hammer')) {
+    } else if (lower.includes('greaves') || lower.includes('atgeir') || lower.includes('hammer') || lower.includes('heavylegs')) {
       itemWeight = 5.0;
     } else if (lower.includes('arrow') || lower.includes('bolt') || lower.includes('feather')) {
       itemWeight = 0.1;
@@ -205,22 +221,30 @@ function calculateInGameStats() {
 
       // Armor calculation
       let baseArmor = 0;
-      if (lower.includes('paddedcuirass') || lower.includes('paddedgreaves') || lower.includes('paddedhelmet')) baseArmor = 26;
+      if (lower.includes('deepnorthheavy') || lower.includes('protector') || lower.includes('dnheavy')) baseArmor = 42;
+      else if (lower.includes('flametal')) baseArmor = 36;
+      else if (lower.includes('deepnorthmedium') || lower.includes('vanguard') || lower.includes('dnmedium')) baseArmor = 34;
       else if (lower.includes('carapace')) baseArmor = 32;
-      else if (lower.includes('mage')) baseArmor = 16;
+      else if (lower.includes('padded')) baseArmor = 26;
+      else if (lower.includes('lox')) baseArmor = 24;
+      else if (lower.includes('deepnorthmage') || lower.includes('caller') || lower.includes('dnmage')) baseArmor = 22;
       else if (lower.includes('silver') || lower.includes('wolf')) baseArmor = 20;
+      else if (lower.includes('mage')) baseArmor = 16;
       else if (lower.includes('iron')) baseArmor = 14;
       else if (lower.includes('bronze')) baseArmor = 8;
       else if (lower.includes('leather')) baseArmor = 2;
       else if (lower.includes('cape')) baseArmor = 1;
 
       if (baseArmor > 0) {
-        totalArmor += baseArmor + (q - 1) * (baseArmor === 1 ? 1 : 2);
+        totalArmor += baseArmor + (q - 1) * (baseArmor <= 2 ? 1 : 2);
       }
     }
   });
 
-  const maxWeight = hasMegingjord ? 450 : 300;
+  let maxWeight = 300;
+  if (hasMegingjord) maxWeight += 150;
+  if (pd.guardianPower === 'GP_Fader') maxWeight += 300;
+
   return { totalArmor, totalWeight: Math.round(totalWeight), maxWeight, slotsUsed: inventory.length };
 }
 
@@ -504,6 +528,14 @@ function swapSlots(posA, posB) {
 }
 
 // Render Skills
+const SKILL_ICONS = {
+  Swords: '⚔️', Knives: '🗡️', Clubs: '🏏', Polearms: '🔱', Spears: '📍',
+  Blocking: '🛡️', Axes: '🪓', Bows: '🏹', Crossbows: '🎯',
+  ElementalMagic: '🔮', BloodMagic: '🩸', Unarmed: '🥊', Pickaxes: '⛏️',
+  WoodCutting: '🪵', Jump: '🦘', Sneak: '🥷', Run: '🏃', Swim: '🏊',
+  Fishing: '🎣', Cooking: '🍲', Farming: '🌾', Crafting: '🔨', Dodge: '🤸', Ride: '🐎'
+};
+
 function renderSkills() {
   skillsContainer.innerHTML = '';
   const pd = currentCharacter.playerData || {};
@@ -514,9 +546,10 @@ function renderSkills() {
   sortedSkills.forEach(([name, data]) => {
     const row = document.createElement('div');
     row.className = 'skill-row';
+    const icon = SKILL_ICONS[name] || '⚡';
     row.innerHTML = `
       <div style="display: flex; align-items: center; gap: 6px;">
-        <span style="color: var(--valheim-gold);">⚡</span>
+        <span>${icon}</span>
         <span class="skill-name">${name}</span>
       </div>
       <input type="number" class="skill-level-input" min="0" max="100" step="0.5" value="${data.level.toFixed(1)}" data-skill="${name}">
@@ -537,13 +570,34 @@ function renderSkills() {
 function renderProgression() {
   progressionContainer.innerHTML = '';
   const pd = currentCharacter.playerData || {};
+  const biomes = pd.knownBiomes || [];
+  const biomeNames = biomes.map(b => typeof b === 'object' ? (b.name || b.id) : b);
+  const hasDeepNorth = biomeNames.some(b => String(b).toLowerCase().includes('deep'));
+
   progressionContainer.innerHTML = `
     <div>📜 Known Recipes: <strong>${(pd.knownRecipes || []).length}</strong></div>
     <div>🪵 Known Materials: <strong>${(pd.knownMaterials || []).length}</strong></div>
     <div>🏆 Trophies Claimed: <strong>${(pd.trophies || []).length}</strong></div>
-    <div>🌲 Discovered Biomes: <strong>${(pd.knownBiomes || []).length}</strong></div>
+    <div>🌲 Discovered Biomes: <strong>${biomes.length}</strong></div>
+    <div style="font-size:0.75rem; color:#67e8f9; line-height:1.4; margin: 2px 0 6px 0;">${biomeNames.join(', ') || 'None'}</div>
     <div>🔨 Crafting Stations: <strong>${Object.keys(pd.knownStations || {}).length}</strong></div>
+    ${!hasDeepNorth ? `<button class="btn btn-secondary" id="btn-discover-deep-north" style="margin-top:6px; font-size:0.75rem; padding:4px 10px; width: 100%; justify-content: center;">❄️ Discover Deep North</button>` : `<div style="color:#a7f3d0; font-size:0.75rem; margin-top:4px; font-weight:600;">❄️ Deep North Discovered!</div>`}
   `;
+
+  const btnDiscover = document.getElementById('btn-discover-deep-north');
+  if (btnDiscover) {
+    btnDiscover.addEventListener('click', () => {
+      if (pd.version >= 33) {
+        if (!pd.knownBiomes) pd.knownBiomes = [];
+        pd.knownBiomes.push({ name: 'Deep North' });
+      } else {
+        if (!pd.knownBiomes) pd.knownBiomes = [];
+        pd.knownBiomes.push({ id: 64, name: 'DeepNorth' });
+      }
+      renderProgression();
+      showToast('Deep North biome discovered & registered to character!', 'success');
+    });
+  }
 }
 
 // Open Item Editor Modal
@@ -805,12 +859,27 @@ document.getElementById('btn-clear-inventory').addEventListener('click', () => {
 
 // Toolbar Actions: Max All Skills
 document.getElementById('btn-max-skills').addEventListener('click', () => {
-  const skills = currentCharacter.playerData.skills || {};
-  for (const s of Object.values(skills)) {
-    s.level = 100;
+  const pd = currentCharacter.playerData;
+  if (!pd) return;
+  if (!pd.skills) pd.skills = {};
+
+  const allSkills = {
+    Swords: 1, Knives: 2, Clubs: 3, Polearms: 4, Spears: 5,
+    Blocking: 6, Axes: 7, Bows: 8, ElementalMagic: 9, BloodMagic: 10,
+    Unarmed: 11, Pickaxes: 12, WoodCutting: 13, Crossbows: 14,
+    Jump: 100, Sneak: 101, Run: 102, Swim: 103, Fishing: 104,
+    Cooking: 105, Farming: 106, Crafting: 107, Dodge: 108, Ride: 110
+  };
+
+  for (const [name, id] of Object.entries(allSkills)) {
+    pd.skills[name] = {
+      skillId: id,
+      level: 100,
+      accumulator: 0
+    };
   }
   renderSkills();
-  showToast('Maxed all Viking skills to Level 100!');
+  showToast('Maxed all 24 Valheim 1.0 skills to Level 100!');
 });
 
 // Character Vitals Modal
