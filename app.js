@@ -6,6 +6,7 @@ let currentFilePath = '';
 let currentFileHandle = null;
 let activeSlotPos = { x: 0, y: 0 };
 let draggedSlotPos = null;
+let currentGridRows = 5; // Default 5 rows (40 slots) to support unlocked extra row
 
 // UI Containers
 const uploadDropzone = document.getElementById('upload-dropzone');
@@ -15,6 +16,7 @@ const equippedContainer = document.getElementById('equipped-gear-container');
 const activeFoodsContainer = document.getElementById('active-foods-container');
 const skillsContainer = document.getElementById('skills-list-container');
 const progressionContainer = document.getElementById('progression-summary-container');
+const selectGridRows = document.getElementById('select-grid-rows');
 
 // Header Action Buttons
 const btnLoadFile = document.getElementById('btn-load-file');
@@ -49,10 +51,29 @@ const catalogSearchInput = document.getElementById('catalog-search-input');
 const catalogCategories = document.getElementById('catalog-categories-container');
 const catalogGrid = document.getElementById('catalog-grid');
 
+// Alias mappings for friendly item names & game prefabs
+const ITEM_ALIASES = {
+  'staffoffracture': 'StaffClusterbomb',
+  'stafffracture': 'StaffClusterbomb',
+  'staffoffracturing': 'StaffClusterbomb',
+  'staffclusterbomb': 'StaffClusterbomb',
+  'seekeraspic': 'SeekerAspic',
+  'seekeraspicfood': 'SeekerAspic',
+  'volturemeat': 'CookedVoltureMeat',
+  'cookedvolturemeat': 'CookedVoltureMeat',
+  'feathercape': 'CapeFeather',
+  'capefeather': 'CapeFeather'
+};
+
 // Helper to get item metadata from database
 function getItemInfo(itemName) {
   if (!itemName || typeof VALHEIM_ITEMS === 'undefined') return null;
   const clean = itemName.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const aliasId = ITEM_ALIASES[clean];
+  if (aliasId) {
+    const found = VALHEIM_ITEMS.find(i => i.id.toLowerCase() === aliasId.toLowerCase());
+    if (found) return found;
+  }
   return VALHEIM_ITEMS.find(i => {
     const idClean = i.id.toLowerCase().replace(/[^a-z0-9]/g, '');
     const nameClean = i.name.toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -88,7 +109,7 @@ function getItemIconHtml(itemName) {
   };
   const fallbackEmoji = emojiMap[cat] || '⚔️';
 
-  return `<img src="${iconPath}" class="item-sprite-img" alt="${itemName}" onerror="if (!this.dataset.triedSvg) { this.dataset.triedSvg = '1'; this.src = this.src.replace(/\\.png$/, '.svg'); } else { this.style.display='none'; if (this.nextElementSibling) this.nextElementSibling.style.display='inline'; }"><span class="fallback-icon" style="display:none; font-size:1.4rem;">${fallbackEmoji}</span>`;
+  return `<img src="${iconPath}" class="item-sprite-img" alt="${itemName}" onerror="if (!this.dataset.triedAlt) { this.dataset.triedAlt = '1'; this.src = this.src.endsWith('.png') ? this.src.replace(/\\.png$/, '.svg') : this.src.replace(/\\.svg$/, '.png'); } else { this.style.display='none'; if (this.nextElementSibling) this.nextElementSibling.style.display='inline'; }"><span class="fallback-icon" style="display:none; font-size:1.4rem;">${fallbackEmoji}</span>`;
 }
 
 // Toast Notifications
@@ -153,6 +174,20 @@ function onCharacterLoaded() {
   btnSaveOverwrite.style.display = 'inline-flex';
   btnExportFch.style.display = 'inline-flex';
   btnExportJson.style.display = 'inline-flex';
+
+  // Auto-detect unlocked extra rows from character inventory
+  const inventory = (currentCharacter && currentCharacter.playerData && currentCharacter.playerData.inventory) || [];
+  let maxY = 3;
+  inventory.forEach(it => {
+    if (it.pos && typeof it.pos.y === 'number' && it.pos.y > maxY) {
+      maxY = it.pos.y;
+    }
+  });
+  // Default to at least 5 rows so the unlocked extra row is visible, or higher if needed
+  currentGridRows = Math.max(5, maxY + 1);
+  if (selectGridRows) {
+    selectGridRows.value = String(currentGridRows);
+  }
 
   renderAll();
 }
@@ -264,7 +299,8 @@ function renderHeroBanner() {
   document.getElementById('display-guardian').textContent = `💀 ${gp}`;
 
   const invCount = (pd.inventory || []).length;
-  document.getElementById('badge-items-count').textContent = `${invCount} / 32 Slots`;
+  const totalSlots = 8 * currentGridRows;
+  document.getElementById('badge-items-count').textContent = `${invCount} / ${totalSlots} Slots`;
 
   // Cheat Status & Steam Achievements Eligibility
   renderCheatStatus();
@@ -309,9 +345,10 @@ function renderCheatStatus() {
 // Render In-Game Stats Header (Armor & Weight HUD)
 function renderInventoryHUD() {
   const stats = calculateInGameStats();
+  const totalSlots = 8 * currentGridRows;
   document.getElementById('stat-armor-val').textContent = stats.totalArmor;
   document.getElementById('stat-weight-val').textContent = `${stats.totalWeight} / ${stats.maxWeight}`;
-  document.getElementById('stat-slots-val').textContent = `${stats.slotsUsed} / 32`;
+  document.getElementById('stat-slots-val').textContent = `${stats.slotsUsed} / ${totalSlots}`;
 }
 
 // Render Left Panel: Equipped Items
@@ -394,7 +431,7 @@ function renderActiveFoods() {
   });
 }
 
-// Render Center 8x4 In-Game Grid
+// Render Center In-Game Grid (Supports Unlocked Extra Rows)
 function renderInventoryGrid() {
   gridContainer.innerHTML = '';
   const pd = currentCharacter.playerData || {};
@@ -407,9 +444,17 @@ function renderInventoryGrid() {
     }
   });
 
-  // Valheim is 8 columns wide (x: 0..7) and 4 rows tall (y: 0..3)
-  for (let y = 0; y < 4; y++) {
-    for (let x = 0; x < 8; x++) {
+  const numRows = currentGridRows;
+  const numCols = 8;
+
+  const panelTitle = document.getElementById('inventory-panel-title');
+  if (panelTitle) {
+    panelTitle.textContent = `🎒 Inventory (8 x ${numRows})`;
+  }
+
+  // Valheim is 8 columns wide (x: 0..7) and dynamic rows tall (y: 0..numRows-1)
+  for (let y = 0; y < numRows; y++) {
+    for (let x = 0; x < numCols; x++) {
       const slot = document.createElement('div');
       const item = gridMap[`${x},${y}`];
 
@@ -744,7 +789,7 @@ function renderCatalogItems(category = 'All', query = '') {
         inventory.forEach(i => gridMap[`${i.pos.x},${i.pos.y}`] = true);
 
         let emptyPos = null;
-        for (let y = 0; y < 4; y++) {
+        for (let y = 0; y < currentGridRows; y++) {
           for (let x = 0; x < 8; x++) {
             if (!gridMap[`${x},${y}`]) {
               emptyPos = { x, y };
@@ -755,7 +800,8 @@ function renderCatalogItems(category = 'All', query = '') {
         }
 
         if (!emptyPos) {
-          showToast('Inventory is full! (32/32 slots used)', 'error');
+          const totalSlots = 8 * currentGridRows;
+          showToast(`Inventory is full! (${totalSlots}/${totalSlots} slots used)`, 'error');
           return;
         }
 
@@ -1228,6 +1274,15 @@ async function loadSaveFromPath(filePath, filename) {
   } catch (err) {
     showToast(`Error loading file: ${err.message}`, 'error');
   }
+}
+
+// Row selector change handler
+if (selectGridRows) {
+  selectGridRows.addEventListener('change', (e) => {
+    currentGridRows = parseInt(e.target.value, 10) || 5;
+    renderAll();
+    showToast(`Inventory grid updated to ${currentGridRows} rows (${8 * currentGridRows} slots)`);
+  });
 }
 
 // Initialize save detection on startup

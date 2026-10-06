@@ -1123,10 +1123,10 @@ const VALHEIM_ITEMS = [
   {
     "id": "AsksvinMeat",
     "name": "Asksvin Tail",
-    "category": "Armor",
-    "maxStack": 1,
-    "maxQuality": 4,
-    "durability": 1000,
+    "category": "Food",
+    "maxStack": 20,
+    "maxQuality": 1,
+    "durability": 100,
     "icon": "icons/AsksvinMeat.png",
     "desc": "Smells a bit smokey, even when raw."
   },
@@ -4532,13 +4532,13 @@ const VALHEIM_ITEMS = [
   },
   {
     "id": "StaffofFracturing",
-    "name": "Staffof Fracturing",
+    "name": "Staff of Fracturing",
     "category": "Magic",
     "maxStack": 1,
     "maxQuality": 4,
     "durability": 350,
     "icon": "icons/StaffofFracturing.png",
-    "desc": "Staffof Fracturing item in Valheim."
+    "desc": "Shoots a cluster of flaming shards that explode on impact."
   },
   {
     "id": "StaffofFrost",
@@ -6413,7 +6413,7 @@ const VALHEIM_ITEMS = [
   {
     "id": "MisthareSupreme",
     "name": "Misthare Supreme",
-    "category": "Materials",
+    "category": "Food",
     "maxStack": 50,
     "maxQuality": 1,
     "durability": 100,
@@ -7023,7 +7023,7 @@ const VALHEIM_ITEMS = [
   {
     "id": "SeekerAspic",
     "name": "Seeker Aspic",
-    "category": "Materials",
+    "category": "Food",
     "maxStack": 50,
     "maxQuality": 1,
     "durability": 100,
@@ -11473,12 +11473,12 @@ const VALHEIM_ITEMS = [
   {
     "id": "StaffClusterbomb",
     "name": "Staff of Fracturing",
-    "category": "Weapons",
+    "category": "Magic",
     "maxStack": 1,
     "maxQuality": 4,
-    "durability": 200,
-    "icon": "icons/StaffClusterbomb.svg",
-    "desc": "Only those with patience and focus will be able to harness the true power of this staff."
+    "durability": 350,
+    "icon": "icons/StaffClusterbomb.png",
+    "desc": "Shoots a cluster of flaming shards that explode on impact."
   },
   {
     "id": "StaffGreenRoots",

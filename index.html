@@ -144,10 +144,22 @@
           </div>
         </aside>
 
-        <!-- CENTER: 8x4 In-Game Inventory Grid -->
+        <!-- CENTER: In-Game Inventory Grid (Configurable / Auto-detected Rows) -->
         <section class="panel-card valheim-frame">
           <div class="panel-header">
-            <div class="panel-title">🎒 Inventory (8 x 4)</div>
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <div class="panel-title" id="inventory-panel-title">🎒 Inventory (8 x 5)</div>
+              <div style="display: flex; align-items: center; gap: 5px; font-size: 0.8rem; font-family: var(--font-valheim); color: var(--valheim-text-muted);">
+                <label for="select-grid-rows" style="cursor: pointer;">Rows:</label>
+                <select id="select-grid-rows" style="background: rgba(0,0,0,0.7); color: var(--valheim-gold); border: 1px solid var(--valheim-panel-border); border-radius: 2px; padding: 2px 6px; font-family: var(--font-valheim); font-size: 0.8rem; cursor: pointer;">
+                  <option value="4">4 (32 Slots - Standard)</option>
+                  <option value="5" selected>5 (40 Slots - Extra Row)</option>
+                  <option value="6">6 (48 Slots - Extended)</option>
+                  <option value="7">7 (56 Slots)</option>
+                  <option value="8">8 (64 Slots)</option>
+                </select>
+              </div>
+            </div>
             <div style="display: flex; gap: 6px; flex-wrap: wrap;">
               <button class="btn btn-primary" id="btn-open-catalog">➕ Add Item</button>
               <button class="btn btn-success" id="btn-repair-all">🔨 Repair All</button>
